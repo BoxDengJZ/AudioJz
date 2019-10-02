@@ -4,7 +4,7 @@
 
 
 
-### 播客地址 [iOS Audio 手把手: 录音、播放、音频播放控制（音量采样检测等），Swift5，基于 AVFoundation @juejin](https://juejin.im/post/5d94abb76fb9a04e252c819c)
+### 播客地址:     [iOS Audio 手把手: 录音、播放、音频播放控制（音量采样检测等），Swift5，基于 AVFoundation @juejin](https://juejin.im/post/5d94abb76fb9a04e252c819c)
 
 #### 以下是 AVAudioPlayer， AVAudioRecorder
 
@@ -23,4 +23,7 @@
 
 0.2 
 
-<img src="">
+
+<p align="center" >
+  <img src="https://raw.githubusercontent.com/BoxDengJZ/AudioJz/master/imgs/five.png">
+</p>
