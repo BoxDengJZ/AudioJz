@@ -6,4 +6,5 @@
 
 把 Ray Wenderlich 的音频教程，从 Swift 2 更新到 Swift 5，并做了适当的修改
 
-0.1 [录音与播放]()
+0.1 [录音与播放](https://github.com/BoxDengJZ/AudioJz/archive/v0.01.zip)
+
