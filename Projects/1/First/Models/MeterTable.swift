@@ -53,6 +53,8 @@ struct MeterTable {
         else {
             let index = Int(power * scaleFactor)
             if debug{
+                print("power")
+                print(power)
                 debug = false
                 print("meterTable")
                 print(meterTable)

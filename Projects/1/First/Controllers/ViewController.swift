@@ -20,10 +20,10 @@ class ViewController: UIViewController {
     var audioStatus: AudioStatus = AudioStatus.stopped
     
     
-    // 一个 音频 录制
+    // 一个音频录制
     var audioRecorder: AVAudioRecorder!
     
-    // 一个 音频 播放
+    // 一个音频播放
     var audioPlayer: AVAudioPlayer!
     
     var soundTimer: CFTimeInterval = 0.0
@@ -160,7 +160,8 @@ extension ViewController: AVAudioPlayerDelegate, AVAudioRecorderDelegate {
             audioPlayer.delegate = self
             if audioPlayer.duration > 0.0 {
                 setPlayButtonOn(flag: true)
-                audioPlayer.isMeteringEnabled = true // 开通 计量 功能
+                // 开通计量功能
+                audioPlayer.isMeteringEnabled = true
                 audioPlayer.enableRate = true
                 toSetVolumn(value: UserDefaults.standard.float(forKey: kVolume))
                 toSetPan(value: UserDefaults.standard.float(forKey: "Pan"))
