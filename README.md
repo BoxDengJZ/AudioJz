@@ -2,6 +2,10 @@
 个人学过的，音频相关的技巧。从 ray wenderlich 开始
 
 
+
+### 播客地址:     [iOS Audio hand by hand: 变声，混响，语音合成 TTS，Swift5，基于 AVAudioEngine 等](https://juejin.im/post/5d964922e51d4577ee4f4808)
+
+
 0.4 [语音合成 AVSpeechSynthesizer](https://github.com/BoxDengJZ/AudioJz/archive/v0.04.zip)
 
 0.3 [AVAudioEngine：音效：变声，混响](https://github.com/BoxDengJZ/AudioJz/archive/v0.03.zip)

@@ -27,8 +27,6 @@ class ViewController: UIViewController {
     synthesizer.delegate = self
   }
 
-
-  
    override var prefersStatusBarHidden: Bool{
         return true
     }
