@@ -2,7 +2,7 @@
 个人学过的，音频相关的技巧。从 ray wenderlich 开始
 
 
-
+0.4 [语音合成 AVSpeechSynthesizer](https://github.com/BoxDengJZ/AudioJz/archive/v0.04.zip)
 
 0.3 [AVAudioEngine：音效：变声，混响](https://github.com/BoxDengJZ/AudioJz/archive/v0.03.zip)
 
