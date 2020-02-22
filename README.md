@@ -1,4 +1,25 @@
 # AudioJz
+
+探索底层一些 under the hood
+
+0.5 [音频操作，Audio Queue Services 搞缓冲，AVAudioEngine 加声效]()
+
+操作音频流，分为三个层面，
+
+buffer, 缓冲，
+packet, 包，
+frame, 帧
+
+
+一个缓冲 buffer 里面，包含很多个包 packet，
+一个包 packet 里面，包含很多个帧 frame 
+
+PS: 感谢、参考、基于，syedhali/AudioStreamer
+
+<hr>
+
+操作音频文件：
+
 个人学过的，音频相关的技巧。从 ray wenderlich 开始
 
 
