@@ -1,6 +1,6 @@
 # AudioJz
 
-探索底层一些 under the hood
+#### 探索底层一些 under the hood
 
 0.5 [音频操作，Audio Queue Services 搞缓冲，AVAudioEngine 加声效]()
 
@@ -21,7 +21,7 @@ frame, 帧
 
 <hr>
 
-操作音频文件：
+#### 操作音频文件：
 
 个人学过的，音频相关的技巧。从 ray wenderlich 开始
 
