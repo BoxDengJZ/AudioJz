@@ -69,6 +69,10 @@ open class Streamer: Streaming {
     /// A `Bool` indicating whether the file has been completely scheduled into the player node.
     var isFileSchedulingComplete = false
 
+    
+    
+    var repeats = false
+    
     // MARK: - Lifecycle
     
     public init() {        
@@ -78,7 +82,7 @@ open class Streamer: Streaming {
 
     // MARK: - Setup
 
-    func setupAudioEngine() {
+    func setupAudioEngine(){
         os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
 
         // Attach nodes
@@ -125,6 +129,8 @@ open class Streamer: Streaming {
         duration = nil
         reader = nil
         isFileSchedulingComplete = false
+        repeats = false
+        
         
         // Create a new parser
         do {
@@ -264,6 +270,9 @@ open class Streamer: Streaming {
         }
 
         guard !isFileSchedulingComplete else {
+            if repeats{
+                try? seek(to: 0)
+            }
             return
         }
 

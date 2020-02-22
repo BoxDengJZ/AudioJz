@@ -13,15 +13,27 @@ import os.log
 class ViewController: UIViewController {
     static let logger = OSLog(subsystem: "com.fastlearner.streamer", category: "ViewController")
     
+    
     // UI props
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var durationTimeLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
+    
+    
     @IBOutlet weak var rateSlider: UISlider!
     @IBOutlet weak var pitchLabel: UILabel!
     @IBOutlet weak var pitchSlider: UISlider!
+    
+    
+    @IBOutlet weak var cycleBtn: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var progressSlider: ProgressSlider!
+    
+    
+    
+    var cycleMode: ( titles: [String], tick: Bool) = (["默认关闭", "打开了"], false)
+    
+    
     
     // Streamer props
     lazy var streamer: TimePitchStreamer = {
@@ -37,6 +49,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addCycleMode()
+        
         
         // Setup the AVAudioSession and AVAudioEngine
         setupAudioSession()
@@ -49,6 +63,11 @@ class ViewController: UIViewController {
         let url = URL(string: "https://cdn.fastlearner.media/bensound-rumble.mp3")!
         streamer.url = url
     }
+    
+    
+    
+    
+    
     
     // MARK: - Setting Up The Engine
     
@@ -156,3 +175,28 @@ class ViewController: UIViewController {
     
 }
 
+
+
+
+extension ViewController{
+    
+    
+    
+    
+    func addCycleMode(){
+        
+        cycleBtn.setTitle(cycleMode.titles[0], for: UIControl.State.normal)
+        cycleBtn.addTarget(self, action: #selector(ViewController.cycle), for: UIControl.Event.touchUpInside)
+    }
+    
+    
+    @objc func cycle(){
+        if cycleMode.tick{
+            cycleBtn.setTitle(cycleMode.titles[0], for: UIControl.State.normal)
+        }
+        else{
+            cycleBtn.setTitle(cycleMode.titles[1], for: UIControl.State.normal)
+        }
+        cycleMode.tick.toggle()
+    }
+}

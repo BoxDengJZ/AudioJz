@@ -343,6 +343,7 @@
 				TargetAttributes = {
 					663E09CC21FCE320004B391D = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -521,7 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ausomeapps.TimePitchStreamer;
 				PRODUCT_NAME = TimePitchStreamer;
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -544,7 +545,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ausomeapps.TimePitchStreamer;
 				PRODUCT_NAME = TimePitchStreamer;
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

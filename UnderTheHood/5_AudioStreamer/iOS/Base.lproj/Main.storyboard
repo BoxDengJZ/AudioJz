@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7uo-NU-YtZ">
-                                <rect key="frame" x="32" y="16" width="311" height="566.5"/>
+                                <rect key="frame" x="32" y="16" width="311" height="604.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3bP-IE-Np2">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="162.5"/>
@@ -95,7 +95,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ghd-bc-Z2D">
-                                        <rect key="frame" x="0.0" y="357" width="311" height="209.5"/>
+                                        <rect key="frame" x="0.0" y="357" width="311" height="247.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0G-Lh-GC5">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="38.5"/>
@@ -137,8 +137,23 @@
                                                     <action selector="progressSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="J4C-kr-8jz"/>
                                                 </connections>
                                             </slider>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bO1-3r-nX4">
+                                                <rect key="frame" x="0.0" y="121.5" width="311" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单曲循环：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyE-CQ-9EN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyE-Dn-SGI">
+                                                        <rect key="frame" x="155.5" y="0.0" width="155.5" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rql-KZ-673">
-                                                <rect key="frame" x="0.0" y="121.5" width="311" height="88"/>
+                                                <rect key="frame" x="0.0" y="159.5" width="311" height="88"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rt-X4-cTN">
                                                         <rect key="frame" x="0.0" y="24" width="311" height="64"/>
@@ -166,6 +181,7 @@
                     </view>
                     <connections>
                         <outlet property="currentTimeLabel" destination="SgO-iI-Dgm" id="B9Q-nz-htV"/>
+                        <outlet property="cycleBtn" destination="CyE-Dn-SGI" id="l9q-5i-jLQ"/>
                         <outlet property="durationTimeLabel" destination="cWp-4h-jRP" id="XRH-LF-u5l"/>
                         <outlet property="pitchLabel" destination="1Sf-gN-iNW" id="Jd2-bm-mph"/>
                         <outlet property="pitchSlider" destination="ZgN-gD-MUl" id="IkG-6F-z9y"/>

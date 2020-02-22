@@ -22,11 +22,17 @@ class ViewController: NSViewController {
     @IBOutlet weak var currentTimeLabel: NSTextField!
     @IBOutlet weak var durationTimeLabel: NSTextField!
     @IBOutlet weak var playbackControlsStackView: NSStackView!
+    
+    
+    
+    
     @IBOutlet weak var playButton: NSButton! {
         willSet {
             newValue.setFilterColor(NSColor(red: 0.18, green: 0.243, blue: 0.345, alpha: 1))
         }
     }
+    
+    
     @IBOutlet weak var progressIndicator: NSProgressIndicator! {
         willSet {
             newValue.isIndeterminate = false
