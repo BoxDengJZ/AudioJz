@@ -14,9 +14,10 @@ frame, 帧
 一个缓冲 buffer 里面，包含很多个包 packet，
 一个包 packet 里面，包含很多个帧 frame 
 
-PS: 
+##### PS:
 
-感谢、参考、基于，syedhali/AudioStreamer
+
+感谢、参考、基于，syedhali/AudioStreamer
 
 <hr>
 
