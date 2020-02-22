@@ -7,11 +7,14 @@
 操作音频流，分为三个层面，
 
 buffer, 缓冲，
+
 packet, 包，
+
 frame, 帧
 
 
 一个缓冲 buffer 里面，包含很多个包 packet，
+
 一个包 packet 里面，包含很多个帧 frame 
 
 ##### PS:
