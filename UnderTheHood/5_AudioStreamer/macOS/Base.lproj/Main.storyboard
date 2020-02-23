@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -619,7 +619,7 @@
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -717,13 +717,13 @@
                                         <edgeInsets key="edgeInsets" left="32" right="32" top="0.0" bottom="0.0"/>
                                     </stackView>
                                     <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="24" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DnU-wi-W7t">
-                                        <rect key="frame" x="0.0" y="64" width="480" height="227"/>
+                                        <rect key="frame" x="0.0" y="92" width="480" height="199"/>
                                         <subviews>
                                             <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="m9H-cM-zBx">
-                                                <rect key="frame" x="190" y="130" width="100" height="98"/>
+                                                <rect key="frame" x="190" y="180" width="100" height="20"/>
                                             </progressIndicator>
                                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="455-vD-81h">
-                                                <rect key="frame" x="0.0" y="60" width="480" height="47"/>
+                                                <rect key="frame" x="0.0" y="110" width="480" height="47"/>
                                                 <subviews>
                                                     <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v77-Us-Pb7">
                                                         <rect key="frame" x="192" y="30" width="96" height="19"/>
@@ -736,7 +736,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="480" height="24"/>
                                                         <subviews>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uI0-MT-hPo">
-                                                                <rect key="frame" x="30" y="7" width="208" height="17"/>
+                                                                <rect key="frame" x="30" y="8" width="208" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="00:00" id="sGB-7y-Z3K">
                                                                     <font key="font" usesAppearanceFont="YES"/>
                                                                     <color key="textColor" red="0.1450980392" green="0.1647058824" blue="0.18823529410000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -744,7 +744,7 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l9a-Py-SzI">
-                                                                <rect key="frame" x="242" y="7" width="208" height="17"/>
+                                                                <rect key="frame" x="242" y="8" width="208" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="00:00" id="xin-Xi-RGp">
                                                                     <font key="font" usesAppearanceFont="YES"/>
                                                                     <color key="textColor" red="0.1450980392" green="0.1647058824" blue="0.18823529410000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -781,7 +781,7 @@
                                                 </customSpacing>
                                             </stackView>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9aw-6x-piG">
-                                                <rect key="frame" x="210" y="0.0" width="60" height="36"/>
+                                                <rect key="frame" x="210" y="50" width="60" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="iJ9-Qu-4hx"/>
                                                     <constraint firstAttribute="width" constant="60" id="lfO-5S-RfM"/>
@@ -794,13 +794,28 @@
                                                     <action selector="playButtonPressed:" target="XfG-lQ-9wD" id="j9i-eC-dWk"/>
                                                 </connections>
                                             </button>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hIA-Rp-muH">
+                                                <rect key="frame" x="393" y="10" width="84" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="JA2-ZH-jdu"/>
+                                                </constraints>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="单曲循环：" id="Ugg-q2-SSx">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                         </subviews>
                                         <edgeInsets key="edgeInsets" left="32" right="32" top="0.0" bottom="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="455-vD-81h" secondAttribute="trailing" id="2qa-3w-r4K"/>
+                                            <constraint firstAttribute="bottom" secondItem="hIA-Rp-muH" secondAttribute="bottom" constant="10" id="C83-gb-lGq"/>
                                             <constraint firstItem="455-vD-81h" firstAttribute="leading" secondItem="DnU-wi-W7t" secondAttribute="leading" id="CLB-0b-SWS"/>
+                                            <constraint firstItem="9aw-6x-piG" firstAttribute="top" secondItem="455-vD-81h" secondAttribute="bottom" constant="24" id="XZA-5X-SxO"/>
+                                            <constraint firstItem="9aw-6x-piG" firstAttribute="leading" secondItem="DnU-wi-W7t" secondAttribute="leading" constant="210" id="hP6-Ze-gmU"/>
                                         </constraints>
                                         <visibilityPriorities>
+                                            <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
@@ -809,21 +824,39 @@
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKc-Zb-mZa">
+                                        <rect key="frame" x="395" y="55" width="80" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Hsc-Re-LqH"/>
+                                            <constraint firstAttribute="height" constant="28" id="MsW-6Z-ncN"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="roundRect" title="Round Rect" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DP9-yj-HXo">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="controlContent"/>
+                                        </buttonCell>
+                                    </button>
                                 </subviews>
                                 <edgeInsets key="edgeInsets" left="32" right="32" top="32" bottom="64"/>
                                 <constraints>
                                     <constraint firstItem="DnU-wi-W7t" firstAttribute="leading" secondItem="kDO-Od-TRp" secondAttribute="leading" id="31G-wE-X2T"/>
+                                    <constraint firstItem="hIA-Rp-muH" firstAttribute="leading" secondItem="rKc-Zb-mZa" secondAttribute="leading" id="B6X-PS-grJ"/>
                                     <constraint firstItem="RNC-C1-V0k" firstAttribute="leading" secondItem="kDO-Od-TRp" secondAttribute="leading" id="Cd3-zb-gnV"/>
+                                    <constraint firstAttribute="trailing" secondItem="rKc-Zb-mZa" secondAttribute="trailing" constant="5" id="RKy-lG-uC3"/>
                                     <constraint firstAttribute="trailing" secondItem="RNC-C1-V0k" secondAttribute="trailing" id="S5O-mm-PoH"/>
                                     <constraint firstAttribute="trailing" secondItem="DnU-wi-W7t" secondAttribute="trailing" id="Ydr-2x-XzK"/>
+                                    <constraint firstAttribute="bottom" secondItem="rKc-Zb-mZa" secondAttribute="bottom" constant="20" symbolic="YES" id="bHb-AH-BLl"/>
+                                    <constraint firstItem="hIA-Rp-muH" firstAttribute="trailing" secondItem="rKc-Zb-mZa" secondAttribute="trailing" id="gUa-1I-jRJ"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <real value="500"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -838,6 +871,7 @@
                     </view>
                     <connections>
                         <outlet property="currentTimeLabel" destination="uI0-MT-hPo" id="xXV-Vk-onU"/>
+                        <outlet property="cycleBtn" destination="rKc-Zb-mZa" id="CDs-ay-xwK"/>
                         <outlet property="durationTimeLabel" destination="l9a-Py-SzI" id="rCs-HL-DzZ"/>
                         <outlet property="playButton" destination="9aw-6x-piG" id="pix-4V-AGu"/>
                         <outlet property="playbackControlsStackView" destination="DnU-wi-W7t" id="iX0-WD-F2m"/>

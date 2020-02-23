@@ -198,5 +198,6 @@ extension ViewController{
             cycleBtn.setTitle(cycleMode.titles[1], for: UIControl.State.normal)
         }
         cycleMode.tick.toggle()
+        streamer.repeats.toggle()
     }
 }

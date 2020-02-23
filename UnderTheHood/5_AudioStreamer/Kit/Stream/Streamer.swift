@@ -276,7 +276,7 @@ open class Streamer: Streaming {
             return
         }
 
-        guard !isFileSchedulingComplete && !repeats else {
+        guard !isFileSchedulingComplete || repeats else {
             return
         }
 

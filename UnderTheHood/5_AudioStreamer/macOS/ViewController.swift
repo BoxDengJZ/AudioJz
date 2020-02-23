@@ -24,6 +24,11 @@ class ViewController: NSViewController {
     @IBOutlet weak var playbackControlsStackView: NSStackView!
     
     
+    var cycleMode: ( titles: [String], tick: Bool) = (["默认关闭", "打开了"], false)
+    
+    
+    
+    @IBOutlet weak var cycleBtn: NSButton!
     
     
     @IBOutlet weak var playButton: NSButton! {
@@ -85,6 +90,8 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addCycleMode()
+        
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor(red: 0.953, green: 0.965, blue: 0.984, alpha: 1).cgColor
         
@@ -133,4 +140,37 @@ class ViewController: NSViewController {
         isSeeking = false
     }
 
+    
+    
+    
+}
+
+
+
+
+
+
+extension ViewController{
+    
+    
+    
+    
+    func addCycleMode(){
+        
+        cycleBtn.title = cycleMode.titles[0]
+        cycleBtn.target = self
+        cycleBtn.action = #selector(ViewController.cycle)
+    }
+    
+    
+    @objc func cycle(){
+        if cycleMode.tick{
+            cycleBtn.title = cycleMode.titles[0]
+        }
+        else{
+            cycleBtn.title = cycleMode.titles[1]
+        }
+        cycleMode.tick.toggle()
+        streamer.repeats.toggle()
+    }
 }
