@@ -103,6 +103,7 @@ open class Streamer: Streaming {
         
         /// Use timer to schedule the buffers (this is not ideal, wish AVAudioEngine provided a pull-model for scheduling buffers)
         let interval = 1 / (readFormat.sampleRate / Double(readBufferSize))
+        print("interval / 2: \(interval / 2)")
         let timer = Timer(timeInterval: interval / 2, repeats: true) {
             [weak self] _ in
             guard self?.state != .stopped else {
