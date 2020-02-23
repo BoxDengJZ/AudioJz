@@ -2,7 +2,7 @@
 
 #### 探索底层一些 under the hood
 
-0.5 [音频操作，Audio Queue Services 搞缓冲，AVAudioEngine 加声效]()
+0.5 [Swift 音频 DIY ，Audio Queue Services 搞缓冲，AVAudioEngine 加声效](https://juejin.im/post/5e52a5c55188254940670156)
 
 操作音频流，分为三个层面，
 
