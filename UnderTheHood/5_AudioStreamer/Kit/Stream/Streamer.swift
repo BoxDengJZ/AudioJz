@@ -31,15 +31,22 @@ open class Streamer: Streaming {
         downloader.delegate = self
         return downloader
     }()
+    
+    
+    
     public internal(set) var parser: Parsing?
     public internal(set) var reader: Reading?
     public let engine = AVAudioEngine()
     public let playerNode = AVAudioPlayerNode()
+    
+    
+    
     public internal(set) var state: StreamingState = .stopped {
         didSet {
             delegate?.streamer(self, changedState: state)
         }
     }
+    
     public var url: URL? {
         didSet {
             reset()
@@ -121,7 +128,7 @@ open class Streamer: Streaming {
     
     // MARK: - Reset
     
-    func reset() {
+    func reset(){
         os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
         
         // Reset the playback state
@@ -172,7 +179,7 @@ open class Streamer: Streaming {
         state = .playing
     }
     
-    public func pause() {
+    public func pause(){
         os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
         
         // Check if the player node is playing
@@ -263,16 +270,13 @@ open class Streamer: Streaming {
 
     // MARK: - Scheduling Buffers
 
-    func scheduleNextBuffer() {
+    func scheduleNextBuffer(){
         guard let reader = reader else {
             os_log("No reader yet...", log: Streamer.logger, type: .debug)
             return
         }
 
-        guard !isFileSchedulingComplete else {
-            if repeats{
-                try? seek(to: 0)
-            }
+        guard !isFileSchedulingComplete && !repeats else {
             return
         }
 
@@ -309,14 +313,16 @@ open class Streamer: Streaming {
     }
     
     /// Handles the current time relative to the duration to make sure current time does not exceed the duration
-    func handleTimeUpdate() {
+    func handleTimeUpdate(){
         guard let currentTime = currentTime, let duration = duration else {
             return
         }
 
         if currentTime >= duration {
             try? seek(to: 0)
-            pause()
+            if !repeats{
+                pause()
+            }
         }
     }
 
