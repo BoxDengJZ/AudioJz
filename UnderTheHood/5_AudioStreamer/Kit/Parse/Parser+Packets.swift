@@ -20,7 +20,7 @@ func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt3
     guard let dataFormat = parser.dataFormat else {
         return
     }
-    
+    print("dataFormat.commonFormat: \(dataFormat.commonFormat) \n  dataFormat.sampleRate: \(dataFormat.sampleRate) \n  dataFormat.channelCount: \(dataFormat.channelCount)")
     /// Iterate through the packets and store the data appropriately
     if isCompressed {
         for i in 0 ..< Int(packetCount) {
