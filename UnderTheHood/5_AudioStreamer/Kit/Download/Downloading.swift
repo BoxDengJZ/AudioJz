@@ -16,9 +16,6 @@ public protocol Downloading: class {
     /// A receiver implementing the `DownloadingDelegate` to receive state change, completion, and progress events from the `Downloading` instance.
     var delegate: DownloadingDelegate? { get set }
     
-    /// A completion block for when the contents of the download are fully downloaded.
-    var completionHandler: ((Error?) -> Void)? { get set }
-    
     /// The current progress of the downloader. Ranges from 0.0 - 1.0, default is 0.0.
     var progress: Float { get }
     

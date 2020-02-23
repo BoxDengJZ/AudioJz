@@ -45,8 +45,6 @@ public class Downloader: NSObject, Downloading {
     // MARK: - Properties (Downloading)
     
     public var delegate: DownloadingDelegate?
-    public var completionHandler: ((Error?) -> Void)?
-    public var progressHandler: ((Data, Float) -> Void)?
     public var progress: Float = 0
     public var state: DownloadingState = .notStarted {
         didSet {
