@@ -73,6 +73,7 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     //
     let sourceFormatDescription = sourceFormat.streamDescription.pointee
     if sourceFormatDescription.mFormatID != kAudioFormatLinearPCM {
+        print("sourceFormatDescription.mFormatID: \(sourceFormatDescription.mFormatID)")
         if outPacketDescriptions?.pointee == nil {
             outPacketDescriptions?.pointee = UnsafeMutablePointer<AudioStreamPacketDescription>.allocate(capacity: 1)
         }
