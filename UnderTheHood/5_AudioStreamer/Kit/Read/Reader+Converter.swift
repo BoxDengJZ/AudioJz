@@ -83,5 +83,5 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     packetCount.pointee = 1
     reader.currentPacket = reader.currentPacket + 1
     
-    return noErr;
+    return noErr
 }
