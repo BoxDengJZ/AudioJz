@@ -16,11 +16,6 @@ func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt3
     let isCompressed = packetDescriptionsOrNil != nil
     os_log("%@ - %d [bytes: %i, packets: %i, compressed: %@]", log: Parser.loggerPacketCallback, type: .debug, #function, #line, byteCount, packetCount, "\(isCompressed)")
     
-    /// At this point we should definitely have a data format
-    guard let dataFormat = parser.dataFormat else {
-        return
-    }
-    print("dataFormat.commonFormat: \(dataFormat.commonFormat) \n  dataFormat.sampleRate: \(dataFormat.sampleRate) \n  dataFormat.channelCount: \(dataFormat.channelCount)")
     /// Iterate through the packets and store the data appropriately
     if isCompressed {
         for i in 0 ..< Int(packetCount) {
@@ -31,6 +26,14 @@ func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt3
             parser.packets.append((packetData, packetDescription))
         }
     } else {
+        
+        /// At this point we should definitely have a data format
+        guard let dataFormat = parser.dataFormat else {
+            return
+        }
+        print("dataFormat.commonFormat: \(dataFormat.commonFormat) \n  dataFormat.sampleRate: \(dataFormat.sampleRate) \n  dataFormat.channelCount: \(dataFormat.channelCount)")
+        
+        
         let format = dataFormat.streamDescription.pointee
         let bytesPerPacket = Int(format.mBytesPerPacket)
         for i in 0 ..< Int(packetCount) {
