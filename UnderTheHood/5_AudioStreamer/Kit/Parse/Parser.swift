@@ -24,6 +24,7 @@ public class Parser: Parsing {
         guard let _ = dataFormat else {
             return nil
         }
+        print("AVAudioPacketCount(packetCount): \(AVAudioPacketCount(packetCount))\n\nAVAudioPacketCount(packets.count):\(AVAudioPacketCount(packets.count))")
         
         return max(AVAudioPacketCount(packetCount), AVAudioPacketCount(packets.count))
     }
