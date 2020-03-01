@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2679CE46240B90F700BD7F78 /* forUInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2679CE45240B90F700BD7F78 /* forUInt.swift */; };
+		2679CE47240B90F700BD7F78 /* forUInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2679CE45240B90F700BD7F78 /* forUInt.swift */; };
 		26DB11BD24019241006A11C3 /* TimeInterval+MMSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB11A424019241006A11C3 /* TimeInterval+MMSS.swift */; };
 		26DB11BE24019241006A11C3 /* TimeInterval+MMSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB11A424019241006A11C3 /* TimeInterval+MMSS.swift */; };
 		26DB11BF24019241006A11C3 /* ProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB11A524019241006A11C3 /* ProgressSlider.swift */; };
@@ -92,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2679CE45240B90F700BD7F78 /* forUInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forUInt.swift; sourceTree = "<group>"; };
 		26DB11A424019241006A11C3 /* TimeInterval+MMSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+MMSS.swift"; sourceTree = "<group>"; };
 		26DB11A524019241006A11C3 /* ProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSlider.swift; sourceTree = "<group>"; };
 		26DB11A724019241006A11C3 /* StreamingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingDelegate.swift; sourceTree = "<group>"; };
@@ -155,9 +158,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2679CE44240B90E800BD7F78 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2679CE45240B90F700BD7F78 /* forUInt.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		26DB11A224019241006A11C3 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
+				2679CE44240B90E800BD7F78 /* Util */,
 				26DB11A324019241006A11C3 /* UI */,
 				26DB11A624019241006A11C3 /* Stream */,
 				26DB11AC24019241006A11C3 /* Parse */,
@@ -427,6 +439,7 @@
 				26DB11CE24019241006A11C3 /* ParserError.swift in Sources */,
 				26DB11D424019241006A11C3 /* Parser.swift in Sources */,
 				26DB11C624019241006A11C3 /* Streamer+DownloadableDelegate.swift in Sources */,
+				2679CE47240B90F700BD7F78 /* forUInt.swift in Sources */,
 				26DB11DE24019241006A11C3 /* Downloading.swift in Sources */,
 				26DB11CC24019241006A11C3 /* Parser+PropertyListener.swift in Sources */,
 				26DB11E424019241006A11C3 /* DownloadingState.swift in Sources */,
@@ -465,6 +478,7 @@
 				26DB11C524019241006A11C3 /* Streamer+DownloadableDelegate.swift in Sources */,
 				26DB11BF24019241006A11C3 /* ProgressSlider.swift in Sources */,
 				66A1DBCC20C7900F00A29E34 /* ViewController+Streamer.swift in Sources */,
+				2679CE46240B90F700BD7F78 /* forUInt.swift in Sources */,
 				26DB11C924019241006A11C3 /* Streamer.swift in Sources */,
 				26DB11C724019241006A11C3 /* StreamingState.swift in Sources */,
 				66C8352E2002C67700E953C7 /* AppDelegate.swift in Sources */,
