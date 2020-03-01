@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSession.Category.playAndRecord, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+            if let input = session.availableInputs{
+                print(input)
+            }
             try session.setActive(true)
             session.requestRecordPermission({ (isGranted: Bool) in
                 if isGranted {
