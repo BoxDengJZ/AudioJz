@@ -14,7 +14,7 @@ import AVFoundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var debugInput: String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             try session.setCategory(AVAudioSession.Category.playAndRecord, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
             if let input = session.availableInputs{
-                print(input)
+                debugInput = input.reduce("", { (result, desp) -> String in
+                    result + desp.debugDescription + "\n\n"
+                })
             }
             try session.setActive(true)
             session.requestRecordPermission({ (isGranted: Bool) in

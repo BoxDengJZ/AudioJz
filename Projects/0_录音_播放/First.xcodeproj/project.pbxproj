@@ -16,6 +16,7 @@
 		2312C20F20C4BFCA00139851 /* FirstUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2312C20E20C4BFCA00139851 /* FirstUITests.swift */; };
 		2312C21D20C4C06A00139851 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2312C21C20C4C06A00139851 /* Utils.swift */; };
 		2312C22020C4C2F800139851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2312C21E20C4C2F800139851 /* Main.storyboard */; };
+		267990C6240C980000D1755B /* ShowDebugInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267990C5240C980000D1755B /* ShowDebugInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2312C21020C4BFCA00139851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2312C21C20C4C06A00139851 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		2312C21F20C4C2F800139851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		267990C5240C980000D1755B /* ShowDebugInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDebugInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		2312C1EA20C4BFCA00139851 /* First */ = {
 			isa = PBXGroup;
 			children = (
+				267990C4240C97E700D1755B /* debug */,
 				2312C1EB20C4BFCA00139851 /* AppDelegate.swift */,
 				2312C1F520C4BFCA00139851 /* Assets.xcassets */,
 				2312C1F220C4BFCA00139851 /* First.xcdatamodeld */,
@@ -129,6 +132,14 @@
 				2312C21020C4BFCA00139851 /* Info.plist */,
 			);
 			path = FirstUITests;
+			sourceTree = "<group>";
+		};
+		267990C4240C97E700D1755B /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				267990C5240C980000D1755B /* ShowDebugInfoVC.swift */,
+			);
+			path = debug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 			files = (
 				2312C1F420C4BFCA00139851 /* First.xcdatamodeld in Sources */,
 				2312C1EE20C4BFCA00139851 /* ViewController.swift in Sources */,
+				267990C6240C980000D1755B /* ShowDebugInfoVC.swift in Sources */,
 				2312C1EC20C4BFCA00139851 /* AppDelegate.swift in Sources */,
 				2312C21D20C4C06A00139851 /* Utils.swift in Sources */,
 			);
