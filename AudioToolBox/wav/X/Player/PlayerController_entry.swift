@@ -49,10 +49,6 @@ struct PlayPageHa {
 }
 
 
-struct OutputPlay {
-    var pIntelliJ_std: P_intelligence?
-}
-
 
 enum FileFormat{
  
@@ -119,7 +115,7 @@ class PlayerController: UIViewController{
     var heightChangeChoosePopConstraint: ConstraintMakerEditable?
     
 
-    var renderDat = OutputPlay()
+    var pIntelliJ_std: P_intelligence?
     
     var fileP: String = ""
 
@@ -145,7 +141,7 @@ class PlayerController: UIViewController{
                 let data = try Data(contentsOf: path)
                 let decoder = PropertyListDecoder()
                 let info = try decoder.decode(P_intelligence.self, from: data)
-                self.renderDat.pIntelliJ_std = info
+                self.pIntelliJ_std = info
                 
                 
             }
@@ -163,7 +159,7 @@ class PlayerController: UIViewController{
 
         
         
-        guard let cake = renderDat.pIntelliJ_std?.oreoPercent else {
+        guard let cake = pIntelliJ_std?.oreoPercent else {
             
             return
         }

@@ -23,7 +23,7 @@ extension PlayerController{
         guard audioStream == nil else {
             return
         }
-        let nodes = renderDat.pIntelliJ_std?.see.wav_lengths
+        let nodes = pIntelliJ_std?.see.wav_lengths
         
         guard let moments = nodes else {
             return
