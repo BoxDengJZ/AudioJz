@@ -34,6 +34,19 @@ struct P_intelligence: Decodable {
         case next = "next_id", author
     }
     
+    
+    
+    var oreoPercent: [Double]?{
+        let moments = see.wav_lengths
+        
+        guard let len = moments.last else {
+            return nil
+        }
+        return see.node.map { (oreo) -> Double in
+            moments[oreo.index] / len
+        }
+            
+    }
 }
 
 

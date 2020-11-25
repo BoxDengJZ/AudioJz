@@ -125,7 +125,7 @@ class PlayerController: UIViewController{
 
     var durationPropaganda: TimeInterval?
 
-    
+    lazy var calibrationView = CalibrationV()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,6 +146,8 @@ class PlayerController: UIViewController{
                 let decoder = PropertyListDecoder()
                 let info = try decoder.decode(P_intelligence.self, from: data)
                 self.renderDat.pIntelliJ_std = info
+                
+                
             }
         }
         catch let error as NSError{
@@ -159,6 +161,15 @@ class PlayerController: UIViewController{
     
         preparePlay()
 
+        
+        
+        guard let cake = renderDat.pIntelliJ_std?.oreoPercent else {
+            
+            return
+        }
+        
+        
+        calibrationView.tubes = cake
     }
 
     
@@ -167,7 +178,7 @@ class PlayerController: UIViewController{
     func forUI(){
         
         
-        view.addSubs([ progressV, bottomBoard])
+        view.addSubs([ progressV, bottomBoard, calibrationView])
       
  
         bottomBoard.snp.makeConstraints { (m) in
@@ -182,6 +193,13 @@ class PlayerController: UIViewController{
             m.bottom.equalTo(bottomBoard.snp.top)
         }
 
+        calibrationView.snp.makeConstraints { (m) in
+            m.leading.trailing.equalTo(progressV.progressBar)
+            m.height.equalTo(12)
+            m.bottom.equalTo(progressV.snp.top)
+        }
+        
+        
     }
     
     

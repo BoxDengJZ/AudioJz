@@ -26,10 +26,16 @@ class CalibrationV: UIView {
     
     override func draw(_ rect: CGRect) {
         // Drawing code
+        
+        UIColor(rgb: 0xF9F9F9).setFill()
+        UIRectFill(rect)
+        
         guard tubes.isEmpty == false else {
             return
         }
+        
         let path = UIBezierPath()
+        path.lineWidth = 2
         for pt in tubes{
             let percent = CGFloat(pt)
             path.move(to: CGPoint(x: percent * rect.width, y: 0))
