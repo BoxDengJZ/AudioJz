@@ -52,11 +52,7 @@ public class Parser{
     // MARK: - Methods
     
     public func parse(url src: URL) throws {
-        os_log("%@ - %d", log: Parser.logger, type: .debug, #function, #line)
-    
-        
-        Utility.check(error:  AudioFileOpenURL(src as CFURL, .readPermission, 0,  &playbackFile) ,                // set on output to the AudioFileID
-                      operation: "AudioFileOpenURL failed")
+        Utility.check(error:  AudioFileOpenURL(src as CFURL, .readPermission, 0,  &playbackFile),  operation: "AudioFileOpenURL failed")
         
         guard let file = playbackFile else {
             return
@@ -75,14 +71,10 @@ public class Parser{
         var bytesRead: UInt32 = 0
         GetPropertyValue(val: &bytesRead, file: file, prop: kAudioFilePropertyAudioDataByteCount)
         
-        
-        
-        
         guard let dataFormat = dataFormatD else {
             return
         }
         
-    
         let format = dataFormat.streamDescription.pointee
         let bytesPerPacket = Int(format.mBytesPerPacket)
         
@@ -101,19 +93,6 @@ public class Parser{
    
     }
 
-/*
-     
-     Int(numPacketsToRead):  405284
-     
-     
-     i  :   950
-     44   555     :  810568
-     
-     
-     
-     packetSize:    2
-     
-     */
     
     
     func over(){
