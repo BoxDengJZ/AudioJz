@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "375C482C1DDC4C56008C701D"
-               BuildableName = "&#x6211;&#x8bfb;&#x4f60;&#x9ed8;.app"
-               BlueprintName = "petit"
+               BlueprintIdentifier = "26D2AD67256E9D01004CBF9A"
+               BuildableName = "stream.app"
+               BlueprintName = "stream"
                ReferencedContainer = "container:SwiftSocket.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "375C482C1DDC4C56008C701D"
-            BuildableName = "&#x6211;&#x8bfb;&#x4f60;&#x9ed8;.app"
-            BlueprintName = "petit"
+            BlueprintIdentifier = "26D2AD67256E9D01004CBF9A"
+            BuildableName = "stream.app"
+            BlueprintName = "stream"
             ReferencedContainer = "container:SwiftSocket.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "375C482C1DDC4C56008C701D"
-            BuildableName = "&#x6211;&#x8bfb;&#x4f60;&#x9ed8;.app"
-            BlueprintName = "petit"
+            BlueprintIdentifier = "26D2AD67256E9D01004CBF9A"
+            BuildableName = "stream.app"
+            BlueprintName = "stream"
             ReferencedContainer = "container:SwiftSocket.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
