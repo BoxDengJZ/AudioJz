@@ -21,26 +21,14 @@ func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt3
    
     let format = dataFormat.streamDescription.pointee
     let bytesPerPacket = Int(format.mBytesPerPacket)
-    
-    print("Int(packetCount):     \(Int(packetCount))")
-    //  405284
+
     
     for i in 0 ..< Int(packetCount) {
         let packetStart = i * bytesPerPacket
         let packetSize = bytesPerPacket
-        // print("bytesPerPacket: \(bytesPerPacket)")
-        
-        //  bytesPerPacket: 2
+
         let packetData = Data(bytes: data.advanced(by: packetStart), count: packetSize)
-    //    print("packetData .count : \(packetData.count)")
-        
-//print("packetData[0]: \(packetData[0])")
-        
-     //   print("packetData[1]: \(packetData[1])")
-        
-        
-        
-        
+
         parser.packetsX.append(packetData)
     }
     

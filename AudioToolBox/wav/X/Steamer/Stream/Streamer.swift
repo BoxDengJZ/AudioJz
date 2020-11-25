@@ -338,7 +338,7 @@ open class Streamer: Streaming {
         
         if shutUp.toClimb{
 
-            if shutUp.howManyNow < shutUp.countStdRepeat{ 
+            if shutUp.howManyNow < shutUp.countStdRepeat{
                 if i < count, currentTime > timeNode[i]{
                     shutUp.howManyNow += 1
                     if i == 0{
@@ -376,7 +376,6 @@ open class Streamer: Streaming {
         
         
         do {
-        //    print("readBufferSize: \(readBufferSize)")
             let nextScheduledBuffer = try reader.read(readBufferSize)
     
             // 这个方法，很有意思，timer 给他塞的 buffer, 比他自己消费的速度， 快多了
@@ -417,11 +416,9 @@ open class Streamer: Streaming {
         }
 
         if currentTime >= duration {
-            do{
-                try seek(to: 0)
-            }catch{
-                print("fuck ")
-            }
+        
+            try? seek(to: 0)
+        
             stateDeng = .over
             // 弹奏完成
             pauseS()

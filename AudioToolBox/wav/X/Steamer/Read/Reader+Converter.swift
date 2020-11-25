@@ -53,23 +53,12 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     //
     var data = packets[packetIndex]
     let dataCount = data.count
-  //  print("data[0]:    \(data[0])")
- //   print("data[1]:    \(data[1])")
-  //  print("data.count:   \(data.count)")
-    
-    //  data.count:   2
+
     
     ioData.pointee.mNumberBuffers = 1
     ioData.pointee.mBuffers.mData = UnsafeMutableRawPointer.allocate(byteCount: dataCount, alignment: 0)
     _ = data.withUnsafeMutableBytes { (bytes: UnsafeMutablePointer<UInt8>) in
-        
-        print("bytes: \(bytes)")
-        print("dataCount: \(dataCount)")
-/*
-         
-         bytes: 0x000000016b4201a0
-         dataCount: 2
-         */
+
         memcpy((ioData.pointee.mBuffers.mData?.assumingMemoryBound(to: UInt8.self))!, bytes, dataCount)
     }
     ioData.pointee.mBuffers.mDataByteSize = UInt32(dataCount)
