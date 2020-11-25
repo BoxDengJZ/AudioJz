@@ -62,11 +62,11 @@ open class Streamer: Streaming {
     var shutUp = AudioRecord()
     
     
-    public var url_deng: URL? {
+    public var sourceURL: URL? {
         didSet {
-            resetDng()
+            resetStream()
 
-            if let src = url_deng{
+            if let src = sourceURL{
                 do {
                     let data = try Data(contentsOf: src)
                     load(didReceiveData: data)
@@ -159,7 +159,7 @@ open class Streamer: Streaming {
     
     // MARK: - Reset
     
-    func resetDng(){
+    func resetStream(){
         os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
         
         // Reset the playback state
@@ -429,7 +429,7 @@ open class Streamer: Streaming {
  
 
     func notifyDurationUpdate(_ duration: TimeInterval) {
-        guard let _ = url_deng else {
+        guard let _ = sourceURL else {
             return
         }
 
