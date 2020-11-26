@@ -37,10 +37,9 @@ extension PlayerController: StreamingDelegate{
     
     
     func streamer(fire streamer: Streaming, updatedCurrentTime current: TimeInterval) {
-        
           progressV.config(current: current)
           showMediaInfo()
-            
+          update(metric: Float(current))
     }
     
     

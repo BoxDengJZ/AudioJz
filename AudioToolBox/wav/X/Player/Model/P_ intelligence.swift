@@ -47,6 +47,7 @@ struct P_intelligence: Decodable {
         }
             
     }
+
 }
 
 

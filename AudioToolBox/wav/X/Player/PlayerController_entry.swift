@@ -94,10 +94,6 @@ class PlayerController: UIViewController{
     
     var audioStream: Streamer?
     
-
-    var info: ReadableDat?
-    
-    
     lazy var bottomBoard : BottomPlayV = {
         let b = BottomPlayV()
         b.delegate = self
@@ -123,6 +119,17 @@ class PlayerController: UIViewController{
 
     lazy var calibrationView = CalibrationV()
   
+    
+    lazy var showTipLabel: UILabel = {
+        let l = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
+        l.font = UIFont.regular(ofSize: 16)
+        l.textColor = UIColor.magenta
+        l.isHidden = true
+        l.textAlignment = .center
+        return l
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -169,12 +176,18 @@ class PlayerController: UIViewController{
     }
 
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        showTipLabel.frame.origin.y = calibrationView.frame.origin.y - 60
+    }
+    
     
     
     func forUI(){
         
         
-        view.addSubs([ progressV, bottomBoard, calibrationView])
+        view.addSubs([ progressV, calibrationView,
+                       showTipLabel, bottomBoard ])
       
  
         bottomBoard.snp.makeConstraints { (m) in
@@ -218,7 +231,27 @@ class PlayerController: UIViewController{
     
     
     
-
+    func update(metric value: Float){
+        
+        if let pie = pIntelliJ_std?.see, let rvc = pIntelliJ_std?.oreoPercent, let duration = durationPropaganda{
+            let val = Double(value)
+            var toHide = true
+            var i = 0
+            for element in pie.node{
+                if fabs(pie.wav_lengths[element.index] - val) < 2{
+                    toHide = false
+                    showTipLabel.text = element.title
+                    showTipLabel.isHidden = false
+                    showTipLabel.center.x = progressV.progressBar.chase(percent: rvc[i])
+                    showTipLabel.sizeToFit()
+                }
+                i += 1
+            }
+            if toHide || abs(duration - val) <= 0.8{
+                showTipLabel.isHidden = true
+            }
+        }
+    }
 }
 
 

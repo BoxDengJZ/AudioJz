@@ -47,10 +47,7 @@ extension PlayerController: PlayerProgressProxy{
             }
             
         case .update(let val):
-            let v = Double(val)
-     
-            
-            
+            update(metric: val)
         }
     }
     
