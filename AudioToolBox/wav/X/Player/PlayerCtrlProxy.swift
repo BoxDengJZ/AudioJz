@@ -47,6 +47,18 @@ extension PlayerController: PlayerProgressProxy{
             }
             
         case .update(let val):
+            
+            // 还是使用持久化好，
+            
+            // 直接使用控件，没有那么灵敏
+            
+            // 播放更改 progress,
+            
+            // 拖动滚动条 progress bar, 修改 progress,
+            
+            // 又影响播放时间，
+            
+            // 播放时间影响 progress bar,
             update(metric: val)
         }
     }

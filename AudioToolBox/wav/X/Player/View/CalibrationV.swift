@@ -11,6 +11,16 @@ import UIKit
 class CalibrationV: UIView {
 
     
+    // 声音的粒度，一次一个字，
+    
+    // 声音数据不是按照 UInt 16 来拆分，
+    
+    // 是按照一个字，来拆
+    
+    
+    
+    
+    
     var tubes = [Double](){
         didSet{
             
@@ -53,7 +63,14 @@ class CalibrationV: UIView {
 
 
 
+// 进度条，应该只前进，不后退，
 
+// 二维进度条，大进度里面套着小进度
+
+
+// 多个圆环，一个环是一个章节
+
+// 每个章节自己的进度，就是其圆环的百分比
 
 class InnerL: UILabel{
     
