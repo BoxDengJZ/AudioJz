@@ -1,0 +1,6 @@
+framework module Pods_petit {
+  umbrella header "Pods-petit-umbrella.h"
+
+  export *
+  module * { export * }
+}
