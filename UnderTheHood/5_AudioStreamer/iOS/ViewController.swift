@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         resetRate(self)
         
         /// Download
-        let url = URL(string: "https://cdn.fastlearner.media/bensound-rumble.mp3")!
+        let url = URL(string: "http://aod.cos.tx.xmcdn.com/group31/M0B/BB/58/wKgJSVmSRjvCZ4wwAAugz-tllHw858.m4a")!
         streamer.url = url
     }
     

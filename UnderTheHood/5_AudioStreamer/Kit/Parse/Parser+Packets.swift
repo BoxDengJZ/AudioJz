@@ -10,7 +10,10 @@ import Foundation
 import AVFoundation
 import os.log
 
-func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt32, _ packetCount: UInt32, _ data: UnsafeRawPointer, _ packetDescriptions: UnsafeMutablePointer<AudioStreamPacketDescription>) {
+func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt32, _ packetCount: UInt32, _ data: UnsafeRawPointer, _ packetDescriptions: UnsafeMutablePointer<AudioStreamPacketDescription>?) {
+    guard let aspd = packetDescriptions else {
+        return
+    }
     let parser = Unmanaged<Parser>.fromOpaque(context).takeUnretainedValue()
     let packetDescriptionsOrNil: UnsafeMutablePointer<AudioStreamPacketDescription>? = packetDescriptions
     let isCompressed = packetDescriptionsOrNil != nil
@@ -19,7 +22,7 @@ func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt3
     /// Iterate through the packets and store the data appropriately
     if isCompressed {
         for i in 0 ..< Int(packetCount) {
-            let packetDescription = packetDescriptions[i]
+            let packetDescription = aspd[i]
             let packetStart = Int(packetDescription.mStartOffset)
             let packetSize = Int(packetDescription.mDataByteSize)
             let packetData = Data(bytes: data.advanced(by: packetStart), count: packetSize)
