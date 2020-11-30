@@ -52,6 +52,7 @@ class BottomPlayV: UIView {
     
     lazy var lhsGoB: UIButton = {
         let b = UIButton()
+        b.isHidden = true
         b.setTitle("上一篇", for: .normal)
         b.setTitleColor(UIColor(rgb: 0x575A61), for: .normal)
         b.titleLabel?.font = UIFont.semibold(ofSize: 12)
@@ -64,6 +65,7 @@ class BottomPlayV: UIView {
     
     lazy var rhsGoB: UIButton = {
         let b = UIButton()
+        b.isHidden = true
         b.setTitle("下一篇", for: .normal)
         b.setTitleColor(UIColor(rgb: 0x575A61), for: .normal)
         b.titleLabel?.font = UIFont.semibold(ofSize: 12)
@@ -278,8 +280,8 @@ class BottomPlayV: UIView {
     
     func p_startAgain(){
    
-        lhsGoB.isHidden = false
-        rhsGoB.isHidden = false
+    //    lhsGoB.isHidden = false
+   //     rhsGoB.isHidden = false
         
         repeatB.isHidden = true
         intervalB.isHidden = true
@@ -298,8 +300,8 @@ class BottomPlayV: UIView {
         playB.isHidden = true
         secondPlayB.isHidden = false
         
-        repeatB.isHidden = false
-        intervalB.isHidden = false
+     //   repeatB.isHidden = false
+     //   intervalB.isHidden = false
     }
     
     

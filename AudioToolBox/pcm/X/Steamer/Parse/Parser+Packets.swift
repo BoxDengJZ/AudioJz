@@ -22,8 +22,12 @@ func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt3
     let format = dataFormat.streamDescription.pointee
     let bytesPerPacket = Int(format.mBytesPerPacket)
 
+    print("packetCount: \(Int(packetCount))")
     
-    for i in 0 ..< Int(packetCount) {
+    
+    
+    
+    for i in 0 ..< Int(packetCount){
         let packetStart = i * bytesPerPacket
         let packetSize = bytesPerPacket
 
@@ -33,3 +37,14 @@ func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt3
     }
     
 }
+
+
+
+
+
+/*
+ 
+ (lldb) po bytesPerPacket
+ 4
+ 
+ */

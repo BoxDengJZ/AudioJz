@@ -141,9 +141,6 @@ extension UIView{
     
     
     func chase(percent p: Double) -> CGFloat{
-        print("frame.origin.x", frame.origin.x)
-        
-        print("frame.size.width", frame.size.width)
         return frame.origin.x + frame.size.width * CGFloat(p)
     }
     

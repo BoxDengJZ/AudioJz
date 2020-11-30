@@ -170,10 +170,7 @@ class PlayerProgressBar: UIView {
         progressBar.maximumValue = Float(amount)
         
         rhsDurationTimeL.text = t.mmSS
-        var son: TimeInterval = 0
-      
-        
-        
+        let son: TimeInterval = 0
         progressBar.value = Float(son)
         lhsCurrentTimeL.text = son.mmSS
     }

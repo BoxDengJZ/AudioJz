@@ -171,7 +171,7 @@ class PlayerController: UIViewController{
             return
         }
         
-        
+        calibrationView.isHidden = true
         calibrationView.tubes = cake
     }
 
