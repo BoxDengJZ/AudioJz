@@ -45,13 +45,20 @@ public class Parser{
         
             do {
                 let data = try Data(contentsOf: src)
-                let array = data.withUnsafeBytes {
-                    [UInt8](UnsafeBufferPointer(start: $0, count: data.count))
+                let array = data.withUnsafeBytes { (pt: UnsafeRawBufferPointer) -> [UInt8] in
+                    let head = pt.bindMemory(to: UInt8.self)
+                    if let addr = head.baseAddress{
+                        let buffer = UnsafeBufferPointer(start: addr, count: data.count)
+                        return Array(buffer)
+                    }
+                    else{
+                        return []
+                    }
                 }
                 let count = array.count
-                print(count)
-                print(count / 4)
-                print(count % 4)
+                guard count > 0 else {
+                    return
+                }
                 
                 for i in stride(from: 0, to: count, by: 4){
                     let arr: [UInt8] = [array[i], array[i + 1], array[i + 2], array[i + 3]]
