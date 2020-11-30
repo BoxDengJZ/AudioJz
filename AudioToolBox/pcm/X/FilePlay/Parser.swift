@@ -25,7 +25,7 @@ public class Parser{
     
     // MARK: - Parsing props
     
-    public internal(set) var dataFormatD = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 44100, channels: 2, interleaved: true)!
+    public internal(set) var dataFormatD = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 44100, channels: 1, interleaved: true)!
     public internal(set) var packetsX = [Data]()
   
     
@@ -60,8 +60,8 @@ public class Parser{
                     return
                 }
                 
-                for i in stride(from: 0, to: count, by: 4){
-                    let arr: [UInt8] = [array[i], array[i + 1], array[i + 2], array[i + 3]]
+                for i in stride(from: 0, to: count, by: 2){
+                    let arr: [UInt8] = [array[i], array[i + 1]]
                     packetsX.append(Data(arr))
                 }
                 
