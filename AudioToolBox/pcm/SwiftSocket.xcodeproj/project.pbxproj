@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26BF85DE25749CF4009F207A /* in.pcm in Resources */ = {isa = PBXBuildFile; fileRef = 26BF85DD25749CF4009F207A /* in.pcm */; };
 		26D2AD6A256E9D01004CBF9A /* CellAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2D7AD253D91B80059B6C2 /* CellAdd.swift */; };
 		26D2AD6B256E9D01004CBF9A /* BottomPlayV_pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF6202549723A00373997 /* BottomPlayV_pop.swift */; };
 		26D2AD6D256E9D01004CBF9A /* DebugHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF6012549166600373997 /* DebugHub.swift */; };
@@ -59,7 +60,6 @@
 		26D2ADA8256E9D01004CBF9A /* one.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2684256C256E6E3200701A1C /* one.plist */; };
 		26D2ADA9256E9D01004CBF9A /* PopChooseCel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26FEF61D2549587200373997 /* PopChooseCel.xib */; };
 		26D2ADAA256E9D01004CBF9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375C48381DDC4C56008C701D /* LaunchScreen.storyboard */; };
-		26D2ADAB256E9D01004CBF9A /* 666.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2684256B256E5DC500701A1C /* 666.wav */; };
 		26D2ADAC256E9D01004CBF9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375C48361DDC4C56008C701D /* Assets.xcassets */; };
 		26D2ADAD256E9D01004CBF9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375C48331DDC4C56008C701D /* Main.storyboard */; };
 		26D2ADF4256E9E91004CBF9A /* StreamingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADE1256E9E91004CBF9A /* StreamingDelegate.swift */; };
@@ -109,8 +109,8 @@
 		266C5D9425402FF500CAD39C /* HotImgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotImgView.swift; sourceTree = "<group>"; };
 		266C5DA52540362E00CAD39C /* neg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = neg.swift; sourceTree = "<group>"; };
 		266C5DAE2540386600CAD39C /* ObjC_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjC_Bridge.h; sourceTree = "<group>"; };
-		2684256B256E5DC500701A1C /* 666.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 666.wav; sourceTree = "<group>"; };
 		2684256C256E6E3200701A1C /* one.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = one.plist; sourceTree = "<group>"; };
+		26BF85DD25749CF4009F207A /* in.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = in.pcm; sourceTree = "<group>"; };
 		26D2ADB3256E9D01004CBF9A /* stream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D2ADB4256E9D01004CBF9A /* file copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "file copy-Info.plist"; path = "/Users/jzd/Documents/AudioJz/AudioToolBox/wav/file copy-Info.plist"; sourceTree = "<absolute>"; };
 		26D2ADE1256E9E91004CBF9A /* StreamingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingDelegate.swift; sourceTree = "<group>"; };
@@ -348,8 +348,8 @@
 		26E2D7D9253D91B80059B6C2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				26BF85DD25749CF4009F207A /* in.pcm */,
 				2684256C256E6E3200701A1C /* one.plist */,
-				2684256B256E5DC500701A1C /* 666.wav */,
 				266C5DAE2540386600CAD39C /* ObjC_Bridge.h */,
 			);
 			path = src;
@@ -532,7 +532,7 @@
 				26D2ADA8256E9D01004CBF9A /* one.plist in Resources */,
 				26D2ADA9256E9D01004CBF9A /* PopChooseCel.xib in Resources */,
 				26D2ADAA256E9D01004CBF9A /* LaunchScreen.storyboard in Resources */,
-				26D2ADAB256E9D01004CBF9A /* 666.wav in Resources */,
+				26BF85DE25749CF4009F207A /* in.pcm in Resources */,
 				26D2ADAC256E9D01004CBF9A /* Assets.xcassets in Resources */,
 				26D2ADAD256E9D01004CBF9A /* Main.storyboard in Resources */,
 			);
