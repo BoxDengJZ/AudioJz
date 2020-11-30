@@ -31,9 +31,7 @@ extension PlayerController{
         
         audioStream = Streamer(source: fileP, with: moments, bridge: self)
         
-     //   audioStream?.url_deng = Bundle.main.url(forResource: "in", withExtension: "pcm")
-        
-          audioStream?.sourceURL = Bundle.main.url(forResource: "file", withExtension: "wav")
+        audioStream?.url_deng = Bundle.main.url(forResource: "in", withExtension: "pcm")
         
     }
 

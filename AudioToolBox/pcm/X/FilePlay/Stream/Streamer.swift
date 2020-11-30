@@ -59,9 +59,6 @@ open class Streamer: Streaming {
     }
     
     
-    var shutUp = AudioRecord()
-    
-    
     public var url_deng: URL? {
         didSet {
             resetDng()
@@ -309,58 +306,6 @@ open class Streamer: Streaming {
          //   os_log("No reader yet...", log: Streamer.logger, type: .debug)
             return
         }
-
-        
-        guard shutUp.pauseWork == false else {
-            if firstPause == false, Date().timeIntervalSince(shutUp.currentMoment) >= shutUp.stdPauseT{
-                
-                playS()
-                shutUp.pauseWork = false
-            }
-            
-            return
-        }
-
-        var shouldReturn = false
-        
-        let i = shutUp.currentX
-        let count = timeNode.count
-        
-        
-        if shutUp.toClimb{
-
-            if shutUp.howManyNow < shutUp.countStdRepeat{
-                if i < count, currentTime > timeNode[i]{
-                    shutUp.howManyNow += 1
-                    if i == 0{
-                        try? seek(to: 0)
-                    }
-                    else{
-                        try? seek(to: timeNode[i - 1])
-                    }
-                    shouldReturn = true
-                }
-            }
-            else{
-                shutUp.toClimb = false
-            }
-
-        }
-        else {
-
-            if i < count, currentTime > timeNode[i]{
-                shutUp.doPause(at: i)
-                pauseS()
-                
-                shouldReturn = true
-            }
-            
-            
-        }
-        
-        guard shouldReturn == false else {
-            return
-        }
         // 文件，读完了，就不要再继续调度了
         guard !isFileSchedulingComplete else {
             return
@@ -504,22 +449,7 @@ extension Streamer {
 
 extension Streamer {
     
-    func idx(for time: TimeInterval){
-          var i = 0
-          let count = timeNode.count
-          let current = time
-        
-           
-          while i < count{
-              if current > timeNode[i]{
-                  i += 1
-              }
-              else{
-                  break
-              }
-          }
-          shutUp.currentX = max(0, i - 1)
-      }
+    func idx(for time: TimeInterval){  }
     
 }
 
