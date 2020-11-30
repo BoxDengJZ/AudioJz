@@ -73,7 +73,8 @@ public protocol Streaming: class {
 }
 
 extension Streaming {
-    
+    //  buffer size , 选用 8 k
+    //  采用 32 KB 也可以
     public var readBufferSize: AVAudioFrameCount {
         return 8192
     }
