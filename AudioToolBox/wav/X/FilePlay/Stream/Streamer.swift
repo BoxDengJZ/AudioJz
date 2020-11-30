@@ -62,11 +62,11 @@ open class Streamer: Streaming {
     var shutUp = AudioRecord()
     
     
-    public var url_deng: URL? {
+    public var sourceURL: URL? {
         didSet {
             resetDng()
 
-            if let src = url_deng{
+            if let src = sourceURL{
                 print(src)
                 load(src: src)
             }
@@ -420,7 +420,7 @@ open class Streamer: Streaming {
  
 
     func notifyDurationUpdate(_ duration: TimeInterval) {
-        guard let _ = url_deng else {
+        guard let _ = sourceURL else {
             return
         }
 

@@ -47,7 +47,7 @@ public protocol Streaming: class {
     var stateDeng: StreamingState { get }
     
     /// A `URL` representing the current remote resource being streamed.
-    var url_deng: URL? { get }
+    var sourceURL: URL? { get }
     
     
     
