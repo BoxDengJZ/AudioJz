@@ -36,13 +36,7 @@ public class Reader{
     
     // 一个文件，对应一个AudioFileStreamID
     
-    public var totalPacketCount: AVAudioPacketCount? {
-        guard let _ = dataFormatD else {
-            return nil
-        }
-        
-        return AVAudioPacketCount(packetsX.count)
-    }
+    public var totalPacketCount: AVAudioPacketCount? = nil
     
     var playbackFile: AudioFileID?
     
@@ -137,7 +131,7 @@ public class Reader{
         
       //  print("framesPerPacket: \(framesPerPacket)")
         
-        
+        totalPacketCount = AVAudioPacketCount(packetsX.count)
         
         while true {
             /// Allocate a buffer to hold the target audio data in the Read format
@@ -157,6 +151,7 @@ public class Reader{
                     throw ReaderError.parserMissingDataFormat
                 case ReaderReachedEndOfDataError:
                     print("reachedEndOfFile: buffers.count = \(buffers.count)")
+                    packetsX.removeAll()
                     return
                 case ReaderNotEnoughDataError:
                     print("notEnoughData")
@@ -168,9 +163,6 @@ public class Reader{
             }
             buffers.append(buffer)
         }
-        
-        
-        
         
     }
     
