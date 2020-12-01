@@ -46,7 +46,10 @@ extension PlayerController: StreamingDelegate{
     
     
     
-    func streamer(_ streamer: Streaming, updatedDuration duration: TimeInterval) {  }
+    func streamer(_ streamer: Streaming, updatedDuration duration: TimeInterval) {
+        durationPropaganda = duration
+        config(duration: duration)
+    }
     
     
     

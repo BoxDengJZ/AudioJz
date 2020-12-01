@@ -33,13 +33,6 @@ extension PlayerController{
         
         audioStream?.sourceURL = Bundle.main.url(forResource: "666", withExtension: "wav")
         
-        guard let duration = moments.last else {
-            
-            return
-        }
-        durationPropaganda = duration
-        config(duration: duration)
-        
     }
 
      
