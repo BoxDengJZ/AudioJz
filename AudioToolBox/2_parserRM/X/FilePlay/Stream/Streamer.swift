@@ -47,8 +47,7 @@ open class Streamer: Streaming {
     public var delegate: StreamingDelegate?
     public internal(set) var duration: TimeInterval?
     
-    public internal(set) var parser: Parser?
-    public internal(set) var reader_ha: Reading?
+    public internal(set) var reader_ha: Reader?
 
     public let engine = AVAudioEngine()
     public let playerNode = AVAudioPlayerNode()
@@ -67,7 +66,6 @@ open class Streamer: Streaming {
             resetDng()
 
             if let src = sourceURL{
-                print(src)
                 load(src: src)
             }
         }
@@ -158,20 +156,18 @@ open class Streamer: Streaming {
         
         // Reset the playback state
         stopDng()
-        
-        parser?.over()
+        reader_ha?.over()
         duration = nil
         reader_ha = nil
         isFileSchedulingComplete = false
         
-        // Create a new parser
-        parser = Parser()
+        
     }
     
     // MARK: - Methods
     
     public func playS() {
-        os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
+    //    os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
         
         // Check we're not already playing
         guard !playerNode.isPlaying else {
@@ -200,7 +196,7 @@ open class Streamer: Streaming {
     }
     
     public func pauseS() {
-        os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
+      //  os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
         
         // Check if the player node is playing
         guard playerNode.isPlaying else {
@@ -238,15 +234,10 @@ open class Streamer: Streaming {
         os_log("%@ - %d [%.1f]", log: Streamer.logger, type: .debug, #function, #line, time)
         
         // Make sure we have a valid parser and reader
-        guard let parser = parser, let reader = reader_ha else {
+        guard let reader = reader_ha, let ratio = reader.ratio(forTime: time) else {
             return
         }
         
-        // Get the proper time and packet offset for the seek operation
-        guard let frameOffset = parser.frameOffset(forTime: time),
-            let packetOffset = parser.packetOffset(forFrame: frameOffset) else {
-                return
-        }
         currentTimeOffset = time
         isFileSchedulingComplete = false
         
@@ -262,7 +253,7 @@ open class Streamer: Streaming {
         
         // Perform the seek to the proper packet offset
         do {
-            try reader.seek(packetOffset)
+            try reader.seek(buffer: ratio)
         } catch {
             os_log("Failed to seek: %@", log: Streamer.logger, type: .error, error.localizedDescription)
             return
@@ -369,7 +360,7 @@ open class Streamer: Streaming {
         
         
         do {
-            let nextScheduledBuffer = try reader.read(readBufferSize)
+            let nextScheduledBuffer = try reader.read()
     
             // 这个方法，很有意思，timer 给他塞的 buffer, 比他自己消费的速度， 快多了
             playerNode.scheduleBuffer(nextScheduledBuffer)
@@ -385,7 +376,7 @@ open class Streamer: Streaming {
     
     /// Handles the duration value, explicitly checking if the duration is greater than the current value. For indeterminate streams we can accurately estimate the duration using the number of packets parsed and multiplying that by the number of frames per packet.
     func handleDurationUpdate() {
-        if let newDuration = parser?.duration {
+        if let newDuration = reader_ha?.duration {
             // Check if the duration is either nil or if it is greater than the previous duration
             var shouldUpdate = false
             if duration == nil {
@@ -448,23 +439,11 @@ extension Streamer {
     
     public func load(src path: URL){
         os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
-
-        guard let parser = parser else {
-            os_log("Expected parser, bail...", log: Streamer.logger, type: .error)
-            return
-        }
-        
-        /// Parse the incoming audio into packets
-        do {
-            try parser.parse(url: path)
-        } catch {
-            os_log("Failed to parse: %@", log: Streamer.logger, type: .error, error.localizedDescription)
-        }
         
         /// Once there's enough data to start producing packets we can use the data format
-        if reader_ha == nil, let _ = parser.dataFormatD {
+        if reader_ha == nil{
             do {
-                reader_ha = try Reader(parser: parser, readFormat: readFormat)
+                reader_ha = try Reader(src: path, readFormat: readFormat, bufferSize: readBufferSize)
             } catch {
                 os_log("Failed to create reader: %@", log: Streamer.logger, type: .error, error.localizedDescription)
             }
@@ -496,7 +475,6 @@ extension Streamer {
         
     }
 }
-
 
 
 

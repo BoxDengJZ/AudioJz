@@ -32,7 +32,7 @@ struct AudioRecord{
     var pauseWork = false
     var currentMoment = Date()
     
-    var stdPauseT: TimeInterval = BottomPopData.interval[3]
+    var stdPauseT: TimeInterval = BottomPopData.interval[BottomPopData.interval.count - 1]
     
     mutating
     func did(repeat times: Int){

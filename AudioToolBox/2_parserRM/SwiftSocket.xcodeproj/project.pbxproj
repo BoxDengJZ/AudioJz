@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2605852225769A5B00023AA8 /* 666.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2605852025769A5A00023AA8 /* 666.wav */; };
 		2605852325769A5B00023AA8 /* one.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2605852125769A5A00023AA8 /* one.plist */; };
+		2605852725769BFB00023AA8 /* Reader+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2605852425769BFB00023AA8 /* Reader+Converter.swift */; };
+		2605852825769BFB00023AA8 /* ReaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2605852525769BFB00023AA8 /* ReaderError.swift */; };
+		2605852925769BFB00023AA8 /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2605852625769BFB00023AA8 /* Reader.swift */; };
 		26141F5F254BF406003E5591 /* P_ intelligence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26141F5E254BF406003E5591 /* P_ intelligence.swift */; };
 		2627C4552558E25D0067C1CF /* md_five.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627C4542558E25D0067C1CF /* md_five.swift */; };
 		264BA9C7256B4EA7001335A7 /* P_Ctrl_bg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BA9C6256B4EA7001335A7 /* P_Ctrl_bg.swift */; };
@@ -25,12 +28,7 @@
 		26D2ADC5256E9D5F004CBF9A /* Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADB8256E9D5F004CBF9A /* Streaming.swift */; };
 		26D2ADC6256E9D5F004CBF9A /* StreamingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADB9256E9D5F004CBF9A /* StreamingState.swift */; };
 		26D2ADC7256E9D5F004CBF9A /* Streamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADBA256E9D5F004CBF9A /* Streamer.swift */; };
-		26D2ADC8256E9D5F004CBF9A /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADBC256E9D5F004CBF9A /* Reader.swift */; };
-		26D2ADC9256E9D5F004CBF9A /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADBD256E9D5F004CBF9A /* Reading.swift */; };
-		26D2ADCA256E9D5F004CBF9A /* ReaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADBE256E9D5F004CBF9A /* ReaderError.swift */; };
-		26D2ADCB256E9D5F004CBF9A /* Reader+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADBF256E9D5F004CBF9A /* Reader+Converter.swift */; };
 		26D2ADCC256E9D5F004CBF9A /* StreamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADC1256E9D5F004CBF9A /* StreamModel.swift */; };
-		26D2ADCE256E9D5F004CBF9A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADC3256E9D5F004CBF9A /* Parser.swift */; };
 		26E011F42550332D008B196E /* PlayerCtrl_play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E011F32550332D008B196E /* PlayerCtrl_play.swift */; };
 		26E2D7DB253D91B80059B6C2 /* BtnPlayAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2D7AA253D91B80059B6C2 /* BtnPlayAdd.swift */; };
 		26E2D7DC253D91B80059B6C2 /* CellAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2D7AD253D91B80059B6C2 /* CellAdd.swift */; };
@@ -92,6 +90,9 @@
 		20B8F63C5D8A2BD71813835D /* Pods-SwiftSocket macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSocket macOS.debug.xcconfig"; path = "Target Support Files/Pods-SwiftSocket macOS/Pods-SwiftSocket macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2605852025769A5A00023AA8 /* 666.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 666.wav; path = ../../../0_wav/X/src/666.wav; sourceTree = "<group>"; };
 		2605852125769A5A00023AA8 /* one.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = one.plist; path = ../../../0_wav/X/src/one.plist; sourceTree = "<group>"; };
+		2605852425769BFB00023AA8 /* Reader+Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reader+Converter.swift"; sourceTree = "<group>"; };
+		2605852525769BFB00023AA8 /* ReaderError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderError.swift; sourceTree = "<group>"; };
+		2605852625769BFB00023AA8 /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		26141F5E254BF406003E5591 /* P_ intelligence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "P_ intelligence.swift"; sourceTree = "<group>"; };
 		2627C4542558E25D0067C1CF /* md_five.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = md_five.swift; sourceTree = "<group>"; };
 		264BA9C6256B4EA7001335A7 /* P_Ctrl_bg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_Ctrl_bg.swift; sourceTree = "<group>"; };
@@ -111,12 +112,7 @@
 		26D2ADB8256E9D5F004CBF9A /* Streaming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streaming.swift; sourceTree = "<group>"; };
 		26D2ADB9256E9D5F004CBF9A /* StreamingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingState.swift; sourceTree = "<group>"; };
 		26D2ADBA256E9D5F004CBF9A /* Streamer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streamer.swift; sourceTree = "<group>"; };
-		26D2ADBC256E9D5F004CBF9A /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
-		26D2ADBD256E9D5F004CBF9A /* Reading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
-		26D2ADBE256E9D5F004CBF9A /* ReaderError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderError.swift; sourceTree = "<group>"; };
-		26D2ADBF256E9D5F004CBF9A /* Reader+Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reader+Converter.swift"; sourceTree = "<group>"; };
 		26D2ADC1256E9D5F004CBF9A /* StreamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamModel.swift; sourceTree = "<group>"; };
-		26D2ADC3256E9D5F004CBF9A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		26E011F32550332D008B196E /* PlayerCtrl_play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCtrl_play.swift; sourceTree = "<group>"; };
 		26E2D7AA253D91B80059B6C2 /* BtnPlayAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnPlayAdd.swift; sourceTree = "<group>"; };
 		26E2D7AD253D91B80059B6C2 /* CellAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellAdd.swift; sourceTree = "<group>"; };
@@ -228,7 +224,6 @@
 				26D2ADB6256E9D5F004CBF9A /* Stream */,
 				26D2ADBB256E9D5F004CBF9A /* Read */,
 				26D2ADC0256E9D5F004CBF9A /* Model */,
-				26D2ADC3256E9D5F004CBF9A /* Parser.swift */,
 			);
 			path = FilePlay;
 			sourceTree = "<group>";
@@ -247,10 +242,9 @@
 		26D2ADBB256E9D5F004CBF9A /* Read */ = {
 			isa = PBXGroup;
 			children = (
-				26D2ADBC256E9D5F004CBF9A /* Reader.swift */,
-				26D2ADBD256E9D5F004CBF9A /* Reading.swift */,
-				26D2ADBE256E9D5F004CBF9A /* ReaderError.swift */,
-				26D2ADBF256E9D5F004CBF9A /* Reader+Converter.swift */,
+				2605852625769BFB00023AA8 /* Reader.swift */,
+				2605852425769BFB00023AA8 /* Reader+Converter.swift */,
+				2605852525769BFB00023AA8 /* ReaderError.swift */,
 			);
 			path = Read;
 			sourceTree = "<group>";
@@ -581,7 +575,6 @@
 				26E2D7DB253D91B80059B6C2 /* BtnPlayAdd.swift in Sources */,
 				26D2ADC5256E9D5F004CBF9A /* Streaming.swift in Sources */,
 				26E2D7E3253D91B80059B6C2 /* Corp.swift in Sources */,
-				26D2ADC8256E9D5F004CBF9A /* Reader.swift in Sources */,
 				26E2D7EC253D91B80059B6C2 /* ImageViewAdd.swift in Sources */,
 				26EC5CB22540080200D48648 /* PlayerCtrlAdd.swift in Sources */,
 				26E2D7EE253D91B80059B6C2 /* UIImageAdd.swift in Sources */,
@@ -592,12 +585,10 @@
 				26FEF61E2549587200373997 /* PopChooseCel.swift in Sources */,
 				26D2ADC7256E9D5F004CBF9A /* Streamer.swift in Sources */,
 				266C5C46254019F500CAD39C /* TableView.swift in Sources */,
-				26D2ADCB256E9D5F004CBF9A /* Reader+Converter.swift in Sources */,
 				26550C312551306A00376D06 /* ProgressPopUpItem.swift in Sources */,
-				26D2ADC9256E9D5F004CBF9A /* Reading.swift in Sources */,
 				26D2ADCC256E9D5F004CBF9A /* StreamModel.swift in Sources */,
-				26D2ADCA256E9D5F004CBF9A /* ReaderError.swift in Sources */,
 				26E2D7E0253D91B80059B6C2 /* NotiAdd.swift in Sources */,
+				2605852825769BFB00023AA8 /* ReaderError.swift in Sources */,
 				26FEF6072549166600373997 /* TimeAdd.swift in Sources */,
 				26EC5CAB2540079300D48648 /* ViewControllerAdd.swift in Sources */,
 				26E2D7E5253D91B80059B6C2 /* SortAdd.swift in Sources */,
@@ -622,12 +613,13 @@
 				26D2ADC4256E9D5F004CBF9A /* StreamingDelegate.swift in Sources */,
 				26E2D7F0253D91B80059B6C2 /* ControllerShared.swift in Sources */,
 				26E011F42550332D008B196E /* PlayerCtrl_play.swift in Sources */,
+				2605852725769BFB00023AA8 /* Reader+Converter.swift in Sources */,
 				266C5D9525402FF500CAD39C /* HotImgView.swift in Sources */,
 				26FEF62625499CCF00373997 /* PlayerProgressBar.swift in Sources */,
 				26141F5F254BF406003E5591 /* P_ intelligence.swift in Sources */,
+				2605852925769BFB00023AA8 /* Reader.swift in Sources */,
 				264BA9C7256B4EA7001335A7 /* P_Ctrl_bg.swift in Sources */,
 				265060632546CB8B007CD349 /* MaskV.swift in Sources */,
-				26D2ADCE256E9D5F004CBF9A /* Parser.swift in Sources */,
 				26E2D7E1253D91B80059B6C2 /* UITableViewAdd.swift in Sources */,
 				26FEF618254955EE00373997 /* BottomPopP.swift in Sources */,
 				26E2D7EB253D91B80059B6C2 /* ArrayAdd.swift in Sources */,

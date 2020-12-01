@@ -23,13 +23,8 @@ public protocol Streaming: class {
     /// A `TimeInterval` representing the total duration
     var duration: TimeInterval? { get }
     
-
-    
-    /// A `Parsing` used to parse the audio's binary data into audio packets
-    var parser: Parser? { get }
-    
     /// A `Reading` used to provide LPCM audio packets from the audio packets from the `parser`
-    var reader_ha: Reading? { get }
+    var reader_ha: Reader? { get }
     
     /// An `AVAudioEngine` used for playback
     var engine: AVAudioEngine { get }
@@ -81,8 +76,7 @@ public protocol Streaming: class {
 }
 
 extension Streaming {
-    //  buffer size , 选用 4 k
-    //  采用 32 KB 也可以
+    
     public var readBufferSize: AVAudioFrameCount {
         4096
     }

@@ -27,7 +27,7 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     //
     // Make sure we have a valid source format so we know the data format of the parser's audio packets
     //
-    guard let _ = reader.parser.dataFormatD else {
+    guard let _ = reader.dataFormatD else {
         return ReaderMissingSourceFormatError
     }
     
@@ -37,7 +37,7 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     //     2. We've reached the end of the data we currently have downloaded, but not the file
     //
     let packetIndex = Int(reader.currentPacket)
-    let packets = reader.parser.packetsX
+    let packets = reader.packetsX
     let isEndOfData = packetIndex >= packets.count - 1
     if isEndOfData {
         
@@ -49,14 +49,19 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     //
     // Copy data over (note we've only processing a single packet of data at a time)
     //
-    var data = packets[packetIndex]
+    let data = packets[packetIndex]
     let dataCount = data.count
-
+    // print("dataCount = \(dataCount)")
+    
+    
     ioData.pointee.mNumberBuffers = 1
     ioData.pointee.mBuffers.mData = UnsafeMutableRawPointer.allocate(byteCount: dataCount, alignment: 0)
-    _ = data.withUnsafeMutableBytes { (bytes: UnsafeMutablePointer<UInt8>) in
-        
-        memcpy((ioData.pointee.mBuffers.mData?.assumingMemoryBound(to: UInt8.self))!, bytes, dataCount)
+    
+    data.withUnsafeBytes { (rawBufferPointer) in
+        let bufferPointer = rawBufferPointer.bindMemory(to: UInt8.self)
+        if let address = bufferPointer.baseAddress{
+            memcpy((ioData.pointee.mBuffers.mData?.assumingMemoryBound(to: UInt8.self))!, address, dataCount)
+        }
     }
     ioData.pointee.mBuffers.mDataByteSize = UInt32(dataCount)
     
