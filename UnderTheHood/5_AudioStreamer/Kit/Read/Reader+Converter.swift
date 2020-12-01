@@ -57,7 +57,7 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     ioData.pointee.mNumberBuffers = 1
     ioData.pointee.mBuffers.mData = UnsafeMutableRawPointer.allocate(byteCount: dataCount, alignment: 0)
 
-    _ = data.withUnsafeMutableBytes { (rawMutableBufferPointer) in
+    data.withUnsafeMutableBytes { (rawMutableBufferPointer) in
         let bufferPointer = rawMutableBufferPointer.bindMemory(to: UInt8.self)
         if let address = bufferPointer.baseAddress{
             memcpy((ioData.pointee.mBuffers.mData?.assumingMemoryBound(to: UInt8.self))!, address, dataCount)
