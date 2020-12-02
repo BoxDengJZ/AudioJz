@@ -19,7 +19,7 @@
 		266C5D9325402F9F00CAD39C /* SideHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C5D9225402F9F00CAD39C /* SideHeader.swift */; };
 		266C5D9525402FF500CAD39C /* HotImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C5D9425402FF500CAD39C /* HotImgView.swift */; };
 		266C5DA62540362E00CAD39C /* neg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C5DA52540362E00CAD39C /* neg.swift */; };
-		2684256D256E6FF100701A1C /* one.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2684256C256E6E3200701A1C /* one.plist */; };
+		2683A6DF257728D700624E88 /* one.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2683A6DE257728D700624E88 /* one.plist */; };
 		26BF85E62574A045009F207A /* in.pcm in Resources */ = {isa = PBXBuildFile; fileRef = 26BF85E52574A045009F207A /* in.pcm */; };
 		26D2ADC4256E9D5F004CBF9A /* StreamingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADB7256E9D5F004CBF9A /* StreamingDelegate.swift */; };
 		26D2ADC5256E9D5F004CBF9A /* Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2ADB8256E9D5F004CBF9A /* Streaming.swift */; };
@@ -103,7 +103,7 @@
 		266C5D9425402FF500CAD39C /* HotImgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotImgView.swift; sourceTree = "<group>"; };
 		266C5DA52540362E00CAD39C /* neg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = neg.swift; sourceTree = "<group>"; };
 		266C5DAE2540386600CAD39C /* ObjC_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjC_Bridge.h; sourceTree = "<group>"; };
-		2684256C256E6E3200701A1C /* one.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = one.plist; sourceTree = "<group>"; };
+		2683A6DE257728D700624E88 /* one.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = one.plist; path = ../../../0_wav/X/src/one.plist; sourceTree = "<group>"; };
 		26BF85E52574A045009F207A /* in.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = in.pcm; sourceTree = "<group>"; };
 		26D2ADB4256E9D01004CBF9A /* file copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "file copy-Info.plist"; path = "/Users/jzd/Documents/AudioJz/AudioToolBox/wav/file copy-Info.plist"; sourceTree = "<absolute>"; };
 		26D2ADB7256E9D5F004CBF9A /* StreamingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingDelegate.swift; sourceTree = "<group>"; };
@@ -314,8 +314,8 @@
 		26E2D7D9253D91B80059B6C2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2683A6DE257728D700624E88 /* one.plist */,
 				26BF85E52574A045009F207A /* in.pcm */,
-				2684256C256E6E3200701A1C /* one.plist */,
 				266C5DAE2540386600CAD39C /* ObjC_Bridge.h */,
 			);
 			path = src;
@@ -497,9 +497,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				26550C322551306A00376D06 /* ProgressPopUpItem.xib in Resources */,
-				2684256D256E6FF100701A1C /* one.plist in Resources */,
 				26FEF61F2549587200373997 /* PopChooseCel.xib in Resources */,
 				375C483A1DDC4C56008C701D /* LaunchScreen.storyboard in Resources */,
+				2683A6DF257728D700624E88 /* one.plist in Resources */,
 				26BF85E62574A045009F207A /* in.pcm in Resources */,
 				375C48371DDC4C56008C701D /* Assets.xcassets in Resources */,
 				375C48351DDC4C56008C701D /* Main.storyboard in Resources */,
