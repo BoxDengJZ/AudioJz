@@ -135,9 +135,9 @@ class PlayerController: UIViewController{
         
         
         do{
-            if let path = Bundle.main.url(forResource: "one", withExtension: "plist"){
+            if let path = Bundle.main.url(forResource: "1_ひこうき雲", withExtension: "json"){
                 let data = try Data(contentsOf: path)
-                let decoder = PropertyListDecoder()
+                let decoder = JSONDecoder()
                 let info = try decoder.decode(P_intelligence.self, from: data)
                 self.pIntelliJ_std = info
                 
@@ -157,13 +157,7 @@ class PlayerController: UIViewController{
 
         
         
-        guard let cake = pIntelliJ_std?.oreoPercent else {
-            
-            return
-        }
         
-        
-        calibrationView.tubes = cake
     }
 
     
@@ -224,24 +218,7 @@ class PlayerController: UIViewController{
     
     func update(metric value: Float){
         
-        if let pie = pIntelliJ_std?.see, let rvc = pIntelliJ_std?.oreoPercent, let duration = durationPropaganda{
-            let val = Double(value)
-            var toHide = true
-            var i = 0
-            for element in pie.node{
-                if fabs(pie.wav_lengths[element.index] - val) < 2{
-                    toHide = false
-                    showTipLabel.text = element.title
-                    showTipLabel.isHidden = false
-                    showTipLabel.center.x = progressV.progressBar.chase(percent: rvc[i])
-                    showTipLabel.sizeToFit()
-                }
-                i += 1
-            }
-            if toHide || abs(duration - val) <= 0.8{
-                showTipLabel.isHidden = true
-            }
-        }
+        showTipLabel.isHidden = true
     }
 }
 

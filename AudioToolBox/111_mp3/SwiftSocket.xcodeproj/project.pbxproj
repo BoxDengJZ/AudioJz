@@ -181,6 +181,7 @@
 		266C5DA52540362E00CAD39C /* neg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = neg.swift; sourceTree = "<group>"; };
 		266C5DAE2540386600CAD39C /* ObjC_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjC_Bridge.h; sourceTree = "<group>"; };
 		26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_ひこうき雲.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_ひこうき雲.mp3"; sourceTree = "<group>"; };
+		26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "1_ひこうき雲.json"; sourceTree = "<group>"; };
 		26D2ADB3256E9D01004CBF9A /* stream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D2ADB4256E9D01004CBF9A /* file copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "file copy-Info.plist"; path = "/Users/jzd/Documents/AudioJz/AudioToolBox/wav/file copy-Info.plist"; sourceTree = "<absolute>"; };
 		26D2ADB7256E9D5F004CBF9A /* StreamingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingDelegate.swift; sourceTree = "<group>"; };
@@ -479,6 +480,7 @@
 		26E2D7D9253D91B80059B6C2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */,
 				26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */,
 				266C5DAE2540386600CAD39C /* ObjC_Bridge.h */,
 			);

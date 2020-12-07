@@ -20,15 +20,13 @@ extension PlayerController{
 
     func preparePlay(){
   
-        guard audioStream == nil else {
-            return
-        }
-        let nodes = pIntelliJ_std?.see.wav_lengths
-        
-        guard let moments = nodes else {
+        guard audioStream == nil, let pIt = pIntelliJ_std else {
             return
         }
         
+        let moments = pIt.list.map { (node) -> TimeInterval in
+            node.time
+        }
         audioStream = Streamer(source: fileP, with: moments, bridge: self)
         
         audioStream?.sourceURL = Bundle.main.url(forResource: "1_ひこうき雲", withExtension: "mp3")
