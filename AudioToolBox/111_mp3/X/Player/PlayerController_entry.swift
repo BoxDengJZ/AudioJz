@@ -20,22 +20,6 @@ import NSObject_Rx
 import SnapKit
 
 
-
-struct GeneralResponse<T>: Decodable  where T: Decodable {
-    let code: Int
-    let data: [T]
-}
-
-
-let assetDir: URL = {
-  let directoryURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-  return directoryURLs.first ?? URL(fileURLWithPath: NSTemporaryDirectory())
-}()
-
-
-
-
-
 struct LayoutWoX {
     
     static let std = LayoutWoX()

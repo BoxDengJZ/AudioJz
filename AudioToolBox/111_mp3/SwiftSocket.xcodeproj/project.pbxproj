@@ -20,6 +20,7 @@
 		266C5D9525402FF500CAD39C /* HotImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C5D9425402FF500CAD39C /* HotImgView.swift */; };
 		266C5DA62540362E00CAD39C /* neg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C5DA52540362E00CAD39C /* neg.swift */; };
 		26987E93257E2D1A00D680BF /* 1_ひこうき雲.json in Resources */ = {isa = PBXBuildFile; fileRef = 26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */; };
+		26987E94257E2F0F00D680BF /* 1_ひこうき雲.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */; };
 		26D2AD6A256E9D01004CBF9A /* CellAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2D7AD253D91B80059B6C2 /* CellAdd.swift */; };
 		26D2AD6B256E9D01004CBF9A /* BottomPlayV_pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF6202549723A00373997 /* BottomPlayV_pop.swift */; };
 		26D2AD6D256E9D01004CBF9A /* DebugHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF6012549166600373997 /* DebugHub.swift */; };
@@ -695,6 +696,7 @@
 				26D2ADAA256E9D01004CBF9A /* LaunchScreen.storyboard in Resources */,
 				26D2ADAC256E9D01004CBF9A /* Assets.xcassets in Resources */,
 				26D2ADAD256E9D01004CBF9A /* Main.storyboard in Resources */,
+				26987E94257E2F0F00D680BF /* 1_ひこうき雲.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
