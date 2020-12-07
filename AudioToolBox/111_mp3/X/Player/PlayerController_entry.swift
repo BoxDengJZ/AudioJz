@@ -19,33 +19,11 @@ import NSObject_Rx
 
 import SnapKit
 
-enum LanOpt{
-    case en
-    case ch
-    
-    
-    var val: String{
-        let src: String
-        switch self {
-        case .ch:
-            src = "chinese"
-        case .en:
-            src = "english"
-        }
-        return src
-    }
-}
-
-enum EnterP_src{
-    case std(PlayPageHa)
-    case custom(Int, LanOpt)
-}
 
 
-
-struct PlayPageHa {
-    let kind: LanOpt
-    let k: Int
+struct GeneralResponse<T>: Decodable  where T: Decodable {
+    let code: Int
+    let data: [T]
 }
 
 
@@ -138,10 +116,8 @@ class PlayerController: UIViewController{
             if let path = Bundle.main.url(forResource: "1_ひこうき雲", withExtension: "json"){
                 let data = try Data(contentsOf: path)
                 let decoder = JSONDecoder()
-                let info = try decoder.decode(P_intelligence.self, from: data)
-                self.pIntelliJ_std = info
-                
-                
+                let info = try decoder.decode([NodeK].self, from: data)
+                self.pIntelliJ_std = P_intelligence(list: info)
             }
         }
         catch let error as NSError{

@@ -10,7 +10,7 @@ import Foundation
 
 
 
-struct P_intelligence: Decodable {
+struct P_intelligence {
     
 
     let list: [NodeK]
