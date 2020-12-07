@@ -40,18 +40,21 @@ extension PlayerController: StreamingDelegate{
           progressV.config(current: current)
           showMediaInfo()
           update(metric: Float(current))
-        
-          guard let cake = pIntelliJ_std else {
-               return
-          }
-          calibrationView.tubes = cake.oreoPercent(duration: current)
+          
     }
     
     
     
     
     
-    func streamer(_ streamer: Streaming, updatedDuration duration: TimeInterval) {  }
+    func streamer(_ streamer: Streaming, updatedDuration duration: TimeInterval) {
+        durationPropaganda = duration
+        config(duration: duration)
+        guard let cake = pIntelliJ_std else {
+             return
+        }
+        calibrationView.tubes = cake.oreoPercent(duration: duration)
+    }
     
     
     

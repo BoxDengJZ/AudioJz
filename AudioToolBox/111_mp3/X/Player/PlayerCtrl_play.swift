@@ -31,13 +31,7 @@ extension PlayerController{
         
         audioStream?.sourceURL = Bundle.main.url(forResource: "1_ひこうき雲", withExtension: "mp3")
         
-        guard let duration = moments.last else {
-            
-            return
-        }
-        durationPropaganda = duration
-        config(duration: duration)
-        
+
     }
 
      
