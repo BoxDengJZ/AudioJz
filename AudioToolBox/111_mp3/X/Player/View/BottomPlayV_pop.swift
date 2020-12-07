@@ -45,7 +45,7 @@ extension BottomPlayV{
     
     func comePopRhs(){
         UIView.animate(withDuration: 0.3) {
-            self.topRhsTimesConstraint?.constraint.update(offset: -121)
+            self.topRhsTimesConstraint?.constraint.update(offset: self.lhsPopInterval.lhsH.neg)
             self.layoutIfNeeded()
         }
     }
