@@ -90,7 +90,7 @@ class BottomPlayV: UIView {
     lazy var repeatB: UIButton = {
         let b = UIButton()
         b.isHidden = true
-        b.setTitle("重复：x1", for: .normal)
+        b.setTitle("重复：x\(BottomPopData.times[BottomPopData.times.count / 2])", for: .normal)
         b.setTitleColor(UIColor(rgb: 0x575A61), for: .normal)
         b.titleLabel?.font = UIFont.semibold(ofSize: 12)
         b.titleLabel?.textAlignment = .center
@@ -104,7 +104,7 @@ class BottomPlayV: UIView {
     lazy var intervalB: InnerL = {
         let b = InnerL()
         b.isHidden = true
-        b.text = BottomPopData.interval[3].interval
+        b.text = BottomPopData.interval[BottomPopData.interval.count - 1].interval
         b.font = UIFont.semibold(ofSize: 12)
         b.textColor = UIColor(rgb: 0x575A61)
         b.textAlignment = .left

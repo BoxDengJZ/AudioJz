@@ -80,7 +80,7 @@ extension BottomPopP: UITableViewDataSource{
             let span = secondsSpan[indexPath.row].format(f: ".0") + " 秒"
             item.config(title: span)
         case .times:
-            item.config(title: sourceTime[indexPath.row])
+            item.config(title: "\(sourceTime[indexPath.row]) 遍")
         }
         
         

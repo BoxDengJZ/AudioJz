@@ -82,9 +82,8 @@ extension BottomPlayV: BottomPopP_delegate{
             intervalB.text = val.interval
             delegate?.change(interval: val)
         case .times:
-            let val = 3 - index
-            repeatB.setTitle("重复：x\(val)", for: .normal)
-            delegate?.change(times: val)
+            repeatB.setTitle("重复：x\(BottomPopData.times[index])", for: .normal)
+            delegate?.change(times: index)
         }
     }
 

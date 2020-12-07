@@ -15,8 +15,7 @@ struct BottomPopData {
                            3, 1]
     
     
-    
-    static let times = ["3 遍", "2 遍", "1 遍"]
+    static let times = [9, 7, 5, 3, 1]
 }
 
 

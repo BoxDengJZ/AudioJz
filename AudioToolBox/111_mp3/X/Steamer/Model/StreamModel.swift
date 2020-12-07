@@ -17,7 +17,7 @@ import Foundation
 struct AudioRecord{
     
     // 重复
-    var countStdRepeat = 0
+    var countStdRepeat = BottomPopData.times[BottomPopData.times.count / 2]
     var howManyNow = 0
     var toClimb = true
     
@@ -32,11 +32,11 @@ struct AudioRecord{
     var pauseWork = false
     var currentMoment = Date()
     
-    var stdPauseT: TimeInterval = BottomPopData.interval[3]
+    var stdPauseT: TimeInterval = BottomPopData.interval[ BottomPopData.interval.count - 1 ]
     
     mutating
-    func did(repeat times: Int){
-        countStdRepeat = times - 1
+    func did(repeat idx: Int){
+        countStdRepeat = BottomPopData.times[idx]
     }
 
     
