@@ -27,7 +27,7 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     //
     // Make sure we have a valid source format so we know the data format of the parser's audio packets
     //
-    guard let _ = reader.parser.dataFormatD else {
+    guard let sourceFormat = reader.parser.dataFormatD else {
         return ReaderMissingSourceFormatError
     }
     
@@ -51,7 +51,7 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
     //
     // Copy data over (note we've only processing a single packet of data at a time)
     //
-    var data = packets[packetIndex]
+    var data = packets[packetIndex].0
     let dataCount = data.count
 
     
@@ -62,9 +62,39 @@ func ReaderConverterCallback(_ converter: AudioConverterRef,
         memcpy((ioData.pointee.mBuffers.mData?.assumingMemoryBound(to: UInt8.self))!, bytes, dataCount)
     }
     ioData.pointee.mBuffers.mDataByteSize = UInt32(dataCount)
-    
+    let sourceFormatDescription = sourceFormat.streamDescription.pointee
+    if sourceFormatDescription.mFormatID != kAudioFormatLinearPCM {
+        print("sourceFormatDescription.mFormatID: \(sourceFormatDescription.mFormatID)")
+        let readFormat = CFSwapInt32HostToBig(sourceFormatDescription.mFormatID)
+        print("sourceFormatDescription.mFormatID: \(readFormat.formatIdMeans)")
+        if outPacketDescriptions?.pointee == nil {
+            outPacketDescriptions?.pointee = UnsafeMutablePointer<AudioStreamPacketDescription>.allocate(capacity: 1)
+        }
+        outPacketDescriptions?.pointee?.pointee.mDataByteSize = UInt32(dataCount)
+        outPacketDescriptions?.pointee?.pointee.mStartOffset = 0
+        outPacketDescriptions?.pointee?.pointee.mVariableFramesInPacket = 0
+    }
     packetCount.pointee = 1
     reader.currentPacket = reader.currentPacket + 1
     
     return noErr
+}
+
+
+
+
+
+extension UInt32{
+
+    var formatIdMeans: String {
+        
+        var x = [UInt8](repeating: 0, count: 4)
+        x[0] = UInt8(self & 0x000000ff)
+        x[1] = UInt8( (self & 0x0000ff00) >> 8)
+        x[2] = UInt8( (self & 0x00ff0000) >> 16)
+        x[3] = UInt8( (self & 0xff000000) >> 24)
+        
+        return String(bytes: x, encoding: String.Encoding.utf8)!
+    }
+
 }

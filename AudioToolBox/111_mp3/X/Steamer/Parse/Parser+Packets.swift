@@ -14,22 +14,22 @@ func ParserPacketCallback(_ context: UnsafeMutableRawPointer, _ byteCount: UInt3
     let parser = Unmanaged<Parser>.fromOpaque(context).takeUnretainedValue()
     
     /// At this point we should definitely have a data format
-    guard let dataFormat = parser.dataFormatD else {
+    guard let dataFormat = parser.dataFormatD, let aspd = packetDescriptions else {
         return
     }
-    
    
     let format = dataFormat.streamDescription.pointee
     let bytesPerPacket = Int(format.mBytesPerPacket)
 
+    print("dataFormat.commonFormat: \(dataFormat.commonFormat) \n  dataFormat.sampleRate: \(dataFormat.sampleRate) \n  dataFormat.channelCount: \(dataFormat.channelCount)")
+    
     
     for i in 0 ..< Int(packetCount) {
-        let packetStart = i * bytesPerPacket
-        let packetSize = bytesPerPacket
-
+        let packetDescription = aspd[i]
+        let packetStart = Int(packetDescription.mStartOffset)
+        let packetSize = Int(packetDescription.mDataByteSize)
         let packetData = Data(bytes: data.advanced(by: packetStart), count: packetSize)
-
-        parser.packetsX.append(packetData)
+        parser.packetsX.append((packetData, packetDescription))
     }
     
 }

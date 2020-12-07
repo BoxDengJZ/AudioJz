@@ -19,7 +19,11 @@ public class Parser: Parsing {
     // MARK: - Parsing props
     
     public internal(set) var dataFormatD: AVAudioFormat?
-    public internal(set) var packetsX = [Data]()
+    
+    
+    public internal(set) var packetsX = [(Data, AudioStreamPacketDescription?)]()
+    
+    
     public var totalPacketCount: AVAudioPacketCount? {
         guard let _ = dataFormatD else {
             return nil
@@ -53,7 +57,7 @@ public class Parser: Parsing {
     /// - Throws: A `ParserError.streamCouldNotOpen` meaning a file stream instance could not be opened
     public init() throws {
         let context = unsafeBitCast(self, to: UnsafeMutableRawPointer.self)
-        guard AudioFileStreamOpen(context, ParserPropertyChangeCallback, ParserPacketCallback, kAudioFileWAVEType, &streamID) == noErr else {
+        guard AudioFileStreamOpen(context, ParserPropertyChangeCallback, ParserPacketCallback, kAudioFileMP3Type, &streamID) == noErr else {
             throw ParserError.streamCouldNotOpen
         }
     }
