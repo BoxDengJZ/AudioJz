@@ -49,15 +49,6 @@ struct PlayPageHa {
 }
 
 
-
-enum FileFormat{
- 
-    static let pcm = "wav"
-}
-
-
-
-
 let assetDir: URL = {
   let directoryURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
   return directoryURLs.first ?? URL(fileURLWithPath: NSTemporaryDirectory())

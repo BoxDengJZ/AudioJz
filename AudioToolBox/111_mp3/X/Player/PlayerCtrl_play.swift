@@ -31,7 +31,7 @@ extension PlayerController{
         
         audioStream = Streamer(source: fileP, with: moments, bridge: self)
         
-        audioStream?.sourceURL = Bundle.main.url(forResource: "666", withExtension: "wav")
+        audioStream?.sourceURL = Bundle.main.url(forResource: "1_ひこうき雲", withExtension: "mp3")
         
         guard let duration = moments.last else {
             
