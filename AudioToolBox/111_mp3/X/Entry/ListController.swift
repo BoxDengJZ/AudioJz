@@ -90,7 +90,12 @@ extension ListController: UITableViewDelegate{
     }
     
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let bulk = records[indexPath.row]
+        let p = PlayerController(from: bulk.music)
+        navigationController?.pushViewController(p, animated: true)
+    }
 
 }
 

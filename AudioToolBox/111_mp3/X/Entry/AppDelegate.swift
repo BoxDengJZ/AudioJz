@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UI.std.layout)
         }
         window?.makeKeyAndVisible()
-        
-        window?.rootViewController = ListController()
+        let navi = UINavigationController(rootViewController: ListController())
+        window?.rootViewController = navi
         
     }
     

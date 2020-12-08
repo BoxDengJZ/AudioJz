@@ -29,7 +29,7 @@ extension PlayerController{
         }
         audioStream = Streamer(source: fileP, with: moments, bridge: self)
         
-        audioStream?.sourceURL = Bundle.main.url(forResource: "1_ひこうき雲", withExtension: "mp3")
+        audioStream?.sourceURL = Bundle.main.url(forResource: src, withExtension: "mp3")
         
 
     }

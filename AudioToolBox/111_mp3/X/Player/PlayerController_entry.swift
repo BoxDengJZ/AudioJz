@@ -83,6 +83,25 @@ class PlayerController: UIViewController{
     }()
     
     
+    
+    let src: String
+    
+    init(from source: String) {
+        src = source
+        super.init(nibName: nil, bundle: nil)
+        
+        
+    }
+    
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -97,7 +116,7 @@ class PlayerController: UIViewController{
         
         
         do{
-            if let path = Bundle.main.url(forResource: "1_ひこうき雲", withExtension: "json"){
+            if let path = Bundle.main.url(forResource: src, withExtension: "json"){
                 let data = try Data(contentsOf: path)
                 let decoder = JSONDecoder()
                 let info = try decoder.decode([NodeK].self, from: data)
@@ -126,6 +145,14 @@ class PlayerController: UIViewController{
         showTipLabel.frame.origin.y = calibrationView.frame.origin.y - 60
     }
     
+    
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        audioStream?.sourceURL = nil
+    }
     
     
     func forUI(){
