@@ -64,7 +64,7 @@ class PlayerController: UIViewController{
     var heightChangeChoosePopConstraint: ConstraintMakerEditable?
     
 
-    var pIntelliJ_std: P_intelligence?
+    let pIntelliJ_std: P_intelligence
     
     var fileP: String = ""
 
@@ -88,6 +88,25 @@ class PlayerController: UIViewController{
     
     init(from source: String) {
         src = source
+        
+        var temp: P_intelligence?
+        do{
+            if let path = Bundle.main.url(forResource: src, withExtension: "json"){
+                let data = try Data(contentsOf: path)
+                let decoder = JSONDecoder()
+                let info = try decoder.decode([NodeK].self, from: data)
+                temp = P_intelligence(list: info)
+            }
+        }
+        catch let error as NSError{
+            print(error)
+        }
+        
+        guard let dat = temp else {
+            fatalError()
+        }
+        
+        pIntelliJ_std = dat
         super.init(nibName: nil, bundle: nil)
         
         
@@ -113,23 +132,7 @@ class PlayerController: UIViewController{
         forUI()
    
         forEvents()
-        
-        
-        do{
-            if let path = Bundle.main.url(forResource: src, withExtension: "json"){
-                let data = try Data(contentsOf: path)
-                let decoder = JSONDecoder()
-                let info = try decoder.decode([NodeK].self, from: data)
-                self.pIntelliJ_std = P_intelligence(list: info)
-            }
-        }
-        catch let error as NSError{
-            print(error)
-        }
 
-
-        
-        
         showMediaInfo()
     
         preparePlay()
@@ -202,10 +205,28 @@ class PlayerController: UIViewController{
     }
     
     
-    
     func update(metric value: Float){
+        /*
+        if let pie = pIntelliJ_std?.see, let rvc = pIntelliJ_std?.oreoPercent, let duration = durationPropaganda{
+            let val = Double(value)
+            var toHide = true
+            var i = 0
+            for element in pie.node{
+                if fabs(pie.wav_lengths[element.index] - val) < 2{
+                    toHide = false
+                    showTipLabel.text = element.title
+                    showTipLabel.isHidden = false
+                    showTipLabel.center.x = progressV.progressBar.chase(percent: rvc[i])
+                    showTipLabel.sizeToFit()
+                }
+                i += 1
+            }
+            if toHide || abs(duration - val) <= 0.8{
+                showTipLabel.isHidden = true
+            }
+        }
         
-        showTipLabel.isHidden = true
+        */
     }
 }
 

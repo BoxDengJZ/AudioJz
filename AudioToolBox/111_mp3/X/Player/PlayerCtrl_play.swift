@@ -20,10 +20,10 @@ extension PlayerController{
 
     func preparePlay(){
   
-        guard audioStream == nil, let pIt = pIntelliJ_std else {
+        guard audioStream == nil else {
             return
         }
-        
+        let pIt = pIntelliJ_std
         let moments = pIt.list.map { (node) -> TimeInterval in
             node.time
         }

@@ -50,9 +50,7 @@ extension PlayerController: StreamingDelegate{
     func streamer(_ streamer: Streaming, updatedDuration duration: TimeInterval) {
         durationPropaganda = duration
         config(duration: duration)
-        guard let cake = pIntelliJ_std else {
-             return
-        }
+        let cake = pIntelliJ_std
         calibrationView.tubes = cake.oreoPercent(duration: duration)
     }
     
