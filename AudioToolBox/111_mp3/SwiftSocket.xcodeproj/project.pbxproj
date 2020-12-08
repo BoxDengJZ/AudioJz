@@ -21,6 +21,15 @@
 		266C5DA62540362E00CAD39C /* neg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C5DA52540362E00CAD39C /* neg.swift */; };
 		26987E93257E2D1A00D680BF /* 1_ひこうき雲.json in Resources */ = {isa = PBXBuildFile; fileRef = 26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */; };
 		26987E94257E2F0F00D680BF /* 1_ひこうき雲.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */; };
+		26A5D3FA257F0C0400357531 /* 1_Le Papillon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26A5D3F8257F0BFD00357531 /* 1_Le Papillon.mp3 */; };
+		26A5D3FC257F0C3100357531 /* 1_Le Papillon.json in Resources */ = {isa = PBXBuildFile; fileRef = 26A5D3FB257F0C3100357531 /* 1_Le Papillon.json */; };
+		26A5D3FD257F0C3100357531 /* 1_Le Papillon.json in Resources */ = {isa = PBXBuildFile; fileRef = 26A5D3FB257F0C3100357531 /* 1_Le Papillon.json */; };
+		26A5D3FF257F0C6800357531 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5D3FE257F0C6800357531 /* ListController.swift */; };
+		26A5D400257F0C6800357531 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5D3FE257F0C6800357531 /* ListController.swift */; };
+		26A5D404257F0DB400357531 /* VIP_CenterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A5D402257F0DB400357531 /* VIP_CenterCell.xib */; };
+		26A5D405257F0DB400357531 /* VIP_CenterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A5D402257F0DB400357531 /* VIP_CenterCell.xib */; };
+		26A5D406257F0DB400357531 /* VIP_CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5D403257F0DB400357531 /* VIP_CenterCell.swift */; };
+		26A5D407257F0DB400357531 /* VIP_CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5D403257F0DB400357531 /* VIP_CenterCell.swift */; };
 		26D2AD6A256E9D01004CBF9A /* CellAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2D7AD253D91B80059B6C2 /* CellAdd.swift */; };
 		26D2AD6B256E9D01004CBF9A /* BottomPlayV_pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF6202549723A00373997 /* BottomPlayV_pop.swift */; };
 		26D2AD6D256E9D01004CBF9A /* DebugHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF6012549166600373997 /* DebugHub.swift */; };
@@ -183,6 +192,11 @@
 		266C5DAE2540386600CAD39C /* ObjC_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjC_Bridge.h; sourceTree = "<group>"; };
 		26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_ひこうき雲.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_ひこうき雲.mp3"; sourceTree = "<group>"; };
 		26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "1_ひこうき雲.json"; sourceTree = "<group>"; };
+		26A5D3F8257F0BFD00357531 /* 1_Le Papillon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_Le Papillon.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_Le Papillon.mp3"; sourceTree = "<group>"; };
+		26A5D3FB257F0C3100357531 /* 1_Le Papillon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1_Le Papillon.json"; sourceTree = "<group>"; };
+		26A5D3FE257F0C6800357531 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		26A5D402257F0DB400357531 /* VIP_CenterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIP_CenterCell.xib; sourceTree = "<group>"; };
+		26A5D403257F0DB400357531 /* VIP_CenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIP_CenterCell.swift; sourceTree = "<group>"; };
 		26D2ADB3256E9D01004CBF9A /* stream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D2ADB4256E9D01004CBF9A /* file copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "file copy-Info.plist"; path = "/Users/jzd/Documents/AudioJz/AudioToolBox/wav/file copy-Info.plist"; sourceTree = "<absolute>"; };
 		26D2ADB7256E9D5F004CBF9A /* StreamingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingDelegate.swift; sourceTree = "<group>"; };
@@ -306,7 +320,9 @@
 		265431232542B3BC00BE4F21 /* Entry */ = {
 			isa = PBXGroup;
 			children = (
+				26A5D401257F0DB400357531 /* Cel */,
 				265431252542B3BC00BE4F21 /* AppDelegate.swift */,
+				26A5D3FE257F0C6800357531 /* ListController.swift */,
 			);
 			path = Entry;
 			sourceTree = "<group>";
@@ -321,6 +337,15 @@
 				66219D5026CD349337D2A75D /* Pods_petit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26A5D401257F0DB400357531 /* Cel */ = {
+			isa = PBXGroup;
+			children = (
+				26A5D402257F0DB400357531 /* VIP_CenterCell.xib */,
+				26A5D403257F0DB400357531 /* VIP_CenterCell.swift */,
+			);
+			path = Cel;
 			sourceTree = "<group>";
 		};
 		26D2ADB5256E9D5F004CBF9A /* FilePlay */ = {
@@ -479,6 +504,8 @@
 		26E2D7D9253D91B80059B6C2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				26A5D3FB257F0C3100357531 /* 1_Le Papillon.json */,
+				26A5D3F8257F0BFD00357531 /* 1_Le Papillon.mp3 */,
 				26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */,
 				26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */,
 				266C5DAE2540386600CAD39C /* ObjC_Bridge.h */,
@@ -691,9 +718,12 @@
 				26D2ADA9256E9D01004CBF9A /* PopChooseCel.xib in Resources */,
 				26987E93257E2D1A00D680BF /* 1_ひこうき雲.json in Resources */,
 				26D2ADAA256E9D01004CBF9A /* LaunchScreen.storyboard in Resources */,
+				26A5D405257F0DB400357531 /* VIP_CenterCell.xib in Resources */,
 				26D2ADAC256E9D01004CBF9A /* Assets.xcassets in Resources */,
+				26A5D3FD257F0C3100357531 /* 1_Le Papillon.json in Resources */,
 				26D2ADAD256E9D01004CBF9A /* Main.storyboard in Resources */,
 				26987E94257E2F0F00D680BF /* 1_ひこうき雲.mp3 in Resources */,
+				26A5D3FA257F0C0400357531 /* 1_Le Papillon.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,9 +733,11 @@
 			files = (
 				26550C322551306A00376D06 /* ProgressPopUpItem.xib in Resources */,
 				26FEF61F2549587200373997 /* PopChooseCel.xib in Resources */,
+				26A5D3FC257F0C3100357531 /* 1_Le Papillon.json in Resources */,
 				375C483A1DDC4C56008C701D /* LaunchScreen.storyboard in Resources */,
 				375C48371DDC4C56008C701D /* Assets.xcassets in Resources */,
 				375C48351DDC4C56008C701D /* Main.storyboard in Resources */,
+				26A5D404257F0DB400357531 /* VIP_CenterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +865,7 @@
 				26D2AD7C256E9D01004CBF9A /* ProgressPopUpItem.swift in Sources */,
 				26D2AD7E256E9D01004CBF9A /* NotiAdd.swift in Sources */,
 				26D2AD7F256E9D01004CBF9A /* TimeAdd.swift in Sources */,
+				26A5D407257F0DB400357531 /* VIP_CenterCell.swift in Sources */,
 				26D2AD80256E9D01004CBF9A /* ViewControllerAdd.swift in Sources */,
 				26D2AD81256E9D01004CBF9A /* SortAdd.swift in Sources */,
 				26D2ADFD256E9E91004CBF9A /* Parser.swift in Sources */,
@@ -870,6 +903,7 @@
 				26D2AD9D256E9D01004CBF9A /* P_Ctrl_bg.swift in Sources */,
 				26D2AD9E256E9D01004CBF9A /* MaskV.swift in Sources */,
 				26D2AD9F256E9D01004CBF9A /* UITableViewAdd.swift in Sources */,
+				26A5D400257F0C6800357531 /* ListController.swift in Sources */,
 				26D2ADFB256E9E91004CBF9A /* Parser+Packets.swift in Sources */,
 				26D2ADFC256E9E91004CBF9A /* Parsing.swift in Sources */,
 				26D2ADA0256E9D01004CBF9A /* BottomPopP.swift in Sources */,
@@ -906,6 +940,7 @@
 				26D2ADCA256E9D5F004CBF9A /* ReaderError.swift in Sources */,
 				26E2D7E0253D91B80059B6C2 /* NotiAdd.swift in Sources */,
 				26FEF6072549166600373997 /* TimeAdd.swift in Sources */,
+				26A5D406257F0DB400357531 /* VIP_CenterCell.swift in Sources */,
 				26EC5CAB2540079300D48648 /* ViewControllerAdd.swift in Sources */,
 				26E2D7E5253D91B80059B6C2 /* SortAdd.swift in Sources */,
 				26E2D7E8253D91B80059B6C2 /* FontAdd.swift in Sources */,
@@ -923,6 +958,7 @@
 				26E2D7DE253D91B80059B6C2 /* StringAdd.swift in Sources */,
 				26D2ADC6256E9D5F004CBF9A /* StreamingState.swift in Sources */,
 				266C5D9325402F9F00CAD39C /* SideHeader.swift in Sources */,
+				26A5D3FF257F0C6800357531 /* ListController.swift in Sources */,
 				26E2D7EF253D91B80059B6C2 /* DateAdd.swift in Sources */,
 				26FEF6042549166600373997 /* DebugLayer.swift in Sources */,
 				26FEF6162549479600373997 /* BottomPlayV.swift in Sources */,

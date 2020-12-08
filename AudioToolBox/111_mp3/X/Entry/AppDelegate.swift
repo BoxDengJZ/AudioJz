@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         window?.makeKeyAndVisible()
         
-        window?.rootViewController = PlayerController()
+        window?.rootViewController = ListController()
         
     }
     
