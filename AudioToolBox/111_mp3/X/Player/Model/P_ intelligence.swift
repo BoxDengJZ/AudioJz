@@ -40,3 +40,8 @@ struct NodeK: Decodable {
 
 
 
+extension NodeK{
+    var sentence: String{
+        content.replacingOccurrences(of: "- - - -", with: "\n\n")
+    }
+}

@@ -74,11 +74,12 @@ class PlayerController: UIViewController{
   
     
     lazy var showTipLabel: UILabel = {
-        let l = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
-        l.font = UIFont.regular(ofSize: 16)
+        let l = UILabel()
+        l.font = UIFont.regular(ofSize: 18)
         l.textColor = UIColor.magenta
-        l.isHidden = true
+        l.isHidden = false
         l.textAlignment = .center
+        l.numberOfLines = 0
         return l
     }()
     
@@ -143,12 +144,7 @@ class PlayerController: UIViewController{
     }
 
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        showTipLabel.frame.origin.y = calibrationView.frame.origin.y - 60
-    }
-    
-    
+
     
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -182,8 +178,14 @@ class PlayerController: UIViewController{
             m.height.equalTo(12)
             m.bottom.equalTo(progressV.snp.top)
         }
-        
-        
+        let leading: CGFloat = 80
+        let top: CGFloat = 200
+        showTipLabel.snp.makeConstraints { (m) in
+            m.leading.equalToSuperview().offset(leading)
+            m.trailing.equalToSuperview().offset(leading.neg)
+            m.top.equalToSuperview().offset(top)
+            m.bottom.equalToSuperview().offset(top.neg)
+        }
     }
     
     
@@ -206,27 +208,17 @@ class PlayerController: UIViewController{
     
     
     func update(metric value: Float){
-        /*
-        if let pie = pIntelliJ_std?.see, let rvc = pIntelliJ_std?.oreoPercent, let duration = durationPropaganda{
-            let val = Double(value)
-            var toHide = true
-            var i = 0
-            for element in pie.node{
-                if fabs(pie.wav_lengths[element.index] - val) < 2{
-                    toHide = false
-                    showTipLabel.text = element.title
-                    showTipLabel.isHidden = false
-                    showTipLabel.center.x = progressV.progressBar.chase(percent: rvc[i])
-                    showTipLabel.sizeToFit()
-                }
-                i += 1
-            }
-            if toHide || abs(duration - val) <= 0.8{
-                showTipLabel.isHidden = true
+        let pie = pIntelliJ_std.list
+       
+        let val = Double(value)
+        for element in pie{
+            if element.time - val > 0{
+                showTipLabel.text = element.sentence
+                break
             }
         }
         
-        */
+        
     }
 }
 
