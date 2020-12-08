@@ -129,7 +129,7 @@ class PlayerController: UIViewController{
         
         view.backgroundColor = UIColor(rgb: 0xF9F9F9)
 
-        
+        title = src
         forUI()
    
         forEvents()
