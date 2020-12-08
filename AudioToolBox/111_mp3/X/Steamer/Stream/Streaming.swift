@@ -88,10 +88,8 @@ extension Streaming {
     }
     
     public var readFormat: AVAudioFormat {
-        AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: true)!
+        return AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 2, interleaved: false)!
     }
-    
-    //  AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 16000, channels: 1, interleaved: true)!
     
     
     var intervalD: Double{

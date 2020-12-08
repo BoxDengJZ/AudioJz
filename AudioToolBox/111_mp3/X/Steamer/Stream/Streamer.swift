@@ -52,6 +52,15 @@ open class Streamer: Streaming {
 
     public let engine = AVAudioEngine()
     public let playerNode = AVAudioPlayerNode()
+    
+    
+    let timePitchNode: AVAudioUnitTimePitch = {
+        let t = AVAudioUnitTimePitch()
+        t.rate = 0.7
+        return t
+    }()
+    
+    
     public internal(set) var stateDeng: StreamingState = .stopped {
         didSet {
             delegate?.streamer(dng: self, changedState: stateDeng)
@@ -150,11 +159,13 @@ open class Streamer: Streaming {
     /// Subclass can override this to attach additional nodes to the engine before it is prepared. Default implementation attaches the `playerNode`. Subclass should call super or be sure to attach the playerNode.
     open func attachNodes() {
         engine.attach(playerNode)
+        engine.attach(timePitchNode)
     }
 
     /// Subclass can override this to make custom node connections in the engine before it is prepared. Default implementation connects the playerNode to the mainMixerNode on the `AVAudioEngine` using the default `readFormat`. Subclass should use the `readFormat` property when connecting nodes.
     open func connectNodes() {
-        engine.connect(playerNode, to: engine.mainMixerNode, format: readFormat)
+        engine.connect(playerNode, to: timePitchNode, format: readFormat)
+        engine.connect(timePitchNode, to: engine.mainMixerNode, format: readFormat)
     }
     
     // MARK: - Reset
