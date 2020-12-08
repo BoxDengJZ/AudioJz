@@ -83,7 +83,7 @@ class PlayerController: UIViewController{
         return l
     }()
     
-    
+    var currentIdx = -1
     
     let src: String
     
@@ -179,12 +179,12 @@ class PlayerController: UIViewController{
             m.bottom.equalTo(progressV.snp.top)
         }
         let leading: CGFloat = 80
-        let top: CGFloat = 200
+        
         showTipLabel.snp.makeConstraints { (m) in
             m.leading.equalToSuperview().offset(leading)
             m.trailing.equalToSuperview().offset(leading.neg)
-            m.top.equalToSuperview().offset(top)
-            m.bottom.equalToSuperview().offset(top.neg)
+            m.top.equalToSuperview().offset(110)
+            m.bottom.equalToSuperview().offset(200.neg)
         }
     }
     
@@ -211,10 +211,19 @@ class PlayerController: UIViewController{
         let pie = pIntelliJ_std.list
        
         let val = Double(value)
+        var i = 0
         for element in pie{
-            if element.time - val > 0{
-                showTipLabel.text = element.sentence
+            if val > element.time{
+                
+                // 这里有一个过滤
+                if currentIdx != i{
+                    currentIdx = i
+                    showTipLabel.text = element.sentence
+                }
                 break
+            }
+            else{
+                i += 1
             }
         }
         

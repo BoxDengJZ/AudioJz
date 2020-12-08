@@ -56,7 +56,7 @@ open class Streamer: Streaming {
     
     let timePitchNode: AVAudioUnitTimePitch = {
         let t = AVAudioUnitTimePitch()
-        t.rate = 0.7
+        t.rate = 0.9
         return t
     }()
     
