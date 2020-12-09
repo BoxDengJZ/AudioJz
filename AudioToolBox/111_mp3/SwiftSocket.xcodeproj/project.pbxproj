@@ -30,6 +30,9 @@
 		26A5D405257F0DB400357531 /* VIP_CenterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A5D402257F0DB400357531 /* VIP_CenterCell.xib */; };
 		26A5D406257F0DB400357531 /* VIP_CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5D403257F0DB400357531 /* VIP_CenterCell.swift */; };
 		26A5D407257F0DB400357531 /* VIP_CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5D403257F0DB400357531 /* VIP_CenterCell.swift */; };
+		26ADF0FF2580A96C00ECC0E9 /* 1_Le Papillon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26A5D3F8257F0BFD00357531 /* 1_Le Papillon.mp3 */; };
+		26ADF1002580A96F00ECC0E9 /* 1_ひこうき雲.json in Resources */ = {isa = PBXBuildFile; fileRef = 26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */; };
+		26ADF1012580A97200ECC0E9 /* 1_ひこうき雲.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */; };
 		26D2AD6A256E9D01004CBF9A /* CellAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2D7AD253D91B80059B6C2 /* CellAdd.swift */; };
 		26D2AD6B256E9D01004CBF9A /* BottomPlayV_pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF6202549723A00373997 /* BottomPlayV_pop.swift */; };
 		26D2AD6D256E9D01004CBF9A /* DebugHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF6012549166600373997 /* DebugHub.swift */; };
@@ -738,6 +741,9 @@
 				375C48371DDC4C56008C701D /* Assets.xcassets in Resources */,
 				375C48351DDC4C56008C701D /* Main.storyboard in Resources */,
 				26A5D404257F0DB400357531 /* VIP_CenterCell.xib in Resources */,
+				26ADF0FF2580A96C00ECC0E9 /* 1_Le Papillon.mp3 in Resources */,
+				26ADF1002580A96F00ECC0E9 /* 1_ひこうき雲.json in Resources */,
+				26ADF1012580A97200ECC0E9 /* 1_ひこうき雲.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

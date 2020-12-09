@@ -26,7 +26,7 @@ public class Parser{
     // MARK: - Parsing props
     
     public internal(set) var dataFormatD: AVAudioFormat?
-    public internal(set) var packetsX = [Data]()
+    public internal(set) var packetsX = [(Data, AudioStreamPacketDescription?)]()
   
     
     // MARK: - Properties
@@ -78,19 +78,36 @@ public class Parser{
         let format = dataFormat.streamDescription.pointee
         let bytesPerPacket = Int(format.mBytesPerPacket)
         
-        for i in 0 ..< Int(numPacketsToRead) {
+        var one: UInt32 = 1
+        var position: Int64 = 0
+        while true{
             
-            var packetSize = UInt32(bytesPerPacket)
+            var data = UnsafeMutableRawPointer.allocate(byteCount: 2, alignment: 0)
+            var packetDescs: UnsafeMutablePointer<AudioStreamPacketDescription>?
+            // read audio data from file into supplied buffer
+            var numBytes: UInt32 = 0
+
+            Utility.check(error: AudioFileReadPacketData(playbackFile!,              // AudioFileID
+                                                         false,                                     // use cache?
+                                                         &numBytes,                                 // initially - buffer capacity, after - bytes actually read
+                                                         packetDescs,                // pointer to an array of PacketDescriptors
+                                                         position,             // index of first packet to be read
+                                                         &one,                                 // number of packets
+                                                         data),          // output buffer
+                          operation: "AudioFileReadPacketData failed")
+
+            // enqueue buffer into the Audio Queue
+            // if nPackets == 0 it means we are EOF (all data has been read from file)
+            if one > 0 {
+                position += Int64(one)
                 
-            let packetStart = Int64(i * bytesPerPacket)
-            let dataPt: UnsafeMutableRawPointer = malloc(MemoryLayout<UInt8>.size * bytesPerPacket)
-            AudioFileReadBytes(file, false, packetStart, &packetSize, dataPt)
-            let startPt = dataPt.bindMemory(to: UInt8.self, capacity: bytesPerPacket)
-            let buffer = UnsafeBufferPointer(start: startPt, count: bytesPerPacket)
-            let array = Array(buffer)
-            packetsX.append(Data(array))
+            } else {
+                break
+            }
+            
+            
         }
-   
+        
     }
 
     
