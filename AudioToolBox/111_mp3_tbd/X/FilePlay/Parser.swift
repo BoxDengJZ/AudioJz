@@ -26,7 +26,7 @@ public class Parser{
     // MARK: - Parsing props
     
     public internal(set) var dataFormatD: AVAudioFormat?
-    public internal(set) var packetsX = [(Data, AudioStreamPacketDescription?)]()
+    public internal(set) var packetsX = [Data]()
   
     
     // MARK: - Properties
@@ -101,13 +101,15 @@ public class Parser{
             if one > 0 {
                 position += Int64(one)
                 
-            } else {
-                break
-            }
-            
-            
+            let packetStart = Int64(i * bytesPerPacket)
+            let dataPt: UnsafeMutableRawPointer = malloc(MemoryLayout<UInt8>.size * bytesPerPacket)
+            AudioFileReadBytes(file, false, packetStart, &packetSize, dataPt)
+            let startPt = dataPt.bindMemory(to: UInt8.self, capacity: bytesPerPacket)
+            let buffer = UnsafeBufferPointer(start: startPt, count: bytesPerPacket)
+            let array = Array(buffer)
+            packetsX.append(Data(array))
         }
-        
+   
     }
 
     
