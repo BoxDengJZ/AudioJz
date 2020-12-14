@@ -5,8 +5,17 @@ import AVFoundation
 extension FormatConverter {
     // MARK: - private helper functions
 
+    
+    
+    
+    // PCM input, compressed output
+    
+    
     // The AVFoundation way. This method doesn't handle compressed input - only compressed output.
-    internal func convertAsset(completionHandler: FormatConverterCallback? = nil) {
+    
+    
+    internal
+    func convertAsset(completionHandler: FormatConverterCallback? = nil) {
         guard let inputURL = self.inputURL else {
             completionHandler?(createError(message: "Input file can't be nil."))
             return
@@ -204,8 +213,17 @@ extension FormatConverter {
         }) // requestMediaDataWhenReady
     }
 
+    
+    
+    
+    
+    
+    
     // Example of the most simplistic AVFoundation conversion.
+    
     // With this approach you can't really specify any settings other than the limited presets.
+    
+    
     internal func convertCompressed(completionHandler: FormatConverterCallback? = nil) {
         guard let inputURL = self.inputURL else {
             completionHandler?(createError(message: "Input file can't be nil."))
@@ -229,6 +247,17 @@ extension FormatConverter {
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // Currently, as of 2017, if you want to convert from a compressed
     // format to a pcm one, you still have to hit CoreAudio
     internal func convertToPCM(completionHandler: FormatConverterCallback? = nil) {

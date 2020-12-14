@@ -156,6 +156,11 @@ open class FormatConverter: NSObject {
             convertCompressed(completionHandler: completionHandler)
 
         } else if !isCompressed(url: outputURL) {
+            
+            // Compressed input , PCM output
+            // PCM input , PCM output
+            
+            
             // PCM output
             convertToPCM(completionHandler: completionHandler)
 
