@@ -149,7 +149,7 @@ extension FormatConverter {
         reader.add(readerOutput)
 
         if !writer.startWriting() {
-            print("Failed to start writing. Error:", writer.error?.localizedDescription)
+            print("Failed to start writing. Error:", writer.error?.localizedDescription ?? "")
             completionHandler?(writer.error)
             return
         }
@@ -157,7 +157,7 @@ extension FormatConverter {
         writer.startSession(atSourceTime: CMTime.zero)
 
         if !reader.startReading() {
-            print("Failed to start reading. Error:", reader.error?.localizedDescription)
+            print("Failed to start reading. Error:", reader.error?.localizedDescription ?? "")
             completionHandler?(reader.error)
             return
         }
@@ -178,7 +178,7 @@ extension FormatConverter {
 
                     switch reader.status {
                     case .failed:
-                        print("Conversion failed with error", reader.error)
+                        print("Conversion failed with error", reader.error ?? "")
                         writer.cancelWriting()
                         completionHandler?(reader.error)
                     case .cancelled:

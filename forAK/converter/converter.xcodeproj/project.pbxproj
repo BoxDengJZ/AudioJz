@@ -15,6 +15,7 @@
 		26321DDD2587411C003587E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26321DDB2587411C003587E9 /* LaunchScreen.storyboard */; };
 		26321E092587428A003587E9 /* FormatConverter+Processing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26321E0725874289003587E9 /* FormatConverter+Processing.swift */; };
 		26321E0A2587428A003587E9 /* FormatConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26321E0825874289003587E9 /* FormatConverter.swift */; };
+		26321E13258748E0003587E9 /* 1_Le Papillon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26321E12258748E0003587E9 /* 1_Le Papillon.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		26321DDE2587411C003587E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26321E0725874289003587E9 /* FormatConverter+Processing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormatConverter+Processing.swift"; sourceTree = "<group>"; };
 		26321E0825874289003587E9 /* FormatConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatConverter.swift; sourceTree = "<group>"; };
+		26321E12258748E0003587E9 /* 1_Le Papillon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_Le Papillon.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_Le Papillon.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		26321DCF25874119003587E9 /* converter */ = {
 			isa = PBXGroup;
 			children = (
+				26321E0B25874699003587E9 /* src */,
 				26321E0625874289003587E9 /* converter */,
 				26321DD025874119003587E9 /* AppDelegate.swift */,
 				26321DD225874119003587E9 /* SceneDelegate.swift */,
@@ -92,6 +95,14 @@
 				26321E0825874289003587E9 /* FormatConverter.swift */,
 			);
 			path = converter;
+			sourceTree = "<group>";
+		};
+		26321E0B25874699003587E9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				26321E12258748E0003587E9 /* 1_Le Papillon.mp3 */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 				26321DDD2587411C003587E9 /* LaunchScreen.storyboard in Resources */,
 				26321DDA2587411C003587E9 /* Assets.xcassets in Resources */,
 				26321DD825874119003587E9 /* Main.storyboard in Resources */,
+				26321E13258748E0003587E9 /* 1_Le Papillon.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
