@@ -86,5 +86,36 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
+    
+    @IBAction func mp3ToM4a(_ sender: Any) {
+        
+        
+        let dir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        guard let source = Bundle.main.url(forResource: "1_Le Papillon", withExtension: "mp3") else{
+            return
+        }
+        
+        var options = FormatConverter.Options()
+        // any options left nil will assume the value of the input file
+        options.format = "m4a"
+
+        let outputUrl = URL(fileURLWithPath: dir + "/two.m4a")
+        let converter = FormatConverter(inputURL: source, outputURL: outputUrl, options: options)
+        print("dir: \n\(dir)")
+        converter.start { (error) in
+            if let err = error{
+                print(err)
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+    }
 }
 

@@ -23,8 +23,19 @@ open class FormatConverter: NSObject {
     public typealias FormatConverterCallback = (_ error: Error?) -> Void
 
     /// Formats that this class can write
+    
+    // 里面 m4a 是压缩格式，caf 是混合格式
+    
+    // wav 是非压缩格式
+    
     public static let outputFormats = ["wav", "aif", "caf", "m4a"]
 
+    
+    
+    //  aac 压缩格式，音乐的保真性好，压缩率高
+    
+    //  aac 压缩格式，一般用于 m4a 中， 也可以用于 caf 格式中
+    
     /// Formats that this class can read
     public static let inputFormats = FormatConverter.outputFormats + [
         "mp3",

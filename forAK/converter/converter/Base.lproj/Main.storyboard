@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="KZs-eo-mDJ">
-                                <rect key="frame" x="138.5" y="379" width="137" height="148"/>
+                                <rect key="frame" x="136" y="328.5" width="142" height="249"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ4-ah-CgP">
-                                        <rect key="frame" x="0.0" y="0.0" width="137" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="47"/>
                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="25"/>
                                         <state key="normal" title="mp3 to wav"/>
                                         <connections>
@@ -28,11 +28,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkE-zf-hAb">
-                                        <rect key="frame" x="0.0" y="101" width="137" height="47"/>
+                                        <rect key="frame" x="0.0" y="101" width="142" height="47"/>
                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="25"/>
                                         <state key="normal" title="wav to m4a"/>
                                         <connections>
                                             <action selector="wavToM4a:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LJR-Gg-NTE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9U-rB-JWI">
+                                        <rect key="frame" x="0.0" y="202" width="142" height="47"/>
+                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="25"/>
+                                        <state key="normal" title="mp3 to m4a"/>
+                                        <connections>
+                                            <action selector="mp3ToM4a:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bjs-rt-zpY"/>
                                         </connections>
                                     </button>
                                 </subviews>
