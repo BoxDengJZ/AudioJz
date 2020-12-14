@@ -392,12 +392,13 @@ extension FormatConverter {
             return
         }
 
+        // 这一行代码，真实神来之笔
         error = ExtAudioFileSetProperty(inputFile,
                                         kExtAudioFileProperty_ClientDataFormat,
                                         thePropertySize,
                                         &dstFormat)
         if error != noErr {
-            completionHandler?(createError(message: "Unable to set data format on output file."))
+            completionHandler?(createError(message: "Unable to set （ data format on output file.） "))
             return
         }
 
@@ -406,7 +407,7 @@ extension FormatConverter {
                                         thePropertySize,
                                         &dstFormat)
         if error != noErr {
-            completionHandler?(createError(message: "Unable to set the output file data format."))
+            completionHandler?(createError(message: "Unable to set （ the output file data format.） "))
             return
         }
         let bufferByteSize: UInt32 = 32_768
