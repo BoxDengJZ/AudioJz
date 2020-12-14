@@ -223,7 +223,7 @@ extension FormatConverter {
     
     // With this approach you can't really specify any settings other than the limited presets.
     
-    
+    // Compressed input and output
     internal func convertCompressed(completionHandler: FormatConverterCallback? = nil) {
         guard let inputURL = self.inputURL else {
             completionHandler?(createError(message: "Input file can't be nil."))
@@ -254,7 +254,11 @@ extension FormatConverter {
     
     
     
+    // Compressed input , PCM output
+    // PCM input , PCM output
     
+    
+    // PCM output
     
     
     
