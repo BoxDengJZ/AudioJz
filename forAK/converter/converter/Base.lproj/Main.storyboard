@@ -30,7 +30,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkE-zf-hAb">
                                         <rect key="frame" x="0.0" y="101" width="137" height="47"/>
                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="25"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="wav to m4a"/>
+                                        <connections>
+                                            <action selector="wavToM4a:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LJR-Gg-NTE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

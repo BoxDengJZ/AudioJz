@@ -49,5 +49,42 @@ class ViewController: UIViewController {
     
     
 
+    
+    
+    
+    
+    
+    
+    @IBAction func wavToM4a(_ sender: Any) {
+        
+        
+        let dir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let source = URL(fileURLWithPath: dir + "/one.wav")
+        
+        guard FileManager.default.fileExists(atPath: source.path) else {
+            print("wav 文件不存在，请点击上一步按钮  /n 点击上一步按钮,还不行，请添加自己的 mp3 文件")
+            return
+        }
+        var options = FormatConverter.Options()
+        // any options left nil will assume the value of the input file
+        options.format = "m4a"
+
+        let outputUrl = URL(fileURLWithPath: dir + "/one.m4a")
+        let converter = FormatConverter(inputURL: source, outputURL: outputUrl, options: options)
+        
+        converter.start { (error) in
+            if let err = error{
+                print(err)
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+    }
+    
 }
 
