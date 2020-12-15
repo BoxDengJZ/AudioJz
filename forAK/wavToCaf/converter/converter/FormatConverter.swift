@@ -162,11 +162,7 @@ open class FormatConverter: NSObject {
         }
 
         // Format checks are necessary as AVAssetReader has opinions about compressed audio for some reason
-        if isCompressed(url: inputURL), isCompressed(url: outputURL) {
-            // Compressed input and output
-            convertCompressed(completionHandler: completionHandler)
-
-        } else if !isCompressed(url: outputURL) {
+        if !isCompressed(url: outputURL) {
             
             // Compressed input , PCM output
             // PCM input , PCM output
@@ -175,9 +171,6 @@ open class FormatConverter: NSObject {
             // PCM output
             convertToPCM(completionHandler: completionHandler)
 
-        } else {
-            // PCM input, compressed output
-            convertAsset(completionHandler: completionHandler)
         }
     }
 }
