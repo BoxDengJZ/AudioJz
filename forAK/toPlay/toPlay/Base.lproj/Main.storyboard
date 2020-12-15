@@ -26,14 +26,26 @@
                                     <action selector="toPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QuL-W0-0Ih"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音频时长: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1x-Fu-2eX">
+                                <rect key="frame" x="164" y="294" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="d1x-Fu-2eX" firstAttribute="centerX" secondItem="nzW-l5-f1J" secondAttribute="centerX" id="H02-BF-49X"/>
                             <constraint firstItem="nzW-l5-f1J" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="M2e-rI-Szs"/>
                             <constraint firstItem="nzW-l5-f1J" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="a3X-SW-jem"/>
+                            <constraint firstItem="nzW-l5-f1J" firstAttribute="top" secondItem="d1x-Fu-2eX" secondAttribute="bottom" constant="120" id="ge5-aG-teP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lengthLabel" destination="d1x-Fu-2eX" id="VRD-m6-Ouv"/>
+                        <outlet property="playBtn" destination="nzW-l5-f1J" id="YRr-DN-gaA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
