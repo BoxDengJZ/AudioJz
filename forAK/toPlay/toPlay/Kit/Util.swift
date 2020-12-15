@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+import AVFoundation
 
 /// Anything that can hold a value (strings, arrays, etc)
 public protocol Occupiable {
@@ -39,4 +39,27 @@ extension ClosedRange {
     public func clamp(_ value: Bound) -> Bound {
         return Swift.min(Swift.max(value, lowerBound), upperBound)
     }
+}
+
+
+
+
+extension AVAudioTime {
+
+    /// An AVAudioTime with a valid hostTime representing now.
+    public static func now() -> AVAudioTime {
+        return AVAudioTime(hostTime: mach_absolute_time())
+    }
+
+}
+
+
+
+extension AVAudioFile {
+    /// Duration in seconds
+    public var duration: TimeInterval {
+        Double(length) / fileFormat.sampleRate
+    }
+
+
 }
