@@ -66,17 +66,10 @@ extension FormatConverter {
         }
         let outputSampleRate = options?.sampleRate ?? srcFormat.mSampleRate
         let outputChannels = options?.channels ?? srcFormat.mChannelsPerFrame
-        var outputBitRate = options?.bitDepth ?? srcFormat.mBitsPerChannel
+        let outputBitRate = options?.bitDepth ?? srcFormat.mBitsPerChannel
 
-        var outputBytesPerFrame = outputBitRate * outputChannels / 8
-        var outputBytesPerPacket = options?.bitDepth == nil ? srcFormat.mBytesPerPacket : outputBytesPerFrame
-
-        // outputBitRate == 0 : in the input file this indicates a compressed format such as mp3
-        if outputBitRate == 0 {
-            outputBitRate = 16
-            outputBytesPerPacket = 2 * outputChannels
-            outputBytesPerFrame = 2 * outputChannels
-        }
+        let outputBytesPerFrame = outputBitRate * outputChannels / 8
+        let outputBytesPerPacket = options?.bitDepth == nil ? srcFormat.mBytesPerPacket : outputBytesPerFrame
 
         dstFormat.mSampleRate = outputSampleRate
         dstFormat.mFormatID = formatKey
