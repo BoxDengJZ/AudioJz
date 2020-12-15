@@ -31,9 +31,6 @@ extension FormatConverter {
             return
         }
 
-        let inputFormat = inputURL.pathExtension.lowercased()
-        let outputFormat = options?.format ?? outputURL.pathExtension.lowercased()
-
         print("convertToPCM() to \(outputURL)")
 
         let format: AudioFileTypeID = kAudioFileCAFType
@@ -70,21 +67,6 @@ extension FormatConverter {
         let outputSampleRate = options?.sampleRate ?? srcFormat.mSampleRate
         let outputChannels = options?.channels ?? srcFormat.mChannelsPerFrame
         var outputBitRate = options?.bitDepth ?? srcFormat.mBitsPerChannel
-
-        guard inputFormat != outputFormat ||
-            outputSampleRate != srcFormat.mSampleRate ||
-            outputChannels != srcFormat.mChannelsPerFrame ||
-            outputBitRate != srcFormat.mBitsPerChannel else {
-            print("No conversion is needed, formats are the same. Copying to", outputURL)
-            // just copy it?
-            do {
-                try FileManager.default.copyItem(at: inputURL, to: outputURL)
-                completionHandler?(nil)
-            } catch let err as NSError {
-                print(err)
-            }
-            return
-        }
 
         var outputBytesPerFrame = outputBitRate * outputChannels / 8
         var outputBytesPerPacket = options?.bitDepth == nil ? srcFormat.mBytesPerPacket : outputBytesPerFrame
