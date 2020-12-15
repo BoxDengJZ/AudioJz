@@ -23,6 +23,7 @@
 		26CA31BA2588A9E90090C8C2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31B92588A9E90090C8C2 /* Util.swift */; };
 		26CA31BD2588AFC00090C8C2 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31BC2588AFC00090C8C2 /* AudioPlayer.swift */; };
 		26CA31C52588B32D0090C8C2 /* 1_Le Papillon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CA31C42588B32D0090C8C2 /* 1_Le Papillon.mp3 */; };
+		26CA31C82588E0610090C8C2 /* 666.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26CA31C72588E0610090C8C2 /* 666.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		26CA31B92588A9E90090C8C2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		26CA31BC2588AFC00090C8C2 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		26CA31C42588B32D0090C8C2 /* 1_Le Papillon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_Le Papillon.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_Le Papillon.mp3"; sourceTree = "<group>"; };
+		26CA31C72588E0610090C8C2 /* 666.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 666.wav; path = ../../../../AudioToolBox/0_wav/X/src/666.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		26CA31BF2588B18C0090C8C2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				26CA31C72588E0610090C8C2 /* 666.wav */,
 				26CA31C42588B32D0090C8C2 /* 1_Le Papillon.mp3 */,
 			);
 			path = src;
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CA319B2588A3840090C8C2 /* LaunchScreen.storyboard in Resources */,
+				26CA31C82588E0610090C8C2 /* 666.wav in Resources */,
 				26CA31982588A3840090C8C2 /* Assets.xcassets in Resources */,
 				26CA31962588A3810090C8C2 /* Main.storyboard in Resources */,
 				26CA31C52588B32D0090C8C2 /* 1_Le Papillon.mp3 in Resources */,

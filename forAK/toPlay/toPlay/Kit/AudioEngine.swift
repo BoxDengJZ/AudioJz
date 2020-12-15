@@ -69,7 +69,6 @@ public class AudioEngine {
                 // create the on demand mixer if needed
                 createEngineMixer()
                 mainMixerNode?.addInput(node)
-                mainMixerNode?.makeAVConnections()
             }
 
             if wasRunning { try? start() }
