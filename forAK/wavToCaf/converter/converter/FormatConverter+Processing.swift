@@ -36,20 +36,8 @@ extension FormatConverter {
 
         print("convertToPCM() to \(outputURL)")
 
-        var format: AudioFileTypeID
+        let format: AudioFileTypeID = kAudioFileCAFType
         let formatKey: AudioFormatID = kAudioFormatLinearPCM
-
-        switch outputFormat {
-        case "aif":
-            format = kAudioFileAIFFType
-        case "wav":
-            format = kAudioFileWAVEType
-        case "caf":
-            format = kAudioFileCAFType
-        default:
-            completionHandler?(createError(message: "Output file must be caf, wav or aif."))
-            return
-        }
 
         var error = noErr
         var destinationFile: ExtAudioFileRef?
@@ -116,15 +104,6 @@ extension FormatConverter {
         dstFormat.mBytesPerFrame = outputBytesPerFrame
         dstFormat.mFramesPerPacket = 1
         dstFormat.mFormatFlags = kLinearPCMFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger
-
-        if format == kAudioFileAIFFType {
-            dstFormat.mFormatFlags = dstFormat.mFormatFlags | kLinearPCMFormatFlagIsBigEndian
-        }
-
-        if format == kAudioFileWAVEType && dstFormat.mBitsPerChannel == 8 {
-            // if is 8 BIT PER CHANNEL, remove kAudioFormatFlagIsSignedInteger
-            dstFormat.mFormatFlags &= ~kAudioFormatFlagIsSignedInteger
-        }
 
         // Create destination file
         error = ExtAudioFileCreateWithURL(outputURL as CFURL,
