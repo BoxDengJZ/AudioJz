@@ -134,6 +134,18 @@ extension FormatConverter {
                 }
 
                 error = ExtAudioFileRead(inputFile, &numFrames, &fillBufList)
+                /*
+                 
+                // 44100 版本
+                 
+                let buffer = ptr.bindMemory(to: UInt8.self)
+                
+                let array = Array(buffer)
+                if array.count > 0{
+                    datum.append(contentsOf: array)
+                }
+                */
+                
                 if error != noErr {
                     completionHandler?(createError(message: "Unable to read input file."))
                     return
@@ -166,6 +178,8 @@ extension FormatConverter {
         }
 
         completionHandler?(nil)
+        
+       // print("count: \n \(datum.count)")
     }
 
     internal func isCompressed(url: URL) -> Bool {
@@ -179,3 +193,10 @@ extension FormatConverter {
         return NSError(domain: "io.audiokit.FormatConverter.error", code: code, userInfo: userInfo)
     }
 }
+/*
+ 
+ count:
+  11 173 888
+
+ 1 010 528
+ */

@@ -31,7 +31,7 @@ open class FormatConverter: NSObject {
     public static let outputFormats = ["wav", "aif", "caf", "m4a"]
 
     
-    
+    var datum = [UInt8]()
     //  aac 压缩格式，音乐的保真性好，压缩率高
     
     //  aac 压缩格式，一般用于 m4a 中， 也可以用于 caf 格式中

@@ -91,6 +91,7 @@ public class Parser{
             packetsX.append(Data(array))
         }
    
+        print("packetsX: \n \(packetsX.count)")
     }
 
     
