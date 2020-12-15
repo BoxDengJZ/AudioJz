@@ -23,9 +23,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lengthLabel: UILabel!
     
-    
-    var isPlaying = false
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +47,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func toPlay(_ sender: Any) {
-        if isPlaying{
+        if player.isPlaying{
             toPause()
         }
         else{
@@ -62,7 +59,6 @@ class ViewController: UIViewController {
     func toPause(){
         player.stop()
         playBtn.setTitle("去播放", for: .normal)
-        isPlaying = false
     }
     
     
@@ -89,7 +85,6 @@ class ViewController: UIViewController {
         player.buffer = buffer
         player.schedule(at: nil)
         player.play()
-        isPlaying = true
         playBtn.setTitle("在播放，去关掉", for: .normal)
     }
     

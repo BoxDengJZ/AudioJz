@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         do {
-            Settings.bufferLength = .short
+            Settings.bufferLength = .longest
             try AVAudioSession.sharedInstance().setPreferredIOBufferDuration(Settings.bufferLength.duration)
             try AVAudioSession.sharedInstance().setCategory(.playAndRecord,
                                                             options: [.defaultToSpeaker, .mixWithOthers])

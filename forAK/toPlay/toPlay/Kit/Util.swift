@@ -58,7 +58,9 @@ extension AVAudioTime {
 extension AVAudioFile {
     /// Duration in seconds
     public var duration: TimeInterval {
-        Double(length) / fileFormat.sampleRate
+        print("length: \(length)")
+        print("sampleRate: \(fileFormat.sampleRate)")
+        return Double(length) / fileFormat.sampleRate
     }
 
 
