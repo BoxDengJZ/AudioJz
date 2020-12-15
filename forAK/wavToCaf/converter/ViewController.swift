@@ -57,3 +57,17 @@ class ViewController: UIViewController {
    
 }
 
+
+
+/*
+ 
+ 
+ [caf @ 0x7f824300fc00] Estimating duration from bitrate, this may be inaccurate
+ Input #0, caf, from 'one.caf':
+   Duration: 00:01:03.16, start: 0.000000, bitrate: 1411 kb/s
+     Stream #0:0: Audio: pcm_s32le (lpcm / 0x6D63706C), 44100 Hz, 1 channels, s32, 1411 kb/s
+
+ }
+ 
+ 
+ */

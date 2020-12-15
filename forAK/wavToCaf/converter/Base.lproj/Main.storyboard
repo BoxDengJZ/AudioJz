@@ -24,7 +24,7 @@
                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="25"/>
                                         <state key="normal" title="wav to caf"/>
                                         <connections>
-                                            <action selector="mp3ToWav:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kWh-AR-Jpf"/>
+                                            <action selector="wavToCaf:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SbL-F8-IIb"/>
                                         </connections>
                                     </button>
                                 </subviews>
