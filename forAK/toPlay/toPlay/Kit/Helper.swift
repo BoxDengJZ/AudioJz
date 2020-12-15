@@ -77,12 +77,6 @@ public class NodeParameter {
 
     private var parameterObserverToken: AUParameterObserverToken?
 
-    /// Stop calling the function passed to `recordAutomation`
-    public func stopRecording() {
-        if let token = parameterObserverToken {
-            parameter.removeParameterObserver(token)
-        }
-    }
 
     // MARK: Lifecycle
 
@@ -93,24 +87,6 @@ public class NodeParameter {
         assert(parameter != nil)
     }
     
-    
-
-    /// Sends a .touch event to the parameter automation observer, beginning automation recording if
-    /// enabled in ParameterAutomation.
-    /// A value may be passed as the initial automation value. The current value is used if none is passed.
-    /// - Parameter value: Initial value
-    public func beginTouch(value: AUValue? = nil) {
-        guard let value = value ?? parameter?.value else { return }
-        parameter?.setValue(value, originator: nil, atHostTime: 0, eventType: .touch)
-    }
-
-    /// Sends a .release event to the parameter observation observer, ending any automation recording.
-    /// A value may be passed as the final automation value. The current value is used if none is passed.
-    /// - Parameter value: Final value
-    public func endTouch(value: AUValue? = nil) {
-        guard let value = value ?? parameter?.value else { return }
-        parameter?.setValue(value, originator: nil, atHostTime: 0, eventType: .release)
-    }
 }
 
 

@@ -160,7 +160,6 @@
             }
 
             if Settings.audioInputEnabled {
-                #if !os(tvOS)
                     if #available(iOS 10.0, *) {
                         // Blueooth Options
                         // .allowBluetooth can only be set with the categories .playAndRecord and .record
@@ -192,8 +191,6 @@
                     if Settings.defaultToSpeaker {
                         options = options.union(.defaultToSpeaker)
                     }
-
-                #endif
             }
 
             return options

@@ -109,23 +109,6 @@ open class Node {
 
 
 
-
-/// Protocol to allow nodes to be tapped using AudioKit's tapping system (not AVAudioEngine's installTap)
-public protocol Tappable {
-    /// Install tap on this node
-    func installTap()
-    /// Remove tap on this node
-    func removeTap()
-    /// Get the latest data for this node
-    /// - Parameter sampleCount: Number of samples to retrieve
-    /// - Returns: Float channel data for two channels
-    func getTapData(sampleCount: Int) -> FloatChannelData
-}
-
-
-
-
-
 /// Protocol for dictating that a node can be in a started or stopped state
 public protocol Toggleable {
     /// Tells whether the node is processing (ie. started, playing, or active)
@@ -137,6 +120,9 @@ public protocol Toggleable {
     /// Function to stop or bypass the node, both are equivalent
     func stop()
 }
+
+
+
 
 /// Default functions for nodes that conform to Toggleable
 public extension Toggleable {
