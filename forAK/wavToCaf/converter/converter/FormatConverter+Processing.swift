@@ -136,6 +136,10 @@ extension FormatConverter {
                 error = ExtAudioFileRead(inputFile, &numFrames, &fillBufList)
                 /*
                  
+                // 因为 ExtAudioFile， 读出的不是 src , 是 destination
+                 
+                 
+                 
                 // 44100 版本
                  
                 let buffer = ptr.bindMemory(to: UInt8.self)
