@@ -135,57 +135,7 @@ public class AudioEngine {
         avEngine.stop()
     }
 
-    /// Start testing for a specified total duration
-    /// - Parameter duration: Total duration of the entire test
-    /// - Returns: A buffer which you can append to
-    public func startTest(totalDuration duration: Double) -> AVAudioPCMBuffer {
-        let samples = Int(duration * Settings.sampleRate)
-
-        do {
-            avEngine.reset()
-            try avEngine.enableManualRenderingMode(.offline,
-                                                   format: Settings.audioFormat,
-                                                   maximumFrameCount: maximumFrameCount)
-            try start()
-        } catch let err {
-            print("🛑 Start Test Error: \(err)")
-        }
-
-        // Work around AVAudioEngine bug.
-        output?.initLastRenderTime()
-
-        return AVAudioPCMBuffer(
-            pcmFormat: avEngine.manualRenderingFormat,
-            frameCapacity: AVAudioFrameCount(samples))!
-    }
-
-    /// Render audio for a specific duration
-    /// - Parameter duration: Length of time to render for
-    /// - Returns: Buffer of rendered audio
-    public func render(duration: Double) -> AVAudioPCMBuffer {
-        let sampleCount = Int(duration * Settings.sampleRate)
-        let startSampleCount = Int(avEngine.manualRenderingSampleTime)
-
-        let buffer = AVAudioPCMBuffer(
-            pcmFormat: avEngine.manualRenderingFormat,
-            frameCapacity: AVAudioFrameCount(sampleCount))!
-
-        let tempBuffer = AVAudioPCMBuffer(
-            pcmFormat: avEngine.manualRenderingFormat,
-            frameCapacity: AVAudioFrameCount(maximumFrameCount))!
-
-        do {
-            while avEngine.manualRenderingSampleTime < sampleCount + startSampleCount {
-                let currentSampleCount = Int(avEngine.manualRenderingSampleTime)
-                let framesToRender = min(UInt32(sampleCount + startSampleCount - currentSampleCount), maximumFrameCount)
-                try avEngine.renderOffline(AVAudioFrameCount(framesToRender), to: tempBuffer)
-                buffer.append(tempBuffer)
-            }
-        } catch let err {
-            print("🛑 Could not render offline \(err)")
-        }
-        return buffer
-    }
+   
 
 
 

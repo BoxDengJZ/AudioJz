@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        player.isLooping = true
         engine.output = player
         do {
             try engine.start()
