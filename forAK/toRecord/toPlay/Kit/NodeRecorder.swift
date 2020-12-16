@@ -124,6 +124,7 @@ open class NodeRecorder: NSObject {
 
         if let path = internalAudioFile?.url.path, !FileManager.default.fileExists(atPath: path) {
             // record to new tmp file
+            print("path: \(path)")
             if let tmpFile = NodeRecorder.createTempFile() {
                 internalAudioFile = try AVAudioFile(forWriting: tmpFile.url,
                                                     settings: tmpFile.fileFormat.settings)

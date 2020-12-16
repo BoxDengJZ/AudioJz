@@ -39,11 +39,6 @@ class ViewController: UIViewController {
     }
 
     
-    
-    
-    
-    
-    
     @IBAction func tapToRecord(_ sender: Any) {
         if recorder != nil, recorder!.isRecording{
             toStop()
@@ -56,7 +51,8 @@ class ViewController: UIViewController {
     
     func toStop(){
         recorder?.stop()
-
+        recordBtn.setTitle("去录音", for: .normal)
+        
     }
     
     
@@ -68,12 +64,10 @@ class ViewController: UIViewController {
         } catch let err {
             print(err)
         }
+        recordBtn.setTitle("在录音，去关掉", for: .normal)
+        
     }
     
-    
-    
-    
-
 }
 
 
