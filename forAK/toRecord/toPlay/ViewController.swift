@@ -54,7 +54,13 @@ class ViewController: UIViewController {
     func toStop(){
         recorder?.stop()
         recordBtn.setTitle("去录音", for: .normal)
-        lengthLabel.text = "录音时长: kkk"
+        
+        let file = recorder?.audioFile
+
+        guard let f = file else {
+            return
+        }
+        lengthLabel.text = "录音时长是 \(f.duration.mmSS)"
     }
     
     

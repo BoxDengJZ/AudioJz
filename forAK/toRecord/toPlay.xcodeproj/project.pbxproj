@@ -19,7 +19,6 @@
 		26CA31AB2588A4710090C8C2 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31AA2588A4710090C8C2 /* Node.swift */; };
 		26CA31AE2588A5980090C8C2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31AD2588A5980090C8C2 /* Settings.swift */; };
 		26CA31B12588A5C90090C8C2 /* Settings+iOSVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31B02588A5C90090C8C2 /* Settings+iOSVariants.swift */; };
-		26CA31B42588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31B32588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift */; };
 		26CA31B72588A8BD0090C8C2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31B62588A8BD0090C8C2 /* Helper.swift */; };
 		26CA31BA2588A9E90090C8C2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31B92588A9E90090C8C2 /* Util.swift */; };
 		26CA31C52588B32D0090C8C2 /* 1_Le Papillon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CA31C42588B32D0090C8C2 /* 1_Le Papillon.mp3 */; };
@@ -41,7 +40,6 @@
 		26CA31AA2588A4710090C8C2 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		26CA31AD2588A5980090C8C2 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		26CA31B02588A5C90090C8C2 /* Settings+iOSVariants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Settings+iOSVariants.swift"; sourceTree = "<group>"; };
-		26CA31B32588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+Utilities.swift"; sourceTree = "<group>"; };
 		26CA31B62588A8BD0090C8C2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		26CA31B92588A9E90090C8C2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		26CA31C42588B32D0090C8C2 /* 1_Le Papillon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_Le Papillon.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_Le Papillon.mp3"; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				26905B8D25899EF40079A0AA /* NodeRecorder.swift */,
-				26CA31B32588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift */,
 				26CA31B02588A5C90090C8C2 /* Settings+iOSVariants.swift */,
 				26CA31AD2588A5980090C8C2 /* Settings.swift */,
 				26CA31AA2588A4710090C8C2 /* Node.swift */,
@@ -189,7 +186,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CA31BA2588A9E90090C8C2 /* Util.swift in Sources */,
-				26CA31B42588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift in Sources */,
 				26CA31A52588A3CB0090C8C2 /* AudioEngine.swift in Sources */,
 				26CA31A82588A4190090C8C2 /* Mixer.swift in Sources */,
 				26CA31932588A3810090C8C2 /* ViewController.swift in Sources */,
