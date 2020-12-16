@@ -181,35 +181,5 @@ open class NodeRecorder: NSObject {
         node.avAudioUnitOrNode.removeTap(onBus: bus)
     }
 
-    /// Reset the AVAudioFile to clear previous recordings
-    public func reset() throws {
-        // Stop recording
-        if isRecording == true {
-            stop()
-        }
-
-        guard let internalAudioFile = internalAudioFile else { return }
-
-        // Delete the physical recording file
-        let fileManager = FileManager.default
-        let settings = internalAudioFile.fileFormat.settings
-        let url = internalAudioFile.url
-
-        do {
-            if let path = audioFile?.url.path {
-                try fileManager.removeItem(atPath: path)
-            }
-        } catch let error as NSError {
-            print("Error: Can't delete" + (audioFile?.url.lastPathComponent ?? "nil") + error.localizedDescription)
-        }
-
-        // Creates a blank new file
-        do {
-            self.internalAudioFile = try AVAudioFile(forWriting: url, settings: settings)
-            print("File has been cleared")
-        } catch let error as NSError {
-            print("Error: Can't record to" + url.lastPathComponent)
-            throw error
-        }
-    }
+   
 }

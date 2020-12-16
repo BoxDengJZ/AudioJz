@@ -15,15 +15,6 @@ public class Mixer: Node, Toggleable {
         }
     }
 
-    /// Output Pan (Default 0 = center)
-    public var pan: AUValue = 1.0 {
-        didSet {
-            pan = min(pan, 1)
-            pan = max(pan, -1)
-            mixerAU.pan = pan
-        }
-    }
-
     fileprivate var lastKnownVolume: AUValue = 1.0
 
     /// Determine if the mixer is serving any output or if it is stopped.
