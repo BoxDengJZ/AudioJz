@@ -19,11 +19,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzW-l5-f1J">
                                 <rect key="frame" x="181.5" y="435" width="51" height="36"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
-                                <state key="normal" title="去播放">
+                                <state key="normal" title="去录音">
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="toPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QuL-W0-0Ih"/>
+                                    <action selector="tapToRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jKA-gX-IiE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音频时长: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1x-Fu-2eX">
@@ -44,7 +44,7 @@
                     </view>
                     <connections>
                         <outlet property="lengthLabel" destination="d1x-Fu-2eX" id="VRD-m6-Ouv"/>
-                        <outlet property="playBtn" destination="nzW-l5-f1J" id="YRr-DN-gaA"/>
+                        <outlet property="recordBtn" destination="nzW-l5-f1J" id="pGJ-M0-fx7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

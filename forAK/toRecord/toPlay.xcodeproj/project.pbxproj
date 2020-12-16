@@ -21,7 +21,6 @@
 		26CA31B42588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31B32588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift */; };
 		26CA31B72588A8BD0090C8C2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31B62588A8BD0090C8C2 /* Helper.swift */; };
 		26CA31BA2588A9E90090C8C2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31B92588A9E90090C8C2 /* Util.swift */; };
-		26CA31BD2588AFC00090C8C2 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31BC2588AFC00090C8C2 /* AudioPlayer.swift */; };
 		26CA31C52588B32D0090C8C2 /* 1_Le Papillon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CA31C42588B32D0090C8C2 /* 1_Le Papillon.mp3 */; };
 		26CA31C82588E0610090C8C2 /* 666.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26CA31C72588E0610090C8C2 /* 666.wav */; };
 /* End PBXBuildFile section */
@@ -43,7 +42,6 @@
 		26CA31B32588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+Utilities.swift"; sourceTree = "<group>"; };
 		26CA31B62588A8BD0090C8C2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		26CA31B92588A9E90090C8C2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		26CA31BC2588AFC00090C8C2 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		26CA31C42588B32D0090C8C2 /* 1_Le Papillon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_Le Papillon.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_Le Papillon.mp3"; sourceTree = "<group>"; };
 		26CA31C72588E0610090C8C2 /* 666.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 666.wav; path = ../../../../AudioToolBox/0_wav/X/src/666.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +92,6 @@
 		26CA31A32588A3CB0090C8C2 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
-				26CA31BC2588AFC00090C8C2 /* AudioPlayer.swift */,
 				26CA31B32588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift */,
 				26CA31B02588A5C90090C8C2 /* Settings+iOSVariants.swift */,
 				26CA31AD2588A5980090C8C2 /* Settings.swift */,
@@ -199,7 +196,6 @@
 				26CA31B72588A8BD0090C8C2 /* Helper.swift in Sources */,
 				26CA318F2588A3810090C8C2 /* AppDelegate.swift in Sources */,
 				26CA31912588A3810090C8C2 /* SceneDelegate.swift in Sources */,
-				26CA31BD2588AFC00090C8C2 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
