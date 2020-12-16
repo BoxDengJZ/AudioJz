@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     var recorder: NodeRecorder?
     
+    let mixer = Mixer()
+    
     @IBOutlet weak var recordBtn: UIButton!
     
     @IBOutlet weak var lengthLabel: UILabel!
@@ -30,7 +32,7 @@ class ViewController: UIViewController {
         } catch let err {
             fatalError("\(err)")
         }
-        
+        engine.output = mixer
         do {
             try engine.start()
         } catch {
@@ -52,7 +54,7 @@ class ViewController: UIViewController {
     func toStop(){
         recorder?.stop()
         recordBtn.setTitle("去录音", for: .normal)
-        
+        lengthLabel.text = "录音时长: kkk"
     }
     
     
@@ -65,7 +67,7 @@ class ViewController: UIViewController {
             print(err)
         }
         recordBtn.setTitle("在录音，去关掉", for: .normal)
-        
+        lengthLabel.text = "录音时长: -"
     }
     
 }
