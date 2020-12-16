@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     let engine = AudioEngine()
 
-    
+    var recorder: NodeRecorder?
     
     @IBOutlet weak var recordBtn: UIButton!
     
@@ -27,15 +27,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
-//        do {
-//            try engine.start()
-//        } catch {
-//            print("AudioKit did not start! \(error)")
-//        }
-//
-//
-//
+
+        guard let input = engine.input else {
+            fatalError()
+        }
+
+        do {
+            recorder = try NodeRecorder(node: input)
+        } catch let err {
+            fatalError("\(err)")
+        }
+        
+        
+        
+        
+        
+        do {
+            try engine.start()
+        } catch {
+            print("AudioKit did not start! \(error)")
+        }
+
+
+
  
     }
 

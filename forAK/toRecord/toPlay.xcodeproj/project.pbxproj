@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26905B8E25899EF40079A0AA /* NodeRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26905B8D25899EF40079A0AA /* NodeRecorder.swift */; };
 		26CA318F2588A3810090C8C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA318E2588A3810090C8C2 /* AppDelegate.swift */; };
 		26CA31912588A3810090C8C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31902588A3810090C8C2 /* SceneDelegate.swift */; };
 		26CA31932588A3810090C8C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA31922588A3810090C8C2 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26905B8D25899EF40079A0AA /* NodeRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeRecorder.swift; sourceTree = "<group>"; };
 		26CA318B2588A3810090C8C2 /* toPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CA318E2588A3810090C8C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CA31902588A3810090C8C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		26CA31A32588A3CB0090C8C2 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
+				26905B8D25899EF40079A0AA /* NodeRecorder.swift */,
 				26CA31B32588A7B00090C8C2 /* AVAudioPCMBuffer+Utilities.swift */,
 				26CA31B02588A5C90090C8C2 /* Settings+iOSVariants.swift */,
 				26CA31AD2588A5980090C8C2 /* Settings.swift */,
@@ -190,6 +193,7 @@
 				26CA31A52588A3CB0090C8C2 /* AudioEngine.swift in Sources */,
 				26CA31A82588A4190090C8C2 /* Mixer.swift in Sources */,
 				26CA31932588A3810090C8C2 /* ViewController.swift in Sources */,
+				26905B8E25899EF40079A0AA /* NodeRecorder.swift in Sources */,
 				26CA31AB2588A4710090C8C2 /* Node.swift in Sources */,
 				26CA31B12588A5C90090C8C2 /* Settings+iOSVariants.swift in Sources */,
 				26CA31AE2588A5980090C8C2 /* Settings.swift in Sources */,

@@ -41,6 +41,31 @@ public class AudioEngine {
     /// Empty initializer
     public init() {}
 
+    
+    /// Input node mixer
+    public class InputNode: Mixer {
+        var isNotConnected = true
+
+        func connect(to engine: AudioEngine) {
+            engine.avEngine.attach(avAudioNode)
+            engine.avEngine.connect(engine.avEngine.inputNode, to: avAudioNode, format: nil)
+        }
+    }
+    
+    let _input = InputNode()
+
+    /// Input for microphone or other device is created when this is accessed
+    public var input: InputNode?{
+
+        if _input.isNotConnected {
+            _input.connect(to: self)
+            _input.isNotConnected = false
+        }
+        return _input
+    }
+    
+    
+    
     /// Output node
     public var output: Node? {
         didSet {
