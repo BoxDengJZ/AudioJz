@@ -134,7 +134,7 @@ open class NodeRecorder: NSObject {
         isRecording = true
 
         // Note: if you install a tap on a bus that already has a tap it will crash your application.
-        print("⏺ Recording using format", internalAudioFile?.processingFormat.debugDescription)
+        print("⏺ Recording using format", internalAudioFile?.processingFormat.debugDescription ?? "")
 
         // note, format should be nil as per the documentation for installTap:
         // "If non-nil, attempts to apply this as the format of the specified output bus. This should

@@ -4,14 +4,10 @@
 //
 //  Created by Jz D on 2020/12/15.
 //
-
 import UIKit
-
 import AVFoundation
 
-
 class ViewController: UIViewController {
-    
     
     let engine = AudioEngine()
 
@@ -19,15 +15,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var recordBtn: UIButton!
     
-    
-    
     @IBOutlet weak var lengthLabel: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         guard let input = engine.input else {
             fatalError()
         }
@@ -38,19 +31,11 @@ class ViewController: UIViewController {
             fatalError("\(err)")
         }
         
-        
-        
-        
-        
         do {
             try engine.start()
         } catch {
             print("AudioKit did not start! \(error)")
         }
-
-
-
- 
     }
 
     
@@ -60,18 +45,29 @@ class ViewController: UIViewController {
     
     
     @IBAction func tapToRecord(_ sender: Any) {
-        
+        if recorder != nil, recorder!.isRecording{
+            toStop()
+        }
+        else{
+            toRecord()
+        }
     }
     
     
     func toStop(){
-        
+        recorder?.stop()
+
     }
     
     
     
     func toRecord(){
-        
+        NodeRecorder.removeTempFiles()
+        do {
+            try recorder?.record()
+        } catch let err {
+            print(err)
+        }
     }
     
     
