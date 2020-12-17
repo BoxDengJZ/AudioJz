@@ -67,8 +67,11 @@ open class Streamer: Streaming {
     public var sourceURL: URL? {
         didSet {
             
-            guard let url = sourceURL else { return }
-                    
+            guard let url = sourceURL else {
+                resetMusic()
+                return
+            }
+            
             var file: AVAudioFile?
             
             do {
@@ -171,7 +174,18 @@ open class Streamer: Streaming {
     
     // MARK: - Reset
     
+    func resetMusic(){
+        os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
+        
+        // Reset the playback state
+        stopDng()
+        
+   
+        duration = nil
+   
+        isFileSchedulingComplete = false
 
+    }
     
     // MARK: - Methods
     

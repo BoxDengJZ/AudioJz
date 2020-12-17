@@ -47,7 +47,7 @@ extension PlayerController: PlayerProgressProxy{
             }
             
         case .update(let val):
-            
+            break
             // 还是使用持久化好，
             
             // 直接使用控件，没有那么灵敏
@@ -59,7 +59,7 @@ extension PlayerController: PlayerProgressProxy{
             // 又影响播放时间，
             
             // 播放时间影响 progress bar,
-            update(metric: val)
+         //   update(metric: val)
         }
     }
     

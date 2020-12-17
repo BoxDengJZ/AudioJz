@@ -75,7 +75,7 @@ class PlayerController: UIViewController{
     
     lazy var showTipLabel: UILabel = {
         let l = UILabel()
-        l.font = UIFont.regular(ofSize: 18)
+        l.font = UIFont.regular(ofSize: 20)
         l.textColor = UIColor.magenta
         l.isHidden = false
         l.textAlignment = .center
@@ -138,7 +138,7 @@ class PlayerController: UIViewController{
     
         preparePlay()
 
-        
+        update(metric: 1)
         
         
     }
@@ -178,7 +178,7 @@ class PlayerController: UIViewController{
             m.height.equalTo(12)
             m.bottom.equalTo(progressV.snp.top)
         }
-        let leading: CGFloat = 80
+        let leading: CGFloat = 70
         
         showTipLabel.snp.makeConstraints { (m) in
             m.leading.equalToSuperview().offset(leading)
@@ -207,26 +207,10 @@ class PlayerController: UIViewController{
     }
     
     
-    func update(metric value: Float){
+    func update(metric idx: Int){
         let pie = pIntelliJ_std.list
-       
-        let val = Double(value)
-        var i = 0
-        for element in pie{
-            if val > element.time{
-                
-                // 这里有一个过滤
-                if currentIdx != i{
-                    currentIdx = i
-                    showTipLabel.text = element.sentence
-                }
-                break
-            }
-            else{
-                i += 1
-            }
-        }
-        
+        showTipLabel.text = pie[idx].sentence
+
         
     }
 }
