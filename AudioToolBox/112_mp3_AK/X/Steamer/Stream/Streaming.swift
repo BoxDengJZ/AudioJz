@@ -80,9 +80,6 @@ extension Streaming {
     }
     
     
-    var intervalD: Double{
-        Double(readBufferSize) * 0.5 / readFormat.sampleRate
-    }
     
     
 }

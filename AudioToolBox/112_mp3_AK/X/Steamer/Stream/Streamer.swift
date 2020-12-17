@@ -42,7 +42,7 @@ open class Streamer: Streaming {
         return currentTime + currentTimeOffset
     }
     
-    
+    var isReady = false
     
     public var delegate: StreamingDelegate?
     public internal(set) var duration: TimeInterval?
@@ -63,21 +63,34 @@ open class Streamer: Streaming {
             delegate?.streamer(dng: self, changedState: stateDeng)
         }
     }
-    
-    
-    var shutUp = AudioRecord()
-    
-    
+
     public var sourceURL: URL? {
         didSet {
-           
+            
+            guard let url = sourceURL else { return }
+                    
+            var file: AVAudioFile?
+            
+            do {
+                file = try AVAudioFile(forReading: url)
+            } catch {
+                print(error)
+            }
 
-    
+            guard let f = file else {
+                return
+            }
+            
+            let buffer = try! AVAudioPCMBuffer(file: f)
+            guard let piece = buffer?.extract(from: timeNode[1], to: timeNode[2]) else { return }
+            dataSource.append(contentsOf: [AVAudioPCMBuffer](repeating: piece, count: 40))
+
+            isReady = true
         }
     }
     
     
-    
+    var dataSource = [AVAudioPCMBuffer]()
     
     
     
@@ -131,7 +144,7 @@ open class Streamer: Streaming {
         engine.prepare()
         
         /// Use timer to schedule the buffers (this is not ideal, wish AVAudioEngine provided a pull-model for scheduling buffers)
-        let timer = Timer(timeInterval: intervalD, repeats: true) {
+        let timer = Timer(timeInterval: 0.1, repeats: true) {
             [weak self] _ in
             guard self?.stateDeng != .stopped else {
                 return
@@ -243,16 +256,14 @@ open class Streamer: Streaming {
     // MARK: - Scheduling Buffers
 
     func scheduleNextBuffer() {
+    
+        guard isReady, dataSource.count > 0 else {
+            return
+        }
        
-
-//        do {
-//            let nextScheduledBuffer = try reader.read(readBufferSize)
-//    
-//            // 这个方法，很有意思，timer 给他塞的 buffer, 比他自己消费的速度， 快多了
-//            playerNode.scheduleBuffer(nextScheduledBuffer)
-//        } catch {
-//            os_log("Cannot schedule buffer: %@", log: Streamer.logger, type: .debug, error.localizedDescription)
-//        }
+        let nextScheduledBuffer = dataSource[0]
+        playerNode.scheduleBuffer(nextScheduledBuffer)
+        dataSource.removeFirst()
     }
 
  
@@ -279,28 +290,6 @@ open class Streamer: Streaming {
 
 
 
-
-
-
-extension Streamer {
-    
-    func idx(for time: TimeInterval){
-          var i = 0
-          let count = timeNode.count
-          let current = time
-           
-          while i < count{
-              if current > timeNode[i]{
-                  i += 1
-              }
-              else{
-                  break
-              }
-          }
-          shutUp.currentX = max(0, i - 1)
-      }
-    
-}
 
 
 

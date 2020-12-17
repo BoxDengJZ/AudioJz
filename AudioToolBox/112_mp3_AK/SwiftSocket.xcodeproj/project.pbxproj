@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		267FCF7B258AF2D700B26C11 /* AVAudioPCMBuffer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267FCF7A258AF2D700B26C11 /* AVAudioPCMBuffer+Utilities.swift */; };
 		26987E93257E2D1A00D680BF /* 1_ひこうき雲.json in Resources */ = {isa = PBXBuildFile; fileRef = 26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */; };
 		26987E94257E2F0F00D680BF /* 1_ひこうき雲.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */; };
 		26A5D3FA257F0C0400357531 /* 1_Le Papillon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26A5D3F8257F0BFD00357531 /* 1_Le Papillon.mp3 */; };
@@ -104,6 +105,7 @@
 		266C5D9425402FF500CAD39C /* HotImgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotImgView.swift; sourceTree = "<group>"; };
 		266C5DA52540362E00CAD39C /* neg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = neg.swift; sourceTree = "<group>"; };
 		266C5DAE2540386600CAD39C /* ObjC_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjC_Bridge.h; sourceTree = "<group>"; };
+		267FCF7A258AF2D700B26C11 /* AVAudioPCMBuffer+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+Utilities.swift"; sourceTree = "<group>"; };
 		26987E91257E1E4400D680BF /* 1_ひこうき雲.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_ひこうき雲.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_ひこうき雲.mp3"; sourceTree = "<group>"; };
 		26987E92257E1F4F00D680BF /* 1_ひこうき雲.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "1_ひこうき雲.json"; sourceTree = "<group>"; };
 		26A5D3F8257F0BFD00357531 /* 1_Le Papillon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1_Le Papillon.mp3"; path = "../../../../../../Downloads/python-spider-master/Netease/1_Le Papillon.mp3"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 		26D2ADE0256E9E91004CBF9A /* Stream */ = {
 			isa = PBXGroup;
 			children = (
+				267FCF7A258AF2D700B26C11 /* AVAudioPCMBuffer+Utilities.swift */,
 				26D2ADE1256E9E91004CBF9A /* StreamingDelegate.swift */,
 				26D2ADE2256E9E91004CBF9A /* Streaming.swift */,
 				26D2ADE4256E9E91004CBF9A /* StreamingState.swift */,
@@ -612,6 +615,7 @@
 				26D2AD8E256E9D01004CBF9A /* PointAdd.swift in Sources */,
 				26D2AD8F256E9D01004CBF9A /* StringAdd.swift in Sources */,
 				26D2AD91256E9D01004CBF9A /* SideHeader.swift in Sources */,
+				267FCF7B258AF2D700B26C11 /* AVAudioPCMBuffer+Utilities.swift in Sources */,
 				26D2AD92256E9D01004CBF9A /* DateAdd.swift in Sources */,
 				26D2AD93256E9D01004CBF9A /* DebugLayer.swift in Sources */,
 				26D2AD95256E9D01004CBF9A /* BottomPlayV.swift in Sources */,
