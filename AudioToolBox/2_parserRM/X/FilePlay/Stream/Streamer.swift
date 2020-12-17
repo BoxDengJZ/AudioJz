@@ -58,7 +58,7 @@ open class Streamer: Streaming {
     }
     
     
-    var shutUp = AudioRecord()
+    var repeatControl = AudioRecord()
     
     
     public var sourceURL: URL? {
@@ -303,11 +303,11 @@ open class Streamer: Streaming {
         }
 
         
-        guard shutUp.pauseWork == false else {
-            if firstPause == false, Date().timeIntervalSince(shutUp.currentMoment) >= shutUp.stdPauseT{
+        guard repeatControl.pauseWork == false else {
+            if firstPause == false, Date().timeIntervalSince(repeatControl.currentMoment) >= repeatControl.stdPauseT{
                 
                 playS()
-                shutUp.pauseWork = false
+                repeatControl.pauseWork = false
             }
             
             return
@@ -315,15 +315,15 @@ open class Streamer: Streaming {
 
         var shouldReturn = false
         
-        let i = shutUp.currentX
+        let i = repeatControl.currentX
         let count = timeNode.count
         
         
-        if shutUp.toClimb{
+        if repeatControl.toClimb{
 
-            if shutUp.howManyNow < shutUp.countStdRepeat{
+            if repeatControl.howManyNow < repeatControl.countStdRepeat{
                 if i < count, currentTime > timeNode[i]{
-                    shutUp.howManyNow += 1
+                    repeatControl.howManyNow += 1
                     if i == 0{
                         try? seek(to: 0)
                     }
@@ -334,14 +334,14 @@ open class Streamer: Streaming {
                 }
             }
             else{
-                shutUp.toClimb = false
+                repeatControl.toClimb = false
             }
 
         }
         else {
 
             if i < count, currentTime > timeNode[i]{
-                shutUp.doPause(at: i)
+                repeatControl.doPause(at: i)
                 pauseS()
                 
                 shouldReturn = true
@@ -497,7 +497,7 @@ extension Streamer {
                   break
               }
           }
-          shutUp.currentX = max(0, i - 1)
+          repeatControl.currentX = max(0, i - 1)
       }
     
 }

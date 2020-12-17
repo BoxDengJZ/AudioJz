@@ -14,11 +14,11 @@ extension PlayerController: BottomPlayBoardProxy{
     
     
     func change(interval t: TimeInterval) {
-        audioStream?.shutUp.delay(time: t)
+        audioStream?.repeatControl.delay(time: t)
     }
 
     func change(times num: Int){
-        audioStream?.shutUp.did(repeat: num)
+        audioStream?.repeatControl.did(repeat: num)
     }
     
     
