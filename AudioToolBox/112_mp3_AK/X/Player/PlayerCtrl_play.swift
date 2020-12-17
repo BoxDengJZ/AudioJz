@@ -70,7 +70,7 @@ extension PlayerController{
      func toPlay(){
          
          
-         audioStream?.climb(to: TimeInterval(progressV.val))
+         audioStream?.playS()
     
          bottomBoard.p_play(second: false)
      }

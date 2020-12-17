@@ -46,9 +46,6 @@ open class Streamer: Streaming {
     
     public var delegate: StreamingDelegate?
     public internal(set) var duration: TimeInterval?
-    
-    public internal(set) var parser: Parsing?
-    public internal(set) var reader_ha: Reading?
 
     public let engine = AVAudioEngine()
     public let playerNode = AVAudioPlayerNode()
@@ -73,18 +70,9 @@ open class Streamer: Streaming {
     
     public var sourceURL: URL? {
         didSet {
-            resetStream()
+           
 
-            if let src = sourceURL{
-                do {
-                    let data = try Data(contentsOf: src)
-                    load(didReceiveData: data)
-                } catch {
-                    print(error)
-                }
-                
-                
-            }
+    
         }
     }
     
@@ -150,7 +138,7 @@ open class Streamer: Streaming {
             }
             
             self?.scheduleNextBuffer()
-            self?.handleTimeUpdate()
+           
             self?.notifyTimeUpdated()
         }
         RunLoop.current.add(timer, forMode: .common)
@@ -170,22 +158,7 @@ open class Streamer: Streaming {
     
     // MARK: - Reset
     
-    func resetStream(){
-        os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
-        
-        // Reset the playback state
-        stopDng()
-        duration = nil
-        reader_ha = nil
-        isFileSchedulingComplete = false
-        
-        // Create a new parser
-        do {
-            parser = try Parser()
-        } catch {
-            os_log("Failed to create parser: %@", log: Streamer.logger, type: .error, error.localizedDescription)
-        }
-    }
+
     
     // MARK: - Methods
     
@@ -246,61 +219,6 @@ open class Streamer: Streaming {
     }
     
     
-    
-    
-    
-    
-    
-    
-    public
-    func seek(to time: TimeInterval) throws {
-        os_log("%@ - %d [%.1f]", log: Streamer.logger, type: .debug, #function, #line, time)
-        
-        // Make sure we have a valid parser and reader
-        guard let parser = parser, let reader = reader_ha else {
-            return
-        }
-        
-        // Get the proper time and packet offset for the seek operation
-        guard let frameOffset = parser.frameOffset(forTime: time),
-            let packetOffset = parser.packetOffset(forFrame: frameOffset) else {
-                return
-        }
-        currentTimeOffset = time
-        isFileSchedulingComplete = false
-        
-        // We need to store whether or not the player node is currently playing to properly resume playback after
-        let isPlaying = playerNode.isPlaying
-        
-        // Stop the player node to reset the time offset to 0
-        
-        
-        // 栈，排空
-        playerNode.stop()
-        volume = 0
-        
-        // Perform the seek to the proper packet offset
-        do {
-            try reader.seek(packetOffset)
-        } catch {
-            os_log("Failed to seek: %@", log: Streamer.logger, type: .error, error.localizedDescription)
-            return
-        }
-        
-        // If the player node was previous playing then resume playback
-        if isPlaying {
-            playerNode.play()
-        }
-        
-        // Update the current time
-        delegate?.streamer(fire: self, updatedCurrentTime: time)
-        
-        swellVolume()
-    }
-    
-    
-    
-    
     func swellVolume(){
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(60)) { [unowned self] in
@@ -325,118 +243,19 @@ open class Streamer: Streaming {
     // MARK: - Scheduling Buffers
 
     func scheduleNextBuffer() {
-        guard let reader = reader_ha else {
-            os_log("No reader yet...", log: Streamer.logger, type: .debug)
-            return
-        }
+       
 
-        
-        guard shutUp.pauseWork == false else {
-            if firstPause == false, Date().timeIntervalSince(shutUp.currentMoment) >= shutUp.stdPauseT{
-                
-                playS()
-                shutUp.pauseWork = false
-            }
-            
-            return
-        }
-        
-        var shouldReturn = false
-        
-        let i = shutUp.currentX
-        let count = timeNode.count
-        
-        
-        if shutUp.toClimb{
-
-            if shutUp.howManyNow < shutUp.countStdRepeat{
-                if i < count, currentTime > timeNode[i]{
-                    shutUp.howManyNow += 1
-                    if i == 0{
-                        try? seek(to: 0)
-                    }
-                    else{
-                        try? seek(to: timeNode[i - 1])
-                    }
-                    shouldReturn = true
-                }
-            }
-            else{
-                shutUp.toClimb = false
-            }
-
-        }
-        else {
-            if i < count, currentTime > timeNode[i]{
-                shutUp.doPause(at: i)
-                pauseS()
-                
-                shouldReturn = true
-            }
-            
-            
-        }
-        
-        guard shouldReturn == false else {
-            return
-        }
-        // 文件，读完了，就不要再继续调度了
-        guard !isFileSchedulingComplete else {
-            return
-        }
-        
-        
-        do {
-            let nextScheduledBuffer = try reader.read(readBufferSize)
-    
-            // 这个方法，很有意思，timer 给他塞的 buffer, 比他自己消费的速度， 快多了
-            playerNode.scheduleBuffer(nextScheduledBuffer)
-        } catch ReaderError.reachedEndOfFile {
-            os_log("Scheduler reached end of file", log: Streamer.logger, type: .debug)
-            isFileSchedulingComplete = true
-        } catch {
-            os_log("Cannot schedule buffer: %@", log: Streamer.logger, type: .debug, error.localizedDescription)
-        }
+//        do {
+//            let nextScheduledBuffer = try reader.read(readBufferSize)
+//    
+//            // 这个方法，很有意思，timer 给他塞的 buffer, 比他自己消费的速度， 快多了
+//            playerNode.scheduleBuffer(nextScheduledBuffer)
+//        } catch {
+//            os_log("Cannot schedule buffer: %@", log: Streamer.logger, type: .debug, error.localizedDescription)
+//        }
     }
 
-    // MARK: - Handling Time Updates
-    
-    /// Handles the duration value, explicitly checking if the duration is greater than the current value. For indeterminate streams we can accurately estimate the duration using the number of packets parsed and multiplying that by the number of frames per packet.
-    func handleDurationUpdate() {
-        if let newDuration = parser?.duration {
-            // Check if the duration is either nil or if it is greater than the previous duration
-            var shouldUpdate = false
-            if duration == nil {
-                shouldUpdate = true
-            } else if let oldDuration = duration, oldDuration < newDuration {
-                shouldUpdate = true
-            }
-            
-            // Update the duration value
-            if shouldUpdate {
-                self.duration = newDuration
-                notifyDurationUpdate(newDuration)
-            }
-        }
-    }
-    
-    /// Handles the current time relative to the duration to make sure current time does not exceed the duration
-    func handleTimeUpdate() {
-        guard let duration = duration else {
-            return
-        }
-
-        if currentTime >= duration {
-        
-            try? seek(to: 0)
-        
-            stateDeng = .over
-            // 弹奏完成
-            pauseS()
-            
-        }
-    }
-
+ 
  
 
     func notifyDurationUpdate(_ duration: TimeInterval) {
@@ -456,68 +275,6 @@ open class Streamer: Streaming {
     }
 }
 
-
-
-
-
-
-extension Streamer {
-    
-  
-
-    
-    public func load(didReceiveData data: Data) {
-        os_log("%@ - %d", log: Streamer.logger, type: .debug, #function, #line)
-
-        guard let parser = parser else {
-            os_log("Expected parser, bail...", log: Streamer.logger, type: .error)
-            return
-        }
-        
-        /// Parse the incoming audio into packets
-        do {
-            try parser.parse(data: data)
-        } catch {
-            os_log("Failed to parse: %@", log: Streamer.logger, type: .error, error.localizedDescription)
-        }
-        
-        /// Once there's enough data to start producing packets we can use the data format
-        if reader_ha == nil, let _ = parser.dataFormatD {
-            do {
-                reader_ha = try Reader(parser: parser, readFormat: readFormat)
-            } catch {
-                os_log("Failed to create reader: %@", log: Streamer.logger, type: .error, error.localizedDescription)
-            }
-        }
-        
-        /// Update the progress UI
-        DispatchQueue.main.async {
-            [weak self] in
-            
-            
-            // Check if we have the duration
-            self?.handleDurationUpdate()
-        }
-    }
-    
-    
-    
-    
-    
-    func climb(to time: TimeInterval){
-        
-        firstPause = false
-        
-        
-        
-        idx(for: time)
-        
-        try? seek(to: time)
-        
-        playS()
-        
-    }
-}
 
 
 

@@ -23,14 +23,6 @@ public protocol Streaming: class {
     /// A `TimeInterval` representing the total duration
     var duration: TimeInterval? { get }
     
-
-    
-    /// A `Parsing` used to parse the audio's binary data into audio packets
-    var parser: Parsing? { get }
-    
-    /// A `Reading` used to provide LPCM audio packets from the audio packets from the `parser`
-    var reader_ha: Reading? { get }
-    
     /// An `AVAudioEngine` used for playback
     var engine: AVAudioEngine { get }
     
@@ -72,11 +64,7 @@ public protocol Streaming: class {
     /// Stops playback and any ongoing downloads.
     func stopDng()
     
-    /// Seeks to a specific time. If the seek operation fails this call should throw an error.
-    ///
-    /// - Parameter time: A `TimeInterval` representing the new desired play time in seconds.
-    /// - Throws: An `Error` describing the reason the seek failed. Concrete classes can use typed-errors to give a specific reason.
-    func seek(to time: TimeInterval) throws
+
     
 }
 
