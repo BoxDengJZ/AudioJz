@@ -106,7 +106,7 @@ open class Streamer: Streaming {
         }
     }
     var volumeRampTimer: Timer?
-    var volumeRampTargetValue: Float = 1
+    var volumeRampTargetValue: Float = 0.014 // sleep mode
 
     // MARK: - Properties
     

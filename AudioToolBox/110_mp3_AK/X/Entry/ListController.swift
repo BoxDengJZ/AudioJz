@@ -11,14 +11,17 @@ import UIKit
 
 struct Piece {
     let music: String
+    let isAAC: Bool
+    let voiceLevel: Float
 }
 
 
 class ListController: UIViewController {
 
     
-    lazy var records: [Piece] = [Piece(music: "1_ひこうき雲"),
-                                 Piece(music: "1_Le Papillon")]
+    lazy var records: [Piece] = [Piece(music: "1_ひこうき雲", isAAC: false, voiceLevel: 0.013),
+                                 Piece(music: "1_Le Papillon", isAAC: false, voiceLevel: 0.009),
+                                 Piece(music: "La_Vie_En_Rose", isAAC: true, voiceLevel: 0.014)]
     
     
     lazy var follow: UIView = { () -> UITableView in
@@ -92,8 +95,7 @@ extension ListController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let bulk = records[indexPath.row]
-        let p = PlayerController(from: bulk.music)
+        let p = PlayerController(from: records[indexPath.row])
         navigationController?.pushViewController(p, animated: true)
     }
 

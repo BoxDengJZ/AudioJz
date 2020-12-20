@@ -85,14 +85,14 @@ class PlayerController: UIViewController{
     
     var currentIdx = -1
     
-    let src: String
+    let src: Piece
     
-    init(from source: String) {
+    init(from source: Piece) {
         src = source
         
         var temp: P_intelligence?
         do{
-            if let path = Bundle.main.url(forResource: src, withExtension: "json"){
+            if let path = Bundle.main.url(forResource: src.music, withExtension: "json"){
                 let data = try Data(contentsOf: path)
                 let decoder = JSONDecoder()
                 let info = try decoder.decode([NodeK].self, from: data)
@@ -129,7 +129,7 @@ class PlayerController: UIViewController{
         
         view.backgroundColor = UIColor(rgb: 0xF9F9F9)
 
-        title = src
+        title = src.music
         forUI()
    
         forEvents()

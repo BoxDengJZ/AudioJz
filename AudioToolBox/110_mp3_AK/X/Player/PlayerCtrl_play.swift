@@ -28,8 +28,14 @@ extension PlayerController{
             node.time
         }
         audioStream = Streamer(source: fileP, with: moments, bridge: self)
+        audioStream?.volumeRampTargetValue = src.voiceLevel
+        if src.isAAC{
+            audioStream?.sourceURL = Bundle.main.url(forResource: src.music, withExtension: "m4a")
+        }
+        else{
+            audioStream?.sourceURL = Bundle.main.url(forResource: src.music, withExtension: "mp3")
+        }
         
-        audioStream?.sourceURL = Bundle.main.url(forResource: src, withExtension: "mp3")
         
 
     }
