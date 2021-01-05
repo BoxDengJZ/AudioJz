@@ -366,6 +366,8 @@ class AssetPlaybackManager: NSObject {
                 catch {
                     print("An Error occured activating the audio session while resuming from interruption: \(error)")
                 }
+        @unknown default:
+            fatalError()
         }
     }
     

@@ -269,6 +269,8 @@ class RemoteCommandManager: NSObject {
         switch event.type {
             case .beginSeeking: assetPlaybackManager.beginFastForward()
             case .endSeeking: assetPlaybackManager.endRewindFastForward()
+        @unknown default:
+            fatalError()
         }
         return .success
     }
@@ -279,6 +281,8 @@ class RemoteCommandManager: NSObject {
         switch event.type {
             case .beginSeeking: assetPlaybackManager.beginRewind()
             case .endSeeking: assetPlaybackManager.endRewindFastForward()
+        @unknown default:
+            fatalError()
         }
         return .success
     }

@@ -27,7 +27,7 @@ class AssetListTableViewController: UITableViewController {
         // Populate `assetListTableView` with all the m4a files in the Application bundle.
         guard let enumerator = FileManager.default.enumerator(at: Bundle.main.bundleURL, includingPropertiesForKeys: nil, options: [], errorHandler: nil) else { return }
         
-        assets = enumerator.flatMap { element in
+        assets = enumerator.compactMap{ element in
             guard let url = element as? URL, url.pathExtension == "m4a" else { return nil }
             
             let fileName = url.lastPathComponent
@@ -79,7 +79,7 @@ class AssetListTableViewController: UITableViewController {
     @objc
     func handleRemoteCommandNextTrackNotification(notification: Notification) {
         guard let assetName = notification.userInfo?[Asset.nameKey] as? String else { return }
-        guard let assetIndex = assets.index(where: {$0.assetName == assetName}) else { return }
+        guard let assetIndex = assets.firstIndex(where: {$0.assetName == assetName}) else { return }
         
         if assetIndex < assets.count - 1 {
             assetPlaybackManager.asset = assets[assetIndex + 1]
@@ -91,7 +91,7 @@ class AssetListTableViewController: UITableViewController {
     @objc
     func handleRemoteCommandPreviousTrackNotification(notification: Notification) {
         guard let assetName = notification.userInfo?[Asset.nameKey] as? String else { return }
-        guard let assetIndex = assets.index(where: {$0.assetName == assetName}) else { return }
+        guard let assetIndex = assets.firstIndex(where: {$0.assetName == assetName}) else { return }
         
         if assetIndex > 0 {
             assetPlaybackManager.asset = assets[assetIndex - 1]
