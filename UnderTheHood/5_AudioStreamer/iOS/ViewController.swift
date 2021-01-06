@@ -10,6 +10,12 @@ import UIKit
 import AVFoundation
 import os.log
 
+
+
+import MediaPlayer
+
+
+
 class ViewController: UIViewController {
     static let logger = OSLog(subsystem: "com.fastlearner.streamer", category: "ViewController")
     
@@ -33,7 +39,7 @@ class ViewController: UIViewController {
     
     var cycleMode: ( titles: [String], tick: Bool) = (["默认关闭", "打开了"], false)
     
-    
+    var length: TimeInterval?
     
     // Streamer props
     lazy var streamer: TimePitchStreamer = {
@@ -62,6 +68,13 @@ class ViewController: UIViewController {
         /// Download
         let url = URL(string: "http://aod.cos.tx.xmcdn.com/group31/M0B/BB/58/wKgJSVmSRjvCZ4wwAAugz-tllHw858.m4a")!
         streamer.url = url
+        
+        
+        if UIApplication.shared.responds(to: #selector(UIApplication.beginReceivingRemoteControlEvents)){
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+            UIApplication.shared.beginBackgroundTask(expirationHandler: { () -> Void in
+            })
+        }
     }
     
     
@@ -199,5 +212,36 @@ extension ViewController{
         }
         cycleMode.tick.toggle()
         streamer.repeats.toggle()
+    }
+    
+    
+    func show(mediaInfo time: TimeInterval){
+        let artistName = "test"
+        
+        guard let duration = length else {
+            return
+        }
+        var isPlaying: Double = 0
+        
+        var pInfo: [String: Any] = [MPMediaItemPropertyArtist : artistName,
+                                    MPMediaItemPropertyTitle : artistName ]
+        if let img = UIImage(named: "fuc_icon"){
+            let artwork = MPMediaItemArtwork(boundsSize: img.size, requestHandler: {  (_) -> UIImage in
+                return img
+            })
+            pInfo[MPMediaItemPropertyArtwork] = artwork
+            
+        }
+        
+        if streamer.state == .playing{
+            isPlaying = 1
+            pInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = time
+            pInfo[MPMediaItemPropertyPlaybackDuration] = duration
+        }
+        pInfo[MPMediaItemPropertyPersistentID] = artistName
+        pInfo[MPNowPlayingInfoPropertyPlaybackRate] = NSNumber(floatLiteral: isPlaying)
+        pInfo[MPNowPlayingInfoPropertyDefaultPlaybackRate] = NSNumber(floatLiteral: isPlaying)
+        pInfo[MPNowPlayingInfoPropertyMediaType] = NSNumber(value: MPNowPlayingInfoMediaType.audio.rawValue)
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = pInfo
     }
 }

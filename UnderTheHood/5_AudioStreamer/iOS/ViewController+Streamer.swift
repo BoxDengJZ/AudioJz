@@ -46,6 +46,7 @@ extension ViewController: StreamingDelegate {
             progressSlider.value = Float(currentTime)
             currentTimeLabel.text = currentTime.toMMSS()
         }
+        show(mediaInfo: currentTime)
     }
     
     func streamer(_ streamer: Streaming, updatedDuration duration: TimeInterval) {
@@ -58,6 +59,8 @@ extension ViewController: StreamingDelegate {
         progressSlider.isEnabled = true
         progressSlider.minimumValue = 0.0
         progressSlider.maximumValue = Float(duration)
+        
+        length = duration
     }
     
 }
