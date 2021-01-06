@@ -225,7 +225,7 @@ extension ViewController{
         
         var pInfo: [String: Any] = [MPMediaItemPropertyArtist : artistName,
                                     MPMediaItemPropertyTitle : artistName ]
-        if let img = UIImage(named: "fuc_icon"){
+        if let img = UIImage(systemName: "music.note.list"){
             let artwork = MPMediaItemArtwork(boundsSize: img.size, requestHandler: {  (_) -> UIImage in
                 return img
             })

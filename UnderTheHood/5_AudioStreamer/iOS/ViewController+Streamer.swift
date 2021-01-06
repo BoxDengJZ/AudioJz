@@ -63,4 +63,32 @@ extension ViewController: StreamingDelegate {
         length = duration
     }
     
+    
+    
+    
+    override func remoteControlReceived(with event: UIEvent?) {
+        guard let e = event else{
+            return
+        }
+        
+        
+        if e.type == UIEvent.EventType.remoteControl{
+            switch e.subtype{
+            case UIEventSubtype.remoteControlPlay:
+                streamer.play()
+            case UIEventSubtype.remoteControlPause:
+                streamer.pause()
+            case UIEventSubtype.remoteControlNextTrack:
+                ()
+            case UIEventSubtype.remoteControlPreviousTrack:
+                ()
+            default:
+                print("There is an issue with the control")
+            }
+        }
+
+
+    }
 }
+
+
