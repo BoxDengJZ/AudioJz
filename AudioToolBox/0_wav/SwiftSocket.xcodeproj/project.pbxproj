@@ -1078,11 +1078,7 @@
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = D878P8TW6L;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/X/thirdCode/Hook",
-					"$(PROJECT_DIR)/X/Pay/lib/ali",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = X/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1111,37 +1107,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = D878P8TW6L;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/X/thirdCode/Hook",
-					"$(PROJECT_DIR)/X/Pay/lib/ali",
-					"$(PROJECT_DIR)/X/thirdCode/realm",
-					"$(PROJECT_DIR)/X/thirdCode/realm/catalyst/swift-12.0",
-					"$(PROJECT_DIR)/X/thirdCode/realm/catalyst/swift-12.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/catalyst/swift-11.7",
-					"$(PROJECT_DIR)/X/thirdCode/realm/catalyst/swift-11.4.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/catalyst/swift-11.3",
-					"$(PROJECT_DIR)/X/thirdCode/realm/watchos/swift-12.0",
-					"$(PROJECT_DIR)/X/thirdCode/realm/watchos/swift-12.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/watchos/swift-11.7",
-					"$(PROJECT_DIR)/X/thirdCode/realm/watchos/swift-11.4.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/watchos/swift-11.3",
-					"$(PROJECT_DIR)/X/thirdCode/realm/osx/swift-12.0",
-					"$(PROJECT_DIR)/X/thirdCode/realm/osx/swift-12.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/osx/swift-11.7",
-					"$(PROJECT_DIR)/X/thirdCode/realm/osx/swift-11.4.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/osx/swift-11.3",
-					"$(PROJECT_DIR)/X/thirdCode/realm/ios/swift-12.0",
-					"$(PROJECT_DIR)/X/thirdCode/realm/ios/swift-12.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/ios/swift-11.7",
-					"$(PROJECT_DIR)/X/thirdCode/realm/ios/swift-11.4.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/ios/swift-11.3",
-					"$(PROJECT_DIR)/X/thirdCode/realm/tvos/swift-12.0",
-					"$(PROJECT_DIR)/X/thirdCode/realm/tvos/swift-12.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/tvos/swift-11.7",
-					"$(PROJECT_DIR)/X/thirdCode/realm/tvos/swift-11.4.1",
-					"$(PROJECT_DIR)/X/thirdCode/realm/tvos/swift-11.3",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = X/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
