@@ -45,8 +45,8 @@ extension PlayerController: PlayerProgressProxy{
             if playingSelected{
                 toPause()
             }
-            
-        case .update(let val):
+        case .update:
+        // case .update(let val):
             break
             // 还是使用持久化好，
             
