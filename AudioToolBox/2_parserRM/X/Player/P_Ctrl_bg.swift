@@ -33,13 +33,13 @@ extension PlayerController{
         
         if e.type == UIEvent.EventType.remoteControl{
             switch e.subtype{
-            case UIEventSubtype.remoteControlPlay:
+            case UIEvent.EventSubtype.remoteControlPlay:
                 secondPlay()
-            case UIEventSubtype.remoteControlPause:
+            case UIEvent.EventSubtype.remoteControlPause:
                 secondPlay()
-            case UIEventSubtype.remoteControlNextTrack:
+            case UIEvent.EventSubtype.remoteControlNextTrack:
                 to(page: .rhs)
-            case UIEventSubtype.remoteControlPreviousTrack:
+            case UIEvent.EventSubtype.remoteControlPreviousTrack:
                 to(page: .lhs)
             default:
                 print("There is an issue with the control")
