@@ -1,4 +1,4 @@
-# AudioJz
+# AudioJz ( 我叫邓江洲，寻找工作中 )
 
 
 #### Audio Tool Box
